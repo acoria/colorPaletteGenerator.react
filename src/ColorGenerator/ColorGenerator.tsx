@@ -4,7 +4,7 @@ import styles from "./ColorGenerator.module.css";
 import { IColorGeneratorProps } from "./IColorGeneratorProps";
 
 export const ColorGenerator: React.FC<IColorGeneratorProps> = (props) => {
-  const initialBarColor = "#eeeaea";
+  const initialBarColor = "";
   const getInitialColors = (initialColor?: string) =>
     [...Array(props.numberOfColorsToGenerate)].map((_, index) => {
       if (index === 0) {

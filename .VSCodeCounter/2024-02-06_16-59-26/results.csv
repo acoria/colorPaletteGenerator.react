@@ -1,0 +1,32 @@
+"filename", "language", "TypeScript", "JSON with Comments", "CSS", "Markdown", "JSON", "HTML", "PowerShell", "comment", "blank", "total"
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\README.md", "Markdown", 0, 0, 0, 26, 0, 0, 0, 0, 21, 47
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\colorPaletteGenerator.ps1", "PowerShell", 0, 0, 0, 0, 0, 0, 2, 0, 0, 2
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\package-lock.json", "JSON", 0, 0, 0, 0, 18002, 0, 0, 0, 1, 18003
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\package.json", "JSON", 0, 0, 0, 0, 43, 0, 0, 0, 1, 44
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\public\index.html", "HTML", 0, 0, 0, 0, 0, 20, 0, 23, 1, 44
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\public\manifest.json", "JSON", 0, 0, 0, 0, 25, 0, 0, 0, 1, 26
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\App.tsx", "TypeScript", 9, 0, 0, 0, 0, 0, 0, 0, 3, 12
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\ColorGenerator\ColorGenerator.module.css", "CSS", 0, 0, 4, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\ColorGenerator\ColorGenerator.tsx", "TypeScript", 46, 0, 0, 0, 0, 0, 0, 0, 6, 52
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\ColorGenerator\IColorGeneratorProps.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorBar\ColorBar.module.css", "CSS", 0, 0, 7, 0, 0, 0, 0, 0, 1, 8
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorBar\ColorBar.tsx", "TypeScript", 31, 0, 0, 0, 0, 0, 0, 0, 4, 35
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorBar\IColorBarProps.ts", "TypeScript", 5, 0, 0, 0, 0, 0, 0, 0, 1, 6
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPalette\ColorPalette.module.css", "CSS", 0, 0, 10, 0, 0, 0, 0, 0, 2, 12
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPalette\ColorPalette.tsx", "TypeScript", 73, 0, 0, 0, 0, 0, 0, 5, 4, 82
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPicker\ColorPicker.module.css", "CSS", 0, 0, 10, 0, 0, 0, 0, 0, 3, 13
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPicker\ColorPicker.tsx", "TypeScript", 15, 0, 0, 0, 0, 0, 0, 0, 2, 17
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPicker\IColorPickerProps.ts", "TypeScript", 6, 0, 0, 0, 0, 0, 0, 0, 1, 7
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\cssCodeGenerator\CssCode.module.css", "CSS", 0, 0, 15, 0, 0, 0, 0, 0, 3, 18
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\cssCodeGenerator\CssCode.tsx", "TypeScript", 19, 0, 0, 0, 0, 0, 0, 0, 2, 21
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\cssCodeGenerator\CssColorCodeGenerator.ts", "TypeScript", 35, 0, 0, 0, 0, 0, 0, 0, 6, 41
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\cssCodeGenerator\ICssCodeProps.ts", "TypeScript", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\horizontalColorPalette\HorizontalColorPalette.module.css", "CSS", 0, 0, 14, 0, 0, 0, 0, 0, 3, 17
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\horizontalColorPalette\HorizontalColorPalette.tsx", "TypeScript", 22, 0, 0, 0, 0, 0, 0, 0, 2, 24
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\horizontalColorPalette\IHorizontalColorPaletteProps.ts", "TypeScript", 4, 0, 0, 0, 0, 0, 0, 0, 1, 5
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\index.css", "CSS", 0, 0, 13, 0, 0, 0, 0, 0, 2, 15
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\index.tsx", "TypeScript", 7, 0, 0, 0, 0, 0, 0, 0, 2, 9
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\react-app-env.d.ts", "TypeScript", 0, 0, 0, 0, 0, 0, 0, 1, 1, 2
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\setupTests.ts", "TypeScript", 1, 0, 0, 0, 0, 0, 0, 4, 1, 6
+"c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\tsconfig.json", "JSON with Comments", 0, 26, 0, 0, 0, 0, 0, 0, 1, 27
+"Total", "-", 282, 26, 73, 26, 18070, 20, 2, 33, 79, 18611

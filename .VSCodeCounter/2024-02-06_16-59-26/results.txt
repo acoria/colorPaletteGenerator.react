@@ -1,0 +1,70 @@
+Date : 2024-02-06 16:59:26
+Directory : c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react
+Total : 30 files,  18499 codes, 33 comments, 79 blanks, all 18611 lines
+
+Languages
++--------------------+------------+------------+------------+------------+------------+
+| language           | files      | code       | comment    | blank      | total      |
++--------------------+------------+------------+------------+------------+------------+
+| JSON               |          3 |     18,070 |          0 |          3 |     18,073 |
+| TypeScript         |         16 |        282 |         10 |         38 |        330 |
+| CSS                |          7 |         73 |          0 |         15 |         88 |
+| JSON with Comments |          1 |         26 |          0 |          1 |         27 |
+| Markdown           |          1 |         26 |          0 |         21 |         47 |
+| HTML               |          1 |         20 |         23 |          1 |         44 |
+| PowerShell         |          1 |          2 |          0 |          0 |          2 |
++--------------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                                                                            | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                                                                               |         30 |     18,499 |         33 |         79 |     18,611 |
+| . (Files)                                                                                                                       |          5 |     18,099 |          0 |         24 |     18,123 |
+| public                                                                                                                          |          2 |         45 |         23 |          2 |         70 |
+| src                                                                                                                             |         23 |        355 |         10 |         53 |        418 |
+| src (Files)                                                                                                                     |          5 |         30 |          5 |          9 |         44 |
+| src\ColorGenerator                                                                                                              |          3 |         55 |          0 |          8 |         63 |
+| src\colorBar                                                                                                                    |          3 |         43 |          0 |          6 |         49 |
+| src\colorPalette                                                                                                                |          2 |         83 |          5 |          6 |         94 |
+| src\colorPicker                                                                                                                 |          3 |         31 |          0 |          6 |         37 |
+| src\cssCodeGenerator                                                                                                            |          4 |         73 |          0 |         12 |         85 |
+| src\horizontalColorPalette                                                                                                      |          3 |         40 |          0 |          6 |         46 |
++---------------------------------------------------------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| filename                                                                                                                        | language           | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\README.md                                                    | Markdown           |         26 |          0 |         21 |         47 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\colorPaletteGenerator.ps1                                    | PowerShell         |          2 |          0 |          0 |          2 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\package-lock.json                                            | JSON               |     18,002 |          0 |          1 |     18,003 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\package.json                                                 | JSON               |         43 |          0 |          1 |         44 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\public\index.html                                            | HTML               |         20 |         23 |          1 |         44 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\public\manifest.json                                         | JSON               |         25 |          0 |          1 |         26 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\App.tsx                                                  | TypeScript         |          9 |          0 |          3 |         12 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\ColorGenerator\ColorGenerator.module.css                 | CSS                |          4 |          0 |          1 |          5 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\ColorGenerator\ColorGenerator.tsx                        | TypeScript         |         46 |          0 |          6 |         52 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\ColorGenerator\IColorGeneratorProps.ts                   | TypeScript         |          5 |          0 |          1 |          6 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorBar\ColorBar.module.css                             | CSS                |          7 |          0 |          1 |          8 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorBar\ColorBar.tsx                                    | TypeScript         |         31 |          0 |          4 |         35 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorBar\IColorBarProps.ts                               | TypeScript         |          5 |          0 |          1 |          6 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPalette\ColorPalette.module.css                     | CSS                |         10 |          0 |          2 |         12 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPalette\ColorPalette.tsx                            | TypeScript         |         73 |          5 |          4 |         82 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPicker\ColorPicker.module.css                       | CSS                |         10 |          0 |          3 |         13 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPicker\ColorPicker.tsx                              | TypeScript         |         15 |          0 |          2 |         17 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\colorPicker\IColorPickerProps.ts                         | TypeScript         |          6 |          0 |          1 |          7 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\cssCodeGenerator\CssCode.module.css                      | CSS                |         15 |          0 |          3 |         18 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\cssCodeGenerator\CssCode.tsx                             | TypeScript         |         19 |          0 |          2 |         21 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\cssCodeGenerator\CssColorCodeGenerator.ts                | TypeScript         |         35 |          0 |          6 |         41 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\cssCodeGenerator\ICssCodeProps.ts                        | TypeScript         |          4 |          0 |          1 |          5 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\horizontalColorPalette\HorizontalColorPalette.module.css | CSS                |         14 |          0 |          3 |         17 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\horizontalColorPalette\HorizontalColorPalette.tsx        | TypeScript         |         22 |          0 |          2 |         24 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\horizontalColorPalette\IHorizontalColorPaletteProps.ts   | TypeScript         |          4 |          0 |          1 |          5 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\index.css                                                | CSS                |         13 |          0 |          2 |         15 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\index.tsx                                                | TypeScript         |          7 |          0 |          2 |          9 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\react-app-env.d.ts                                       | TypeScript         |          0 |          1 |          1 |          2 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\src\setupTests.ts                                            | TypeScript         |          1 |          4 |          1 |          6 |
+| c:\Users\vtewes\VisualStudioProjects\color_palette_generator.react\tsconfig.json                                                | JSON with Comments |         26 |          0 |          1 |         27 |
+| Total                                                                                                                           |                    |     18,499 |         33 |         79 |     18,611 |
++---------------------------------------------------------------------------------------------------------------------------------+--------------------+------------+------------+------------+------------+

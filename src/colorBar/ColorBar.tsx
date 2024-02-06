@@ -3,12 +3,20 @@ import styles from "./ColorBar.module.css";
 import { IColorBarProps } from "./IColorBarProps";
 
 export const ColorBar: React.FC<IColorBarProps> = (props) => {
+  //needs its own color state so that the color picker can be prefilled with a value
   const [color, setColor] = useState(props.color);
   const [pickerInitialized, setPickerInitialized] = useState(false);
 
   useEffect(() => {
     setColor(props.color);
+    if (props.color === "") {
+      //if the color was reset, the color picker needs initializing
+      //so that the color picker color can be set once again
+      setPickerInitialized(false);
+    }
   }, [props.color]);
+
+  const testColor = color === "" ? "#FFFFFF" : color;
 
   return (
     <input
@@ -18,7 +26,7 @@ export const ColorBar: React.FC<IColorBarProps> = (props) => {
         backgroundColor: "transparent",
       }}
       type="color"
-      value={color}
+      value={testColor}
       onChange={(event) => {
         props.onColorChange?.(event.target.value);
         setColor(event.target.value);
