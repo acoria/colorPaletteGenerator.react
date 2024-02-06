@@ -4,6 +4,10 @@
   column-gap: 3rem;
 }
 
+.titleOfApp{
+  font-family: "Lobster"
+}
+
 .code {
   display: flex;
   flex-direction: row;

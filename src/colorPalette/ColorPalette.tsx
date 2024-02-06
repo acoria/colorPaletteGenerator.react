@@ -16,7 +16,7 @@ export const ColorPalette: React.FC = () => {
 
   return (
     <div className={styles.colorPalette}>
-      <h1>Color Palette Generator</h1>
+      <h1 className={styles.titleOfApp}>Color Palette Generator</h1>
       <p>
         Go to{" "}
         <a href="https://coolors.co/palettes" target="_blank">
