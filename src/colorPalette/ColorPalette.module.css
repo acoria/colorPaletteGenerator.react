@@ -1,0 +1,11 @@
+.colorPickers {
+  display: flex;
+  flex-direction: row;
+  column-gap: 3rem;
+}
+
+.code {
+  display: flex;
+  flex-direction: row;
+  column-gap: 3rem;
+}

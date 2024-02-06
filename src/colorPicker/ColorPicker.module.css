@@ -1,0 +1,12 @@
+.colorPicker {
+  max-width: 50%;
+}
+
+.title{
+  margin-bottom: 0.3rem;
+}
+
+.explanation {
+  width: 20rem;
+  font-size: small;
+}

@@ -1,0 +1,17 @@
+.code {
+  display: flex;
+  flex-direction: column;
+  font-family: monospace;
+  width: fit-content;
+  background-color: #dfdddd;
+  padding-bottom: 0.5rem;
+}
+
+.code button {
+  align-self: end;
+  margin-bottom: 0.5rem;
+}
+
+.codeSnippet {
+  margin: 0 0.5rem;
+}

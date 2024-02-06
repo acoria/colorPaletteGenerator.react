@@ -1,0 +1,16 @@
+.horizontalPalette {
+  display: flex;
+  flex-direction: row;
+}
+
+.horizontalPaletteBar {
+  width: 6rem;
+  height: 10rem;
+}
+
+.hexCodeDark {
+  color: black;
+}
+.hexCodeLight {
+  color: white;
+}
