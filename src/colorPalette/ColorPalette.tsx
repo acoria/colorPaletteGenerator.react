@@ -7,6 +7,7 @@ import styles from "./ColorPalette.module.css";
 import { ReactComponent as CircleWithOne } from "../assets/circleWithOne.svg";
 import { ReactComponent as CircleWithTwo } from "../assets/circleWithTwo.svg";
 import { ReactComponent as CircleWithThree } from "../assets/circleWithThree.svg";
+import { DesignExamples } from "../designExamples/DesignExamples";
 
 export const ColorPalette: React.FC = () => {
   const [primaryColors, setPrimaryColors] = useState<string[]>([]);
@@ -106,6 +107,8 @@ export const ColorPalette: React.FC = () => {
           )}
         </div>
       </div>
+      <DesignExamples colors={[...primaryColors, ...selectedNeutralColors]} className={styles.designExamples}/>
+      {/* <DesignExamples className={styles.designExamples} colors={["#FE8E19","#FFA648","#FEDDBA","#033465","#1d6dc3","#2367A8","#E7F3FF"]} /> */}
     </div>
   );
 };
