@@ -1,3 +1,13 @@
+.generatedPalette{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.generatedPalette h4 {
+  font-family: "Lobster";
+  font-size: large;
+}
 .horizontalPalette {
   display: flex;
   flex-direction: row;

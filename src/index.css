@@ -5,15 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  padding: 0 1rem;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 @font-face {
   font-family: "Lobster";
   src: url(./fonts/Lobster-Regular.ttf);
+}
+
+h4 {
+  margin: 0.5rem 0;
 }

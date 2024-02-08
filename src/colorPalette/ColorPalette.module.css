@@ -1,15 +1,62 @@
+.colorPalette {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
 .colorPickers {
   display: flex;
   flex-direction: row;
   column-gap: 3rem;
 }
 
-.titleOfApp{
-  font-family: "Lobster"
+.titleOfApp {
+  font-family: "Lobster";
+  /* background-color: #642472; */
+  /* background-image: linear-gradient(90deg, #642472 10%, #ffc0cbbb, #0000ffbb, #008000bb, #ffff00bb, #ffa500bb, #ff0000bb); */
+  /* background-image: linear-gradient(90deg, #642472 10%, #ffc0cb99, #0000ff99, #00800099, #ffff0099, #ffa50099, #ff000099); */
+  background-image: linear-gradient(90deg, #642472ee 10%, #9c747b55, #0000ff55, #00800055, #ffff0055, #ffa50055, #ff000055);
+  height: 4rem;
+  padding: 0.5rem;
+  margin: 0;
+  grid-column-start: 1;
+  grid-column-end: 3;
+}
+
+.colorPaletteBody {
+  padding: 1rem 1rem 0 1rem;
+}
+
+.firstStep {
+  display: flex;
+  flex-direction: row;
+  column-gap: 0.5rem;
+}
+
+.secondStep {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
+.colorTitle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+
+.colorTitleText {
+  margin: 0;
+  width: fit-content;
 }
 
 .code {
   display: flex;
   flex-direction: row;
   column-gap: 3rem;
+  margin-top: 1rem;
+}
+
+.circleWithNumber {
+  width: 2rem;
 }

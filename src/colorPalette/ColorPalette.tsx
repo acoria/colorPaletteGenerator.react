@@ -1,9 +1,12 @@
-import { useState } from "react";
+import { ReactNode, useState } from "react";
 import { ColorPicker } from "../colorPicker/ColorPicker";
 import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
 import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
 import styles from "./ColorPalette.module.css";
+import { ReactComponent as CircleWithOne } from "../assets/circleWithOne.svg";
+import { ReactComponent as CircleWithTwo } from "../assets/circleWithTwo.svg";
+import { ReactComponent as CircleWithThree } from "../assets/circleWithThree.svg";
 
 export const ColorPalette: React.FC = () => {
   const [primaryColors, setPrimaryColors] = useState<string[]>([]);
@@ -14,66 +17,93 @@ export const ColorPalette: React.FC = () => {
       ? [neutralColors[0], neutralColors[2], neutralColors[4], neutralColors[6]]
       : [];
 
+  const colorTitle = (component: ReactNode, title: string) => (
+    <div className={styles.colorTitle}>
+      {component}
+      <h4 className={styles.colorTitleText}>{title}</h4>
+    </div>
+  );
+
+  const colorsPicked = primaryColors.length > 0;
+
   return (
     <div className={styles.colorPalette}>
       <h1 className={styles.titleOfApp}>Color Palette Generator</h1>
-      <p>
-        Go to{" "}
-        <a href="https://coolors.co/palettes" target="_blank">
-          Coolors.co
-        </a>{" "}
-        and pick two colors you like from the same color palette.
-      </p>
-      <div className={styles.colorPickers}>
-        <ColorPicker
-          title="Primary color"
-          numberOfColorsToGenerate={3}
-          onColorsChange={setPrimaryColors}
-          explanation="Decide which color should be your primary color. Click on the first
+      <div className={styles.colorPaletteBody}>
+        <div className={styles.firstStep}>
+          <CircleWithOne className={styles.circleWithNumber} />
+          <p>
+            Go to{" "}
+            <a href="https://coolors.co/palettes" target="_blank">
+              Coolors.co
+            </a>{" "}
+            or take any other color palette and pick two colors you like from
+            the same color palette.
+          </p>
+        </div>
+        <div className={styles.colorPickers}>
+          <div className={styles.secondStep}>
+            <ColorPicker
+              title={colorTitle(
+                <CircleWithTwo className={styles.circleWithNumber} />,
+                "Pick primary Color"
+              )}
+              numberOfColorsToGenerate={3}
+              onColorsChange={setPrimaryColors}
+              explanation="Decide which color should be your primary color. Click on the first
         element and use the picker to select this color. Then move left on the
-        x-axis towards a lighter color for each following color."
-        />
-        <ColorPicker
-          title="Neutral color"
-          numberOfColorsToGenerate={7}
-          onColorsChange={setNeutralColors}
-          explanation="Pick the second color, then move a little up and left for each color
+        x-axis towards a lighter color for each following element."
+            />
+          </div>
+          <div>
+            <ColorPicker
+              title={colorTitle(
+                <CircleWithThree className={styles.circleWithNumber} />,
+                "Pick neutral color"
+              )}
+              numberOfColorsToGenerate={7}
+              onColorsChange={setNeutralColors}
+              explanation="Pick the second color, then move a little up and left for each color
             until you reach the top and nearly the left with the last color."
-        />
-        <div>
+            />
+          </div>
+        </div>
+      </div>
+      <div className={styles.colorPaletteBody}>
+        {colorsPicked && (
           <HorizontalColorPalette
             colors={[...primaryColors, ...selectedNeutralColors]}
             title={"Color palette"}
           />
-          {/* <CssCode colors={selectedNeutralColors} prefix="neutral" /> */}
+        )}
+        {colorsPicked && (
           <HorizontalColorPalette
             colors={[...primaryColors, ...neutralColors]}
             title={"Extended color palette"}
           />
-          <div className={styles.code}>
-            {primaryColors.length > 0 && (
-              <>
-                {" "}
-                <CssCode
-                  code={[
-                    ...CssColorCodeGenerator.generate(primaryColors, "primary"),
-                    ...CssColorCodeGenerator.generate(
-                      selectedNeutralColors,
-                      "neutral"
-                    ),
-                  ]}
-                  title="SCSS code"
-                />
-                <CssCode
-                  code={[
-                    ...CssColorCodeGenerator.generate(primaryColors, "primary"),
-                    ...CssColorCodeGenerator.generate(neutralColors, "neutral"),
-                  ]}
-                  title="SCSS code extended"
-                />
-              </>
-            )}
-          </div>
+        )}
+        <div className={styles.code}>
+          {colorsPicked && (
+            <>
+              <CssCode
+                code={[
+                  ...CssColorCodeGenerator.generate(primaryColors, "primary"),
+                  ...CssColorCodeGenerator.generate(
+                    selectedNeutralColors,
+                    "neutral"
+                  ),
+                ]}
+                title="SCSS code"
+              />
+              <CssCode
+                code={[
+                  ...CssColorCodeGenerator.generate(primaryColors, "primary"),
+                  ...CssColorCodeGenerator.generate(neutralColors, "neutral"),
+                ]}
+                title="SCSS code extended"
+              />
+            </>
+          )}
         </div>
       </div>
     </div>
