@@ -5,4 +5,5 @@ export interface IColorPickerProps {
   explanation: string;
   numberOfColorsToGenerate: number;
   onColorsChange?: (colors: string[]) => void;
+  initialColor?: string;
 }

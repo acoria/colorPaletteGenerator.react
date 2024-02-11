@@ -110,13 +110,13 @@ export const ColorPalette: React.FC = () => {
           )}
         </div>
       </div>
-      {/* {colorsPicked && (
+      {colorsPicked && (
         <DesignExamples
           colors={[...primaryColors, ...selectedNeutralColors]}
           className={styles.designExamples}
         />
-      )} */}
-      <DesignExamples
+      )}
+      {/* <DesignExamples
         className={styles.designExamples}
         colors={[
           "#FE8E19",
@@ -127,7 +127,7 @@ export const ColorPalette: React.FC = () => {
           "#2367A8",
           "#E7F3FF",
         ]}
-      />
+      /> */}
     </div>
   );
 };

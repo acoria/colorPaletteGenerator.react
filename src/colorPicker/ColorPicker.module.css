@@ -7,3 +7,8 @@
   width: 20rem;
   font-size: small;
 }
+
+.colorBars {
+  display: flex;
+  flex-direction: column;
+}
