@@ -9,6 +9,9 @@ import { DesignExamples } from "../designExamples/DesignExamples";
 import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
 import styles from "./ColorPalette.module.css";
 
+/**
+ * An application to create a color palette, show the SCSS code for it and generate design examples from it
+ */
 export const ColorPalette: React.FC = () => {
   const [primaryColors, setPrimaryColors] = useState<string[]>([]);
   const [neutralColors, setNeutralColors] = useState<string[]>([]);
@@ -113,7 +116,18 @@ export const ColorPalette: React.FC = () => {
           className={styles.designExamples}
         />
       )} */}
-      <DesignExamples className={styles.designExamples} colors={["#FE8E19","#FFA648","#FEDDBA","#033465","#1d6dc3","#2367A8","#E7F3FF"]} />
+      <DesignExamples
+        className={styles.designExamples}
+        colors={[
+          "#FE8E19",
+          "#FFA648",
+          "#FEDDBA",
+          "#033465",
+          "#1d6dc3",
+          "#2367A8",
+          "#E7F3FF",
+        ]}
+      />
     </div>
   );
 };

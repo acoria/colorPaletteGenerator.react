@@ -4,6 +4,9 @@ import { ColorPickOptions } from "../../colorPickOptions/ColorPickOptions";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
 
+/**
+ * A design example component with a header, buttons and some label text
+ */
 export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
   props
 ) => {

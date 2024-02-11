@@ -3,6 +3,9 @@ import { ColorBar } from "../colorBar/ColorBar";
 import styles from "./ColorGenerator.module.css";
 import { IColorGeneratorProps } from "./IColorGeneratorProps";
 
+/**
+ * A component to pick and generate a number of colors depending on the previously picked color.
+ */
 export const ColorGenerator: React.FC<IColorGeneratorProps> = (props) => {
   const initialBarColor = "";
   const getInitialColors = (initialColor?: string) =>

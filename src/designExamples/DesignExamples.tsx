@@ -3,8 +3,11 @@ import styles from "./DesignExamples.module.css";
 import { IDesignExampleProps } from "./IDesignExamplesProps";
 import { ExampleWithButtons } from "./exampleWithButtons/ExampleWithButtons";
 
+/**
+ * A component to wrap design examples with different color combinations for a color palette
+ */
 export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
-
+  //add black and white as colors to pick from
   const colors = useMemo<string[]>(
     () => [...props.colors, "white", "black"],
     [props.colors]
@@ -25,7 +28,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             buttonsTextColorUnselected={colors[3]}
             primaryButtonBackgroundColor={colors[0]}
             primaryButtonTextColor={colors[3]}
-            colors={props.colors}
+            colors={colors}
           />
           <ExampleWithButtons
             backgroundColor={colors[2]}
@@ -37,7 +40,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             buttonsTextColorUnselected={colors[3]}
             primaryButtonBackgroundColor={colors[0]}
             primaryButtonTextColor={colors[6]}
-            colors={props.colors}
+            colors={colors}
           />
           <ExampleWithButtons
             backgroundColor={colors[2]}
@@ -50,7 +53,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             primaryButtonBackgroundColor={colors[0]}
             primaryButtonTextColor={colors[3]}
             headerBackgroundColor={colors[3]}
-            colors={props.colors}
+            colors={colors}
           />
         </div>
         <div className={styles.designExamplesRow}>
@@ -64,7 +67,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             buttonsTextColorUnselected={colors[4]}
             primaryButtonBackgroundColor={colors[0]}
             primaryButtonTextColor={colors[3]}
-            colors={props.colors}
+            colors={colors}
           />
           <ExampleWithButtons
             backgroundColor={colors[6]}
@@ -76,7 +79,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             buttonsTextColorUnselected={colors[3]}
             primaryButtonBackgroundColor={colors[0]}
             primaryButtonTextColor={colors[3]}
-            colors={props.colors}
+            colors={colors}
           />
           <ExampleWithButtons
             backgroundColor={colors[6]}
@@ -88,7 +91,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             buttonsTextColorUnselected={colors[3]}
             primaryButtonBackgroundColor={colors[0]}
             primaryButtonTextColor={colors[3]}
-            colors={props.colors}
+            colors={colors}
           />
         </div>
       </div>

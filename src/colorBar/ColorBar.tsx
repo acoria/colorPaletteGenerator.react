@@ -2,6 +2,9 @@ import { useEffect, useState } from "react";
 import styles from "./ColorBar.module.css";
 import { IColorBarProps } from "./IColorBarProps";
 
+/**
+ * A component to pick and show a color and keep track of it.
+ */
 export const ColorBar: React.FC<IColorBarProps> = (props) => {
   //needs its own color state so that the color picker can be prefilled with a value
   const [color, setColor] = useState(props.color);
