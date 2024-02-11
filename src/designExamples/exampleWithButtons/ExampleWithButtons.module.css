@@ -28,6 +28,15 @@
   cursor: crosshair;
 }
 
+.appWithWhiteBackground {
+  border: 1px solid black;
+}
+
+/* in edit mode, the border around the white background is not necessary since the appInEditMode already provides a border */
+.appWithEditMode .appWithWhiteBackground {
+  border: none;
+}
+
 .editButton {
   position: absolute;
   top: 0;

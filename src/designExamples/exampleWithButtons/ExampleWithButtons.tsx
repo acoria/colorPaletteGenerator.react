@@ -61,6 +61,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
       if (selectedEditColor !== "") {
         colorChangeFunction(selectedEditColor);
       }
+      //stop elements above from changing color by having their event triggered as well
       event.stopPropagation();
     }
   };
@@ -118,7 +119,9 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
           />
         )}
         <div
-          className={`${styles.app} ${editMode && styles.editMode}`}
+          className={`${styles.app} ${editMode && styles.editMode} ${
+            backgroundColor === "white" && styles.appWithWhiteBackground
+          }`}
           style={{ backgroundColor: backgroundColor }}
           onClick={(event) => {
             !editMode && setEditMode(true);
