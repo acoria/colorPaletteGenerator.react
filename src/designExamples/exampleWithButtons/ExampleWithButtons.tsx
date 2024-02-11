@@ -1,7 +1,7 @@
 import { IExampleWithButtonProps } from "./IExampleWithButtonsProps";
 import styles from "./ExampleWithButtons.module.css";
 import { ColorPickOptions } from "../../colorPickOptions/ColorPickOptions";
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
   props
@@ -34,6 +34,18 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
   const [headerBackgroundColor, setHeaderBackgroundColor] = useState(
     props.headerBackgroundColor
   );
+
+  useEffect(() => {
+    setBackgroundColor(props.backgroundColor);
+    setTitleColor(props.titleColor);
+    setButtonsSectionTextColor(props.buttonsSectionTextColor);
+    setButtonsBackgroundColor(props.buttonsBackgroundColor);
+    setButtonsTextColor(props.buttonsTextColor);
+    setButtonsTextColorUnselected(props.buttonsTextColorUnselected);
+    setButtonsBackgroundColorUnselected(props.buttonsBackgroundColorUnselected);
+    setPrimaryButtonBackgroundColor(props.primaryButtonBackgroundColor);
+    setPrimaryButtonTextColor(props.primaryButtonTextColor);
+  }, [props]);
 
   const setSelectedColorToElement = (
     event: React.MouseEvent<HTMLDivElement, MouseEvent>,
