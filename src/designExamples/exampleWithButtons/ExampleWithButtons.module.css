@@ -12,7 +12,7 @@
   height: 20rem;
 }
 
-.appInEditMode {
+.appWithEditMode {
   display: flex;
   flex-direction: row;
   transform: scale(200%);
@@ -22,6 +22,9 @@
   border: 1px solid black;
   background-color: white;
   padding-left: 0.5rem;
+}
+
+.editMode {
   cursor: crosshair;
 }
 

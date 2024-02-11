@@ -17,6 +17,7 @@ export const ColorPickOptions: React.FC<IColorPickOptionsProps> = (props) => {
       </div>
       {colors.map((color) => (
         <div
+          key={color}
           className={`${styles.singleButton} ${
             color === selectedColor && styles.colorSelected
           }`}

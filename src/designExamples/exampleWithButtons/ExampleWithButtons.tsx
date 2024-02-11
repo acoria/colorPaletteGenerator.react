@@ -1,7 +1,8 @@
 import { IExampleWithButtonProps } from "./IExampleWithButtonsProps";
 import styles from "./ExampleWithButtons.module.css";
 import { ColorPickOptions } from "../../colorPickOptions/ColorPickOptions";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import useOnClickOutside from "../../hooks/useOnClickOutside";
 
 export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
   props
@@ -35,6 +36,11 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
     props.headerBackgroundColor
   );
 
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => {
+    editMode && setEditMode(false);
+  });
+
   useEffect(() => {
     setBackgroundColor(props.backgroundColor);
     setTitleColor(props.titleColor);
@@ -52,7 +58,9 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
     colorChangeFunction: Dispatch<SetStateAction<any>>
   ) => {
     if (editMode) {
-      colorChangeFunction(selectedEditColor);
+      if (selectedEditColor !== "") {
+        colorChangeFunction(selectedEditColor);
+      }
       event.stopPropagation();
     }
   };
@@ -99,8 +107,8 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
     );
 
   return (
-    <div className={styles.exampleWithButtons}>
-      <div className={`${editMode && styles.appInEditMode}`}>
+    <div className={styles.exampleWithButtons} ref={ref}>
+      <div className={`${editMode && styles.appWithEditMode}`}>
         {editMode && (
           <ColorPickOptions
             className={styles.colorDropdown}
@@ -110,7 +118,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
           />
         )}
         <div
-          className={styles.app}
+          className={`${styles.app} ${editMode && styles.editMode}`}
           style={{ backgroundColor: backgroundColor }}
           onClick={(event) => {
             !editMode && setEditMode(true);
