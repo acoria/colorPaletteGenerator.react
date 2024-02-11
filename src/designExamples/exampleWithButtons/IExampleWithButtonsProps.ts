@@ -9,4 +9,5 @@ export interface IExampleWithButtonProps {
   primaryButtonBackgroundColor: string;
   primaryButtonTextColor: string;
   headerBackgroundColor?: string;
+  colors: string[];
 }

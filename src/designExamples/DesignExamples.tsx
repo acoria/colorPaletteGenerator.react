@@ -1,6 +1,6 @@
+import styles from "./DesignExamples.module.css";
 import { IDesignExampleProps } from "./IDesignExamplesProps";
 import { ExampleWithButtons } from "./exampleWithButtons/ExampleWithButtons";
-import styles from './DesignExamples.module.css';
 
 export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
   return (
@@ -17,8 +17,9 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
           buttonsTextColorUnselected={props.colors[3]}
           primaryButtonBackgroundColor={props.colors[0]}
           primaryButtonTextColor={props.colors[3]}
+          colors={props.colors}
         />
-         <ExampleWithButtons
+        <ExampleWithButtons
           backgroundColor={props.colors[2]}
           titleColor={props.colors[3]}
           buttonsSectionTextColor={props.colors[3]}
@@ -28,6 +29,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
           buttonsTextColorUnselected={props.colors[3]}
           primaryButtonBackgroundColor={props.colors[0]}
           primaryButtonTextColor={props.colors[6]}
+          colors={props.colors}
         />
         <ExampleWithButtons
           backgroundColor={props.colors[2]}
@@ -40,6 +42,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
           primaryButtonBackgroundColor={props.colors[0]}
           primaryButtonTextColor={props.colors[3]}
           headerBackgroundColor={props.colors[3]}
+          colors={props.colors}
         />
         <ExampleWithButtons
           backgroundColor={props.colors[6]}
@@ -51,6 +54,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
           buttonsTextColorUnselected={props.colors[4]}
           primaryButtonBackgroundColor={props.colors[0]}
           primaryButtonTextColor={props.colors[3]}
+          colors={props.colors}
         />
         <ExampleWithButtons
           backgroundColor={props.colors[6]}
@@ -62,6 +66,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
           buttonsTextColorUnselected={props.colors[3]}
           primaryButtonBackgroundColor={props.colors[0]}
           primaryButtonTextColor={props.colors[3]}
+          colors={props.colors}
         />
       </div>
     </div>

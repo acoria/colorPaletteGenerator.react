@@ -12,8 +12,6 @@
 .titleOfApp {
   font-family: "Lobster";
   /* background-color: #642472; */
-  /* background-image: linear-gradient(90deg, #642472 10%, #ffc0cbbb, #0000ffbb, #008000bb, #ffff00bb, #ffa500bb, #ff0000bb); */
-  /* background-image: linear-gradient(90deg, #642472 10%, #ffc0cb99, #0000ff99, #00800099, #ffff0099, #ffa50099, #ff000099); */
   background-image: linear-gradient(
     90deg,
     #642472ee 10%,
@@ -24,7 +22,6 @@
     #ffa50055,
     #ff000055
   );
-  /* background-image: linear-gradient(90deg, #642472ee 10%, #9c747b22, #0000ff22, #00800022, #ffff0022, #ffa50022, #ff000022); */
   height: 4rem;
   padding: 0.5rem;
   margin: 0;

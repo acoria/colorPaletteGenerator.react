@@ -1,13 +1,13 @@
 import { ReactNode, useState } from "react";
+import { ReactComponent as CircleWithOne } from "../assets/circleWithOne.svg";
+import { ReactComponent as CircleWithThree } from "../assets/circleWithThree.svg";
+import { ReactComponent as CircleWithTwo } from "../assets/circleWithTwo.svg";
 import { ColorPicker } from "../colorPicker/ColorPicker";
 import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
+import { DesignExamples } from "../designExamples/DesignExamples";
 import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
 import styles from "./ColorPalette.module.css";
-import { ReactComponent as CircleWithOne } from "../assets/circleWithOne.svg";
-import { ReactComponent as CircleWithTwo } from "../assets/circleWithTwo.svg";
-import { ReactComponent as CircleWithThree } from "../assets/circleWithThree.svg";
-import { DesignExamples } from "../designExamples/DesignExamples";
 
 export const ColorPalette: React.FC = () => {
   const [primaryColors, setPrimaryColors] = useState<string[]>([]);
@@ -107,8 +107,13 @@ export const ColorPalette: React.FC = () => {
           )}
         </div>
       </div>
-      <DesignExamples colors={[...primaryColors, ...selectedNeutralColors]} className={styles.designExamples}/>
-      {/* <DesignExamples className={styles.designExamples} colors={["#FE8E19","#FFA648","#FEDDBA","#033465","#1d6dc3","#2367A8","#E7F3FF"]} /> */}
+      {/* {colorsPicked && (
+        <DesignExamples
+          colors={[...primaryColors, ...selectedNeutralColors]}
+          className={styles.designExamples}
+        />
+      )} */}
+      <DesignExamples className={styles.designExamples} colors={["#FE8E19","#FFA648","#FEDDBA","#033465","#1d6dc3","#2367A8","#E7F3FF"]} />
     </div>
   );
 };

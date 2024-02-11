@@ -3,3 +3,9 @@
   flex-direction: row;
   column-gap: 2rem;
 }
+
+.colorDropdown {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

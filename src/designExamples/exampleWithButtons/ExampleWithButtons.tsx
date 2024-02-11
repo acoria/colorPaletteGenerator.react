@@ -1,88 +1,170 @@
 import { IExampleWithButtonProps } from "./IExampleWithButtonsProps";
 import styles from "./ExampleWithButtons.module.css";
+import { ColorPickOptions } from "../../colorPickOptions/ColorPickOptions";
+import { Dispatch, SetStateAction, useState } from "react";
 
 export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
   props
 ) => {
-  const button = (caption: string, backgroundColor: string, color: string) => (
+  const [editMode, setEditMode] = useState(false);
+  const [selectedEditColor, setSelectedEditColor] = useState("");
+  const [backgroundColor, setBackgroundColor] = useState(props.backgroundColor);
+  const [titleColor, setTitleColor] = useState(props.titleColor);
+  const [buttonsSectionTextColor, setButtonsSectionTextColor] = useState(
+    props.buttonsSectionTextColor
+  );
+  const [buttonsBackgroundColor, setButtonsBackgroundColor] = useState(
+    props.buttonsBackgroundColor
+  );
+  const [buttonsTextColor, setButtonsTextColor] = useState(
+    props.buttonsTextColor
+  );
+  const [
+    buttonsBackgroundColorUnselected,
+    setButtonsBackgroundColorUnselected,
+  ] = useState(props.buttonsBackgroundColorUnselected);
+  const [buttonsTextColorUnselected, setButtonsTextColorUnselected] = useState(
+    props.buttonsTextColorUnselected
+  );
+  const [primaryButtonBackgroundColor, setPrimaryButtonBackgroundColor] =
+    useState(props.primaryButtonBackgroundColor);
+  const [primaryButtonTextColor, setPrimaryButtonTextColor] = useState(
+    props.primaryButtonTextColor
+  );
+  const [headerBackgroundColor, setHeaderBackgroundColor] = useState(
+    props.headerBackgroundColor
+  );
+
+  const setSelectedColorToElement = (
+    event: React.MouseEvent<HTMLDivElement, MouseEvent>,
+    colorChangeFunction: Dispatch<SetStateAction<any>>
+  ) => {
+    if (editMode) {
+      colorChangeFunction(selectedEditColor);
+      event.stopPropagation();
+    }
+  };
+
+  const button = (
+    caption: string,
+    backgroundColor: string,
+    setBackgroundColor: Dispatch<SetStateAction<any>>,
+    color: string,
+    setColor: Dispatch<SetStateAction<any>>
+  ) => (
     <div
       style={{
         backgroundColor: backgroundColor,
         color: color,
       }}
+      onClick={(event) => setSelectedColorToElement(event, setBackgroundColor)}
     >
-      {caption}
+      <div
+        className={styles.text}
+        onClick={(event) => setSelectedColorToElement(event, setColor)}
+      >
+        {caption}
+      </div>
     </div>
   );
 
+  const selectedButton = (caption: string) =>
+    button(
+      caption,
+      buttonsBackgroundColor,
+      setButtonsBackgroundColor,
+      buttonsTextColor,
+      setButtonsTextColor
+    );
+
+  const unselectedButton = (caption: string) =>
+    button(
+      caption,
+      buttonsBackgroundColorUnselected,
+      setButtonsBackgroundColorUnselected,
+      buttonsTextColorUnselected,
+      setButtonsTextColorUnselected
+    );
+
   return (
-    <div
-      className={styles.exampleWithButtons}
-      style={{ backgroundColor: props.backgroundColor }}
-    >
-      <div
-        className={styles.header}
-        style={{
-          backgroundColor: props.headerBackgroundColor,
-          color: props.titleColor,
-        }}
-      >
-        Example App
-      </div>
-      <div className={styles.buttonsSection}>
+    <div className={styles.exampleWithButtons}>
+      <div className={`${editMode && styles.appInEditMode}`}>
+        {editMode && (
+          <ColorPickOptions
+            className={styles.colorDropdown}
+            colors={props.colors}
+            onColorChosen={setSelectedEditColor}
+            onClose={() => setEditMode(false)}
+          />
+        )}
         <div
-          className={styles.buttonsSectionTitle}
-          style={{ color: props.buttonsSectionTextColor }}
+          className={styles.app}
+          style={{ backgroundColor: backgroundColor }}
+          onClick={(event) => {
+            !editMode && setEditMode(true);
+            setSelectedColorToElement(event, setBackgroundColor);
+          }}
         >
-          Pick from some choices
+          <div
+            className={styles.header}
+            style={{
+              backgroundColor: headerBackgroundColor,
+              color: titleColor,
+            }}
+            onClick={(event) =>
+              setSelectedColorToElement(event, setHeaderBackgroundColor)
+            }
+          >
+            <div
+              className={styles.text}
+              onClick={(event) =>
+                setSelectedColorToElement(event, setTitleColor)
+              }
+            >
+              Example App
+            </div>
+          </div>
+          <div className={styles.buttonsSection}>
+            <div
+              className={styles.buttonsSectionTitle}
+              style={{ color: buttonsSectionTextColor }}
+              onClick={(event) =>
+                setSelectedColorToElement(event, setButtonsSectionTextColor)
+              }
+            >
+              Pick from some choices
+            </div>
+            <div className={styles.buttons}>
+              {selectedButton("Something")}
+              {selectedButton("you")}
+              {unselectedButton("can")}
+              {selectedButton("click on")}
+              {unselectedButton("or")}
+              {selectedButton("something else")}
+              {unselectedButton("you cannot")}
+              {selectedButton("click on")}
+            </div>
+          </div>
+          <div
+            className={styles.primaryButton}
+            style={{
+              backgroundColor: primaryButtonBackgroundColor,
+              color: primaryButtonTextColor,
+            }}
+            onClick={(event) =>
+              setSelectedColorToElement(event, setPrimaryButtonBackgroundColor)
+            }
+          >
+            <div
+              className={styles.text}
+              onClick={(event) => {
+                setSelectedColorToElement(event, setPrimaryButtonTextColor);
+              }}
+            >
+              Click for action
+            </div>
+          </div>
         </div>
-        <div className={styles.buttons}>
-          {button(
-            "Something",
-            props.buttonsBackgroundColor,
-            props.buttonsTextColor
-          )}
-          {button("you", props.buttonsBackgroundColor, props.buttonsTextColor)}
-          {button(
-            "can",
-            props.buttonsBackgroundColorUnselected,
-            props.buttonsTextColorUnselected
-          )}
-          {button(
-            "click on",
-            props.buttonsBackgroundColor,
-            props.buttonsTextColor
-          )}
-          {button(
-            "or",
-            props.buttonsBackgroundColorUnselected,
-            props.buttonsTextColorUnselected
-          )}
-          {button(
-            "something else",
-            props.buttonsBackgroundColor,
-            props.buttonsTextColor
-          )}
-          {button(
-            "you cannot",
-            props.buttonsBackgroundColorUnselected,
-            props.buttonsTextColorUnselected
-          )}
-          {button(
-            "click on",
-            props.buttonsBackgroundColor,
-            props.buttonsTextColor
-          )}
-        </div>
-      </div>
-      <div
-        className={styles.primaryButton}
-        style={{
-          backgroundColor: props.primaryButtonBackgroundColor,
-          color: props.primaryButtonTextColor,
-        }}
-      >
-        Click for action
       </div>
     </div>
   );
