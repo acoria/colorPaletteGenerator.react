@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styles from "./ColorPickOptions.module.css";
 import { IColorPickOptionsProps } from "./IColorPickOptionsProps";
+import { style } from "../utils/style";
 
 /**
  * A component to show all available colors to pick from for selection.
@@ -16,9 +17,10 @@ export const ColorPickOptions: React.FC<IColorPickOptionsProps> = (props) => {
       {props.colors.map((color) => (
         <div
           key={color}
-          className={`${styles.singleButton} ${
-            color === selectedColor && styles.colorSelected
-          }`}
+          className={style(
+            styles.singleButton,
+            `${color === selectedColor && styles.colorSelected}`
+          )}
           style={{ backgroundColor: color }}
           onClick={() => {
             setSelectedColor(color);
