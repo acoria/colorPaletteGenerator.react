@@ -3,6 +3,7 @@ import styles from "./ExampleWithButtons.module.css";
 import { ColorPickOptions } from "../../colorPickOptions/ColorPickOptions";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
 import useOnClickOutside from "../../hooks/useOnClickOutside";
+import { style } from "../../utils/style";
 
 /**
  * A design example component with a header, buttons and some label text
@@ -122,9 +123,11 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
           />
         )}
         <div
-          className={`${styles.app} ${editMode && styles.editMode} ${
-            backgroundColor === "white" && styles.appWithWhiteBackground
-          }`}
+          className={style(
+            styles.app,
+            `${editMode && styles.editMode}`,
+            `${backgroundColor === "white" && styles.appWithWhiteBackground}`
+          )}
           style={{ backgroundColor: backgroundColor }}
           onClick={(event) => {
             !editMode && setEditMode(true);
