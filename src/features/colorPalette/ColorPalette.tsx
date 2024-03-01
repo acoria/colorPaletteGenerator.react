@@ -2,7 +2,6 @@ import { ReactNode, useState } from "react";
 import { ReactComponent as CircleWithOne } from "../../assets/circleWithOne.svg";
 import { ReactComponent as CircleWithThree } from "../../assets/circleWithThree.svg";
 import { ReactComponent as CircleWithTwo } from "../../assets/circleWithTwo.svg";
-import { ReactComponent as ColorPaletteIcon } from "../../assets/colorPalette.svg";
 import styles from "./ColorPalette.module.css";
 import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
 import { CssCode } from "../cssCodeGenerator/CssCode";
@@ -33,10 +32,6 @@ export const ColorPalette: React.FC = () => {
 
   return (
     <div className={styles.colorPalette}>
-      <div className={styles.header}>
-        <ColorPaletteIcon className={styles.colorPaletteIcon} />
-        <h1 className={styles.titleOfApp}>Color Palette Generator</h1>
-      </div>
       <div className={styles.colorPaletteBody}>
         <div className={styles.firstStep}>
           <ColorPicker
