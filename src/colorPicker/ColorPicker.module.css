@@ -5,6 +5,7 @@
 
 .explanation {
   width: 20rem;
+  min-height: 4rem;
   font-size: small;
 }
 

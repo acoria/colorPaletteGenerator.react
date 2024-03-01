@@ -1,0 +1,19 @@
+#Color palette am Schluss kopierbar machen 
+#Farbcodes über die Balken legen
+#Farbcodes von vorherigem Balken, wenn noch keine Farbe ausgewählt ist, ansonsten die eigene
+
+#beispielApp mit unterschiedlichsten Kombinationen
+#bug: zwei Farben auswählen, die erste verändern -> sollte alles resetten
+
+#die einzelnen Elemente auswählbar machen und mit Dropdown eine andere Farbe wählen
+#bug: schwarz & weiß werden nicht mehr im color picker angezeigt
+
+- für mehr Beispiele: mit weiß und schwarz als Text-Farben und evt. Buttons arbeiten
+
+Verbesserungen aus Design-Kurs:
+- Alignment
+- Rhythmus -> 1 Überschrift Beschreibung, 2 Überschrift ...
+- Link sollte nicht aussehen wie ein Link (unterstrichen)
+- Typo in Überschrift "Pick primary Color"
+
+- vorher nochmal stashen, Screenshot machen -> für before-state

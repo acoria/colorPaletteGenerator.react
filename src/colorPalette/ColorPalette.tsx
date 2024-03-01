@@ -39,21 +39,34 @@ export const ColorPalette: React.FC = () => {
       </div>
       <div className={styles.colorPaletteBody}>
         <div className={styles.firstStep}>
-          <CircleWithOne className={styles.circleWithNumber} />
+          <ColorPicker
+            title={colorTitle(
+              <CircleWithOne className={styles.circleWithNumber} />,
+              "Choose two colors"
+            )}
+            numberOfColorsToGenerate={0}
+            onColorsChange={setPrimaryColors}
+            explanation={
+              <>
+                Go to{" "}
+                <a href="https://coolors.co/palettes" target="_blank">
+                  Coolors.co
+                </a>{" "}
+                or take any other color palette and pick two colors you like
+                from the same color palette.
+              </>
+            }
+          />
+          {/* <CircleWithOne className={styles.circleWithNumber} />
           <p>
-            Go to{" "}
-            <a href="https://coolors.co/palettes" target="_blank">
-              Coolors.co
-            </a>{" "}
-            or take any other color palette and pick two colors you like from
-            the same color palette.
-          </p>
+            
+          </p> */}
         </div>
         <div className={styles.secondStep}>
           <ColorPicker
             title={colorTitle(
               <CircleWithTwo className={styles.circleWithNumber} />,
-              "Pick primary Color"
+              "Pick primary colors"
             )}
             numberOfColorsToGenerate={3}
             onColorsChange={setPrimaryColors}
@@ -66,7 +79,7 @@ export const ColorPalette: React.FC = () => {
           <ColorPicker
             title={colorTitle(
               <CircleWithThree className={styles.circleWithNumber} />,
-              "Pick neutral color"
+              "Pick neutral colors"
             )}
             numberOfColorsToGenerate={7}
             onColorsChange={setNeutralColors}
