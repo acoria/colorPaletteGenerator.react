@@ -2,8 +2,8 @@ import { IExampleWithButtonProps } from "./IExampleWithButtonsProps";
 import styles from "./ExampleWithButtons.module.css";
 import { ColorPickOptions } from "../../colorPickOptions/ColorPickOptions";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import useOnClickOutside from "../../hooks/useOnClickOutside";
-import { style } from "../../utils/style";
+import useOnClickOutside from "../../../hooks/useOnClickOutside";
+import { style } from "../../../utils/style";
 
 /**
  * A design example component with a header, buttons and some label text

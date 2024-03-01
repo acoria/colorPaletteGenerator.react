@@ -1,4 +1,5 @@
-import { ColorPalette } from "./colorPalette/ColorPalette";
+import { ColorPalette } from "./features/colorPalette/ColorPalette";
+
 
 function App() {
   return (

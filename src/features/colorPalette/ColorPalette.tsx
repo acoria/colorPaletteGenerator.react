@@ -1,14 +1,14 @@
 import { ReactNode, useState } from "react";
-import { ReactComponent as CircleWithOne } from "../assets/circleWithOne.svg";
-import { ReactComponent as CircleWithThree } from "../assets/circleWithThree.svg";
-import { ReactComponent as CircleWithTwo } from "../assets/circleWithTwo.svg";
-import { ReactComponent as ColorPaletteIcon } from "../assets/colorPalette.svg";
-import { ColorPicker } from "../colorPicker/ColorPicker";
+import { ReactComponent as CircleWithOne } from "../../assets/circleWithOne.svg";
+import { ReactComponent as CircleWithThree } from "../../assets/circleWithThree.svg";
+import { ReactComponent as CircleWithTwo } from "../../assets/circleWithTwo.svg";
+import { ReactComponent as ColorPaletteIcon } from "../../assets/colorPalette.svg";
+import styles from "./ColorPalette.module.css";
+import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
 import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
+import { ColorPicker } from "../colorPicker/ColorPicker";
 import { DesignExamples } from "../designExamples/DesignExamples";
-import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
-import styles from "./ColorPalette.module.css";
 
 /**
  * An application to create a color palette, show the SCSS code for it and generate design examples from it

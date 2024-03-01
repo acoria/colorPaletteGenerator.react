@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./ColorPickOptions.module.css";
 import { IColorPickOptionsProps } from "./IColorPickOptionsProps";
-import { style } from "../utils/style";
+import { style } from "../../utils/style";
 
 /**
  * A component to show all available colors to pick from for selection.
