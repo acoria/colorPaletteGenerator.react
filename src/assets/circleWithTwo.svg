@@ -1,5 +1,5 @@
 <svg viewBox="0 0 100 100"
     xmlns="http://www.w3.org/2000/svg">
-    <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="9" fill="none"/>
+    <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="5" fill="none"/>
     <text x="50%" y="60%" text-anchor="middle" stroke="#000000" font-size="3rem" font-family="Roboto" stroke-width="0.1rem" dy=".3rem">2</text>
 </svg>

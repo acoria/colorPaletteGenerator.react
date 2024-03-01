@@ -2,6 +2,7 @@ import { ReactNode, useState } from "react";
 import { ReactComponent as CircleWithOne } from "../assets/circleWithOne.svg";
 import { ReactComponent as CircleWithThree } from "../assets/circleWithThree.svg";
 import { ReactComponent as CircleWithTwo } from "../assets/circleWithTwo.svg";
+import { ReactComponent as ColorPaletteIcon } from "../assets/colorPalette.svg";
 import { ColorPicker } from "../colorPicker/ColorPicker";
 import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
@@ -32,7 +33,10 @@ export const ColorPalette: React.FC = () => {
 
   return (
     <div className={styles.colorPalette}>
-      <h1 className={styles.titleOfApp}>Color Palette Generator</h1>
+      <div className={styles.header}>
+        <ColorPaletteIcon className={styles.colorPaletteIcon} />
+        <h1 className={styles.titleOfApp}>Color Palette Generator</h1>
+      </div>
       <div className={styles.colorPaletteBody}>
         <div className={styles.firstStep}>
           <CircleWithOne className={styles.circleWithNumber} />
@@ -45,32 +49,30 @@ export const ColorPalette: React.FC = () => {
             the same color palette.
           </p>
         </div>
-        <div className={styles.colorPickers}>
-          <div className={styles.secondStep}>
-            <ColorPicker
-              title={colorTitle(
-                <CircleWithTwo className={styles.circleWithNumber} />,
-                "Pick primary Color"
-              )}
-              numberOfColorsToGenerate={3}
-              onColorsChange={setPrimaryColors}
-              explanation="Decide which color should be your primary color. Click on the first
+        <div className={styles.secondStep}>
+          <ColorPicker
+            title={colorTitle(
+              <CircleWithTwo className={styles.circleWithNumber} />,
+              "Pick primary Color"
+            )}
+            numberOfColorsToGenerate={3}
+            onColorsChange={setPrimaryColors}
+            explanation="Decide which color should be your primary color. Click on the first
         element and use the picker to select this color. Then move left on the
         x-axis towards a lighter color for each following element."
-            />
-          </div>
-          <div>
-            <ColorPicker
-              title={colorTitle(
-                <CircleWithThree className={styles.circleWithNumber} />,
-                "Pick neutral color"
-              )}
-              numberOfColorsToGenerate={7}
-              onColorsChange={setNeutralColors}
-              explanation="Pick the second color, then move a little up and left for each color
+          />
+        </div>
+        <div>
+          <ColorPicker
+            title={colorTitle(
+              <CircleWithThree className={styles.circleWithNumber} />,
+              "Pick neutral color"
+            )}
+            numberOfColorsToGenerate={7}
+            onColorsChange={setNeutralColors}
+            explanation="Pick the second color, then move a little up and left for each color
             until you reach the top and nearly the left with the last color."
-            />
-          </div>
+          />
         </div>
       </div>
       <div className={styles.colorPaletteBody}>
