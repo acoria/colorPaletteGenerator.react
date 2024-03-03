@@ -8,12 +8,13 @@
 #die einzelnen Elemente auswählbar machen und mit Dropdown eine andere Farbe wählen
 #bug: schwarz & weiß werden nicht mehr im color picker angezeigt
 
-- für mehr Beispiele: mit weiß und schwarz als Text-Farben und evt. Buttons arbeiten
+- für mehr Design-Beispiele: mit weiß und schwarz als Text-Farben und evt. Buttons arbeiten
 
 Verbesserungen aus Design-Kurs:
-- Alignment
-- Rhythmus -> 1 Überschrift Beschreibung, 2 Überschrift ...
-- Link sollte nicht aussehen wie ein Link (unterstrichen)
-- Typo in Überschrift "Pick primary Color"
-
-- vorher nochmal stashen, Screenshot machen -> für before-state
+#Alignment
+#Rhythmus -> 1 Überschrift Beschreibung, 2 Überschrift ...
+#Link sollte nicht aussehen wie ein Link (unterstrichen)
+#Typo in Überschrift "Pick primary Color"
+#4. Design preview step einfügen?
+- Fix color picking for elements -> grow
+- Use outlet for routing
