@@ -1,5 +1,6 @@
+@import '../../../colors.scss';
+
 .colorPaletteStepList {
-  padding: 3rem 1rem 0 3rem;
   display: flex;
   flex-direction: row;
   column-gap: 3rem;
@@ -10,6 +11,7 @@
   flex-direction: column;
   row-gap: 0.3rem;
   align-items: center;
+  font-family: "Lexend";
 }
 
 .colorTitleText {
@@ -20,4 +22,12 @@
 .circleWithNumber {
   width: 1.5rem;
   flex-shrink: 0;
+  stroke: $primary;
+  fill: $primary;
+}
+
+.link {
+  text-decoration: none;
+  color: $neutral;
+  font-weight: 500;
 }

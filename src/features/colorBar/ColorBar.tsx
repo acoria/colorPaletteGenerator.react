@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./ColorBar.module.css";
+import styles from "./ColorBar.module.scss";
 import { IColorBarProps } from "./IColorBarProps";
 
 /**

@@ -1,7 +1,10 @@
+@import '../../colors.scss';
+
 .colorBar {
   position: relative;
   border: none;
   width: 20rem;
   height: 3rem;
   transform: translateY(-0.3rem);
+  cursor: pointer;
 }

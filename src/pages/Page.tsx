@@ -1,25 +1,28 @@
 import { ReactNode } from "react";
-import styles from "./Page.module.css";
 import { ReactComponent as ColorPaletteIcon } from "../assets/colorPalette.svg";
+import styles from "./Page.module.scss";
 import { Navbar } from "../components/navbar/Navbar";
-import { Routes } from "../routes/Routes";
+import { Route } from "../routes/Route";
+import { useNavigate } from "react-router-dom";
 
 export const Page: React.FC<{ children?: ReactNode }> = (props) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className={styles.header}>
-        <div className={styles.homeIcon}>
+        <div className={styles.home} onClick={() => navigate(Route.HOME)}>
           <ColorPaletteIcon className={styles.colorPaletteIcon} />
           <h1 className={styles.titleOfApp}>Color Palette Generator</h1>
         </div>
         <Navbar
           items={[
-            { title: "Color pick", route: Routes.HOME },
-            { title: "Palette & Code", route: Routes.PALETTE_AND_CODE },
+            { title: "Color pick", route: Route.HOME },
+            { title: "Palette & Code", route: Route.PALETTE_AND_CODE },
           ]}
         />
       </div>
-      {props.children}
+      <div className={styles.content}>{props.children}</div>
     </>
   );
 };

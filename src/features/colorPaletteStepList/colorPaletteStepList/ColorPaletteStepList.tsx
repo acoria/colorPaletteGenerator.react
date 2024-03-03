@@ -4,7 +4,7 @@ import { ReactComponent as CircleWithOne } from "../../../assets/circleWithOne.s
 import { ReactComponent as CircleWithThree } from "../../../assets/circleWithThree.svg";
 import { ReactComponent as CircleWithTwo } from "../../../assets/circleWithTwo.svg";
 import { ColorPaletteStep } from "../colorPaletteStep/ColorPaletteStep";
-import styles from "./ColorPaletteStepList.module.css";
+import styles from "./ColorPaletteStepList.module.scss";
 import { IColorPaletteStepListProps } from "./IColorPaletteStepListProps";
 
 export const ColorPaletteStepList: React.FC<IColorPaletteStepListProps> = (
@@ -27,7 +27,7 @@ export const ColorPaletteStepList: React.FC<IColorPaletteStepListProps> = (
         explanation={
           <>
             Go to{" "}
-            <a href="https://coolors.co/palettes" target="_blank">
+            <a href="https://coolors.co/palettes" target="_blank" className={styles.link}>
               Coolors.co
             </a>{" "}
             or take any other color palette and pick two colors you like from

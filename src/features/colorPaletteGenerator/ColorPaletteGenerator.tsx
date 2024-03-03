@@ -19,7 +19,9 @@ export const ColorPaletteGenerator: React.FC = () => {
     );
   }, [context.neutralColors]);
 
-  const colorsPicked = context.primaryColors.value.length > 0;
+  const colorsPicked =
+    context.primaryColors.value.length > 0 &&
+    context.primaryColors.value[0] !== "";
 
   return (
     <div className={styles.colorPalette}>
@@ -28,7 +30,6 @@ export const ColorPaletteGenerator: React.FC = () => {
         onSetNeutralColors={context.neutralColors.setValue}
       />
       <div>
-        {colorsPicked && <ColorPaletteResult />}
         <div className={styles.code}>
           {colorsPicked && (
             <>
@@ -36,11 +37,11 @@ export const ColorPaletteGenerator: React.FC = () => {
                 code={[
                   ...CssColorCodeGenerator.generate(
                     context.primaryColors.value,
-                    "primary"
+                    "$primary"
                   ),
                   ...CssColorCodeGenerator.generate(
                     selectedNeutralColors,
-                    "neutral"
+                    "$neutral"
                   ),
                 ]}
                 title="SCSS code"
@@ -49,11 +50,11 @@ export const ColorPaletteGenerator: React.FC = () => {
                 code={[
                   ...CssColorCodeGenerator.generate(
                     context.primaryColors.value,
-                    "primary"
+                    "$primary"
                   ),
                   ...CssColorCodeGenerator.generate(
                     context.neutralColors.value,
-                    "neutral"
+                    "$neutral"
                   ),
                 ]}
                 title="SCSS code extended"

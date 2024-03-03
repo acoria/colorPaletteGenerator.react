@@ -1,7 +1,8 @@
 import { RouterProvider } from "react-router-dom";
-import { AppRouter } from "./routes/AppRouter";
 import { AppContext } from "./context/AppContext";
 import { useValue } from "./hooks/useValue";
+import { AppRouter } from "./routes/AppRouter";
+import { Route } from "./routes/Route";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
         value={{
           primaryColors: useValue([""]),
           neutralColors: useValue([""]),
+          selectedNavItemRoute: useValue<Route>(Route.HOME),
         }}
       >
         <RouterProvider router={AppRouter} />

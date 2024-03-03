@@ -1,6 +1,6 @@
-import { Routes } from "../../routes/Routes";
+import { Route } from "../../routes/Route";
 
 export interface INavbarItem {
   title: string;
-  route: Routes;
+  route: Route;
 }

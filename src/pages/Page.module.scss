@@ -1,0 +1,36 @@
+@import '../colors.scss';
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  padding: 1em 0 0 1rem;
+}
+
+.home {
+  display: flex;
+  flex-direction: row;
+  flex-shrink: 0;
+  column-gap: 0.3rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.titleOfApp {
+  font-family: "Lexend";
+  font-size: 1.4rem;
+  margin: 0;
+  color: $primary;
+}
+
+.colorPaletteIcon {
+  position: relative;
+  top: -0.1rem;
+  width: 1.1rem;
+  fill: $primary;
+  stroke: $primary;
+  transform: rotateZ(180deg)
+}
+
+.content {
+  padding: 5rem 0 0 5rem;
+}
