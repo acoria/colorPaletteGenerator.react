@@ -1,21 +1,34 @@
-import { useMemo } from "react";
-import styles from "./DesignExamples.module.css";
+import { useContext, useMemo } from "react";
+import styles from "./DesignExamples.module.scss";
 import { IDesignExampleProps } from "./IDesignExamplesProps";
 import { ExampleWithButtons } from "./exampleWithButtons/ExampleWithButtons";
+import { AppContext } from "../../context/AppContext";
+import { LimitedNeutralColorsSelector } from "../../services/LimitedNeutralColorsSelector";
 
 /**
  * A component to wrap design examples with different color combinations for a color palette
  */
 export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
+  const context = useContext(AppContext);
+  const selectedNeutralColors = useMemo(() => {
+    return new LimitedNeutralColorsSelector().select(
+      context.neutralColors.value
+    );
+  }, [context.neutralColors]);
+
   //add black and white as colors to pick from
   const colors = useMemo<string[]>(
-    () => [...props.colors, "white", "black"],
-    [props.colors]
+    () => [
+      ...context.primaryColors.value,
+      ...selectedNeutralColors,
+      "white",
+      "black",
+    ],
+    [context.primaryColors, selectedNeutralColors]
   );
 
   return (
     <div className={props.className}>
-      <h4>Design examples</h4>
       <div className={styles.designExamples}>
         <div className={styles.designExamplesRow}>
           <ExampleWithButtons

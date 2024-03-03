@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
 import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
-import styles from "./ColorPaletteResult.module.css";
+import styles from "./ColorPaletteResult.module.scss";
 import { AppContext } from "../../context/AppContext";
 import { LimitedNeutralColorsSelector } from "../../services/LimitedNeutralColorsSelector";
 import { CssCode } from "../cssCodeGenerator/CssCode";
@@ -14,7 +14,7 @@ export const ColorPaletteResult: React.FC = () => {
   );
 
   return (
-    <div>
+    <div className={styles.colorPaletteResult}>
       <HorizontalColorPalette
         colors={[
           ...context.primaryColors.value,

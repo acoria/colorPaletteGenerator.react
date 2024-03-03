@@ -1,7 +1,10 @@
+@import "../../spacing.scss";
+
 .designExamples {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
+  padding-left: $pagePaddingLeft;
 }
 
 .designExamplesRow {

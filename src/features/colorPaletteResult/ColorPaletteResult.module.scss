@@ -1,3 +1,9 @@
+@import '../../spacing.scss';
+
+.colorPaletteResult {
+  padding-left: $pagePaddingLeft;
+}
+
 .codeSnippets {
   margin-top: 2rem;
   display: flex;

@@ -1,15 +1,19 @@
-import { ReactNode } from "react";
-import { ColorPicker } from "../../colorPicker/ColorPicker";
+import { ReactNode, useContext } from "react";
+import { ReactComponent as CircleWithFour } from "../../../assets/circleWithFour.svg";
 import { ReactComponent as CircleWithOne } from "../../../assets/circleWithOne.svg";
 import { ReactComponent as CircleWithThree } from "../../../assets/circleWithThree.svg";
 import { ReactComponent as CircleWithTwo } from "../../../assets/circleWithTwo.svg";
+import { AppContext } from "../../../context/AppContext";
+import { ColorPicker } from "../../colorPicker/ColorPicker";
+import { ExampleWithButtons } from "../../designExamples/exampleWithButtons/ExampleWithButtons";
 import { ColorPaletteStep } from "../colorPaletteStep/ColorPaletteStep";
 import styles from "./ColorPaletteStepList.module.scss";
-import { IColorPaletteStepListProps } from "./IColorPaletteStepListProps";
 
-export const ColorPaletteStepList: React.FC<IColorPaletteStepListProps> = (
-  props
-) => {
+export const ColorPaletteStepList: React.FC = () => {
+  const context = useContext(AppContext);
+  const primaryColors = context.primaryColors.value;
+  const neutralColors = context.neutralColors.value;
+
   const colorTitle = (component: ReactNode, title: string) => (
     <div className={styles.colorTitle}>
       {component}
@@ -27,7 +31,11 @@ export const ColorPaletteStepList: React.FC<IColorPaletteStepListProps> = (
         explanation={
           <>
             Go to{" "}
-            <a href="https://coolors.co/palettes" target="_blank" className={styles.link}>
+            <a
+              href="https://coolors.co/palettes"
+              target="_blank"
+              className={styles.link}
+            >
               Coolors.co
             </a>{" "}
             or take any other color palette and pick two colors you like from
@@ -46,7 +54,7 @@ export const ColorPaletteStepList: React.FC<IColorPaletteStepListProps> = (
       >
         <ColorPicker
           numberOfColorsToGenerate={3}
-          onColorsChange={props.onSetPrimaryColors}
+          onColorsChange={context.primaryColors.setValue}
         />
       </ColorPaletteStep>
       <ColorPaletteStep
@@ -59,8 +67,31 @@ export const ColorPaletteStepList: React.FC<IColorPaletteStepListProps> = (
       >
         <ColorPicker
           numberOfColorsToGenerate={7}
-          onColorsChange={props.onSetNeutralColors}
+          onColorsChange={context.neutralColors.setValue}
         />
+      </ColorPaletteStep>
+      <ColorPaletteStep
+        title={colorTitle(
+          <CircleWithFour className={styles.circleWithNumber} />,
+          "Preview design"
+        )}
+        explanation="This is an example on how a design could look. In the next tab you view more combinations and adjust individual elements' colors by clicking on them."
+      >
+        <div className={styles.designExample}>
+          <ExampleWithButtons
+            backgroundColor={primaryColors[2]}
+            titleColor={primaryColors[1]}
+            buttonsSectionTextColor={neutralColors[0]}
+            buttonsBackgroundColor={neutralColors[0]}
+            buttonsTextColor={primaryColors[0]}
+            buttonsBackgroundColorUnselected={neutralColors[3]}
+            buttonsTextColorUnselected={neutralColors[0]}
+            primaryButtonBackgroundColor={primaryColors[0]}
+            primaryButtonTextColor={neutralColors[0]}
+            headerBackgroundColor={neutralColors[0]}
+            colors={[...primaryColors, ...neutralColors]}
+          />
+        </div>
       </ColorPaletteStep>
     </div>
   );

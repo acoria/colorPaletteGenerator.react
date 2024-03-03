@@ -3,7 +3,8 @@
 .colorPaletteStepList {
   display: flex;
   flex-direction: row;
-  column-gap: 3rem;
+  // column-gap: 3rem;
+  justify-content: space-evenly;
 }
 
 .colorTitle {
@@ -30,4 +31,10 @@
   text-decoration: none;
   color: $neutral;
   font-weight: 500;
+}
+
+.designExample {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }

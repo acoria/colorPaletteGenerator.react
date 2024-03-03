@@ -18,6 +18,7 @@ export const Page: React.FC<{ children?: ReactNode }> = (props) => {
         <Navbar
           items={[
             { title: "Colors", route: Route.HOME },
+            { title: "Design examples", route: Route.DESIGN_EXAMPLES },
             { title: "Palette & Code", route: Route.PALETTE_AND_CODE },
           ]}
         />
