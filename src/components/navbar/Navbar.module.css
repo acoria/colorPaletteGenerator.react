@@ -1,0 +1,10 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+}
+
+.navLink {
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+}

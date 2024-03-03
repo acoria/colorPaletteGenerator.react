@@ -1,5 +1,10 @@
 import { ColorPaletteResult } from "../features/colorPaletteResult/ColorPaletteResult";
+import { Page } from "./Page";
 
 export const ColorPaletteResultPage = () => {
-  return <ColorPaletteResult />;
+  return (
+    <Page>
+      <ColorPaletteResult />
+    </Page>
+  );
 };
