@@ -1,7 +1,6 @@
 import { useContext, useMemo } from "react";
 import { AppContext } from "../../context/AppContext";
 import { LimitedNeutralColorsSelector } from "../../services/LimitedNeutralColorsSelector";
-import { ColorPaletteResult } from "../colorPaletteResult/ColorPaletteResult";
 import { ColorPaletteStepList } from "../colorPaletteStepList/colorPaletteStepList/ColorPaletteStepList";
 import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
@@ -29,40 +28,6 @@ export const ColorPaletteGenerator: React.FC = () => {
         onSetPrimaryColors={context.primaryColors.setValue}
         onSetNeutralColors={context.neutralColors.setValue}
       />
-      <div>
-        <div className={styles.code}>
-          {colorsPicked && (
-            <>
-              <CssCode
-                code={[
-                  ...CssColorCodeGenerator.generate(
-                    context.primaryColors.value,
-                    "$primary"
-                  ),
-                  ...CssColorCodeGenerator.generate(
-                    selectedNeutralColors,
-                    "$neutral"
-                  ),
-                ]}
-                title="SCSS code"
-              />
-              <CssCode
-                code={[
-                  ...CssColorCodeGenerator.generate(
-                    context.primaryColors.value,
-                    "$primary"
-                  ),
-                  ...CssColorCodeGenerator.generate(
-                    context.neutralColors.value,
-                    "$neutral"
-                  ),
-                ]}
-                title="SCSS code extended"
-              />
-            </>
-          )}
-        </div>
-      </div>
       {colorsPicked && (
         <DesignExamples
           colors={[...context.primaryColors.value, ...selectedNeutralColors]}
@@ -80,7 +45,7 @@ export const ColorPaletteGenerator: React.FC = () => {
           "#2367A8",
           "#E7F3FF",
         ]}
-      /> */}
+      />)} */}
     </div>
   );
 };

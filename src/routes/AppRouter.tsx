@@ -1,5 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ColorPalettePage } from "../pages/ColorPalettePage";
+import { ColorPalettePage } from "../pages/ColorPaletteGeneratorPage";
 import { DesignExamplesPage } from "../pages/DesignExamplesPage";
 import { Route } from "./Route";
 import { ColorPaletteResultPage } from "../pages/ColorPaletteResultPage";

@@ -1,0 +1,6 @@
+.codeSnippets {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: row;
+  column-gap: 2rem;
+}

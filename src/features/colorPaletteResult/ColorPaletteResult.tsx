@@ -3,6 +3,8 @@ import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColo
 import styles from "./ColorPaletteResult.module.css";
 import { AppContext } from "../../context/AppContext";
 import { LimitedNeutralColorsSelector } from "../../services/LimitedNeutralColorsSelector";
+import { CssCode } from "../cssCodeGenerator/CssCode";
+import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
 
 export const ColorPaletteResult: React.FC = () => {
   const context = useContext(AppContext);
@@ -27,6 +29,34 @@ export const ColorPaletteResult: React.FC = () => {
         ]}
         title={"Extended color palette"}
       />
+      <div className={styles.codeSnippets}>
+        <CssCode
+          code={[
+            ...CssColorCodeGenerator.generate(
+              context.primaryColors.value,
+              "$primary"
+            ),
+            ...CssColorCodeGenerator.generate(
+              limitedNeutralColorSelector.select(context.neutralColors.value),
+              "$neutral"
+            ),
+          ]}
+          title="SCSS code"
+        />
+        <CssCode
+          code={[
+            ...CssColorCodeGenerator.generate(
+              context.primaryColors.value,
+              "$primary"
+            ),
+            ...CssColorCodeGenerator.generate(
+              context.neutralColors.value,
+              "$neutral"
+            ),
+          ]}
+          title="SCSS code extended"
+        />
+      </div>
     </div>
   );
 };
