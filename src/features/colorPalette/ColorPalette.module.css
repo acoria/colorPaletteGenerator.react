@@ -1,50 +1,8 @@
-.colorPaletteBody {
-  padding: 3rem 1rem 0 3rem;
-  display: flex;
-  flex-direction: row;
-  column-gap: 5rem;
-}
-
-.firstStep {
-  display: flex;
-  flex-direction: row;
-  column-gap: 0.5rem;
-  align-items: start;
-}
-
-.firstStep > p {
-  margin: 0;
-  font-size: small;
-}
-
-.secondStep {
-  display: flex;
-  flex-direction: row;
-  align-items: start;
-}
-
-.colorTitle {
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.3rem;
-  align-items: center;
-}
-
-.colorTitleText {
-  margin: 0;
-  width: fit-content;
-}
-
 .code {
   display: flex;
   flex-direction: row;
   column-gap: 3rem;
   margin-top: 1rem;
-}
-
-.circleWithNumber {
-  width: 1.5rem;
-  flex-shrink: 0;
 }
 
 .designExamples {

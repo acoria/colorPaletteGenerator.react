@@ -1,0 +1,23 @@
+.colorPaletteStepList {
+  padding: 3rem 1rem 0 3rem;
+  display: flex;
+  flex-direction: row;
+  column-gap: 3rem;
+}
+
+.colorTitle {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.3rem;
+  align-items: center;
+}
+
+.colorTitleText {
+  margin: 0;
+  width: fit-content;
+}
+
+.circleWithNumber {
+  width: 1.5rem;
+  flex-shrink: 0;
+}

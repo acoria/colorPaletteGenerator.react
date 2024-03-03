@@ -50,15 +50,5 @@ export const ColorPicker: React.FC<IColorPickerProps> = (props) => {
     />
   ));
 
-  return (
-    <div>
-      {typeof props.title === "string" ? (
-        <h4 className={styles.title}>{props.title}</h4>
-      ) : (
-        props.title
-      )}
-      <p className={styles.explanation}>{props.explanation}</p>
-      <div className={styles.colorBars}>{colorBars}</div>
-    </div>
-  );
+  return <div className={styles.colorBars}>{colorBars}</div>;
 };
