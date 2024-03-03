@@ -1,10 +1,10 @@
-import { ColorPalette } from "../features/colorPalette/ColorPalette";
+import { ColorPaletteGenerator } from "../features/colorPaletteGenerator/ColorPaletteGenerator";
 import { Page } from "./Page";
 
 export const ColorPalettePage: React.FC = () => {
   return (
     <Page>
-      <ColorPalette />
+      <ColorPaletteGenerator />
     </Page>
   );
 };
