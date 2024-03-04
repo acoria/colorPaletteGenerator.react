@@ -170,7 +170,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
               {selectedButton("click on")}
               {unselectedButton("or")}
               {selectedButton("something else")}
-              {unselectedButton("you cannot")}
+              {unselectedButton("you can also")}
               {selectedButton("click on")}
             </div>
           </div>
@@ -190,7 +190,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
                 setSelectedColorToElement(event, setPrimaryButtonTextColor);
               }}
             >
-              Click for action
+              Main action
             </div>
           </div>
         </div>
