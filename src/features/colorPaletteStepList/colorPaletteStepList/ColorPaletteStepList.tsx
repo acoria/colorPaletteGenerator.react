@@ -35,6 +35,7 @@ export const ColorPaletteStepList: React.FC = () => {
             <a
               href="https://coolors.co/palettes"
               target="_blank"
+              rel="noreferrer"
               className={styles.link}
             >
               Coolors.co
@@ -60,6 +61,7 @@ export const ColorPaletteStepList: React.FC = () => {
         <ColorPicker
           numberOfColorsToGenerate={3}
           onColorsChange={context.primaryColors.setValue}
+          allInitialColors={primaryColors}
         />
       </ColorPaletteStep>
       <ColorPaletteStep
@@ -73,6 +75,7 @@ export const ColorPaletteStepList: React.FC = () => {
         <ColorPicker
           numberOfColorsToGenerate={7}
           onColorsChange={context.neutralColors.setValue}
+          allInitialColors={neutralColors}
         />
       </ColorPaletteStep>
       <ColorPaletteStep
