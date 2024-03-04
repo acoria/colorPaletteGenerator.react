@@ -3,7 +3,6 @@
 .colorPaletteStepList {
   display: flex;
   flex-direction: row;
-  // column-gap: 3rem;
   justify-content: space-evenly;
 }
 
@@ -33,7 +32,11 @@
   font-weight: 500;
 }
 
-.designExample {
+.decisionIcon {
+  width: 59%;
+}
+
+.centerElement {
   display: flex;
   flex-direction: row;
   justify-content: center;

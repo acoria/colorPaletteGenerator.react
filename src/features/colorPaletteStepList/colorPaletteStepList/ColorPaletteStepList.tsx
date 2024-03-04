@@ -3,6 +3,7 @@ import { ReactComponent as CircleWithFour } from "../../../assets/circleWithFour
 import { ReactComponent as CircleWithOne } from "../../../assets/circleWithOne.svg";
 import { ReactComponent as CircleWithThree } from "../../../assets/circleWithThree.svg";
 import { ReactComponent as CircleWithTwo } from "../../../assets/circleWithTwo.svg";
+import { ReactComponent as Decision } from "../../../assets/decision.svg";
 import { AppContext } from "../../../context/AppContext";
 import { ColorPicker } from "../../colorPicker/ColorPicker";
 import { ExampleWithButtons } from "../../designExamples/exampleWithButtons/ExampleWithButtons";
@@ -42,7 +43,11 @@ export const ColorPaletteStepList: React.FC = () => {
             the same color palette.
           </>
         }
-      />
+      >
+        <div className={styles.centerElement}>
+          <Decision className={styles.decisionIcon} />
+        </div>
+      </ColorPaletteStep>
       <ColorPaletteStep
         title={colorTitle(
           <CircleWithTwo className={styles.circleWithNumber} />,
@@ -75,9 +80,9 @@ export const ColorPaletteStepList: React.FC = () => {
           <CircleWithFour className={styles.circleWithNumber} />,
           "Preview design"
         )}
-        explanation="This is an example on how a design could look. In the next tab you view more combinations and adjust individual elements' colors by clicking on them."
+        explanation="This is an example on how a design could look. In the next tab you can view more combinations and adjust individual elements' colors by clicking on them."
       >
-        <div className={styles.designExample}>
+        <div className={styles.centerElement}>
           <ExampleWithButtons
             backgroundColor={primaryColors[2]}
             titleColor={primaryColors[1]}
