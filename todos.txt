@@ -1,10 +1,8 @@
 #Color palette am Schluss kopierbar machen 
 #Farbcodes über die Balken legen
 #Farbcodes von vorherigem Balken, wenn noch keine Farbe ausgewählt ist, ansonsten die eigene
-
 #beispielApp mit unterschiedlichsten Kombinationen
 #bug: zwei Farben auswählen, die erste verändern -> sollte alles resetten
-
 #die einzelnen Elemente auswählbar machen und mit Dropdown eine andere Farbe wählen
 #bug: schwarz & weiß werden nicht mehr im color picker angezeigt
 
@@ -22,3 +20,6 @@ Verbesserungen aus Design-Kurs:
 - "Reopen from existing colors" function
 - "copy value from color above" function
 - save existing colors
+- show rgb values in color palette
+- Sättigung mit anzeigen (>82%?)
+- für Icon bezahlen
