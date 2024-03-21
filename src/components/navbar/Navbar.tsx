@@ -13,13 +13,12 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
   return (
     <div className={styles.navbar}>
       {props.items.map((item) => (
-        <div>
+        <div key={item.route}>
           <div
             className={style(
               styles.item,
               item.route === selectedItemRoute ? styles.selectedItem : ""
             )}
-            id={item.route}
             onClick={() => {
               context.selectedNavItemRoute.setValue(item.route);
               if (item.route !== selectedItemRoute) {
@@ -29,7 +28,9 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
           >
             {item.title}
           </div>
-          {item.route === selectedItemRoute && <div className={styles.selectedItemBar}></div>}
+          {item.route === selectedItemRoute && (
+            <div className={styles.selectedItemBar}></div>
+          )}
         </div>
       ))}
     </div>
