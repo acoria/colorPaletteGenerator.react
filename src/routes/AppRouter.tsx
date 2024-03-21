@@ -1,11 +1,18 @@
 import { createBrowserRouter } from "react-router-dom";
-import { ColorPalettePage } from "../pages/ColorPaletteGeneratorPage";
-import { DesignExamplesPage } from "../pages/DesignExamplesPage";
+import { ColorPaletteGenerator } from "../features/colorPaletteGenerator/ColorPaletteGenerator";
+import { ColorPaletteResult } from "../features/colorPaletteResult/ColorPaletteResult";
+import { DesignExamples } from "../features/designExamples/DesignExamples";
+import { Page } from "../pages/Page";
 import { Routes } from "./Routes";
-import { ColorPaletteResultPage } from "../pages/ColorPaletteResultPage";
 
 export const AppRouter = createBrowserRouter([
-  { path: Routes.HOME, element: <ColorPalettePage /> },
-  { path: Routes.DESIGN_EXAMPLES, element: <DesignExamplesPage /> },
-  { path: Routes.PALETTE_AND_CODE, element: <ColorPaletteResultPage /> },
+  {
+    path: Routes.HOME,
+    element: <Page />,
+    children: [
+      { path: Routes.HOME, element: <ColorPaletteGenerator /> },
+      { path: Routes.DESIGN_EXAMPLES, element: <DesignExamples /> },
+      { path: Routes.PALETTE_AND_CODE, element: <ColorPaletteResult /> },
+    ],
+  },
 ]);

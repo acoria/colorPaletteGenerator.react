@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { ReactComponent as ColorPaletteIcon } from "../assets/colorPalette.svg";
 import { Navbar } from "../components/navbar/Navbar";
 import { Routes } from "../routes/Routes";
@@ -23,7 +23,9 @@ export const Page: React.FC<{ children?: ReactNode }> = (props) => {
           ]}
         />
       </div>
-      <div className={styles.content}>{props.children}</div>
+      <div className={styles.content}>
+        <Outlet />
+      </div>
     </>
   );
 };

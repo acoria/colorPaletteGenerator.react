@@ -1,14 +1,15 @@
-import { useContext } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { AppContext } from "../../context/AppContext";
+import { Routes } from "../../routes/Routes";
 import { style } from "../../utils/style";
 import { INavbarProps } from "./INavbarProps";
 import styles from "./Navbar.module.scss";
 
 export const Navbar: React.FC<INavbarProps> = (props) => {
   const navigate = useNavigate();
-  const context = useContext(AppContext);
-  const selectedItemRoute = context.selectedNavItemRoute.value;
+  const [selectedItemRoute, setSelectedItemRoute] = useState<Routes>(
+    Routes.HOME
+  );
 
   return (
     <div className={styles.navbar}>
@@ -20,7 +21,7 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
               item.route === selectedItemRoute ? styles.selectedItem : ""
             )}
             onClick={() => {
-              context.selectedNavItemRoute.setValue(item.route);
+              setSelectedItemRoute(item.route);
               if (item.route !== selectedItemRoute) {
                 navigate(item.route);
               }
