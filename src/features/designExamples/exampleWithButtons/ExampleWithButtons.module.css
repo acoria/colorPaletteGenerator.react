@@ -16,7 +16,6 @@
   display: flex;
   flex-direction: row;
   transform: scale(200%);
-  transform-origin: bottom left;
   transition: transform 0.4s;
   z-index: 100;
   border: 1px solid black;

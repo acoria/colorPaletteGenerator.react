@@ -98,6 +98,7 @@ export const ColorPaletteStepList: React.FC = () => {
             primaryButtonTextColor={neutralColors[0]}
             headerBackgroundColor={neutralColors[0]}
             colors={[...primaryColors, ...neutralColors]}
+            suppressExpanding
           />
         </div>
       </ColorPaletteStep>

@@ -1,7 +1,14 @@
 import { IExampleWithButtonProps } from "./IExampleWithButtonsProps";
 import styles from "./ExampleWithButtons.module.css";
 import { ColorPickOptions } from "../../colorPickOptions/ColorPickOptions";
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import {
+  CSSProperties,
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
 import { style } from "../../../utils/style";
 
@@ -111,9 +118,22 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
       setButtonsTextColorUnselected
     );
 
+  const transformOriginStyle = (): CSSProperties => {
+    let transformOrigin = `${props.transformOriginVertical ?? "top"}`;
+    transformOrigin = `${transformOrigin} ${
+      props.transformOriginHorizontal ?? "left"
+    }`;
+    return {
+      "transform-origin": transformOrigin,
+    } as CSSProperties;
+  };
+
   return (
     <div className={styles.exampleWithButtons} ref={ref}>
-      <div className={`${editMode && styles.appWithEditMode}`}>
+      <div
+        className={`${editMode && styles.appWithEditMode}`}
+        style={transformOriginStyle()}
+      >
         {editMode && (
           <ColorPickOptions
             className={styles.colorDropdown}
@@ -130,7 +150,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
           )}
           style={{ backgroundColor: backgroundColor }}
           onClick={(event) => {
-            !editMode && setEditMode(true);
+            !editMode && !props.suppressExpanding && setEditMode(true);
             setSelectedColorToElement(event, setBackgroundColor);
           }}
         >
