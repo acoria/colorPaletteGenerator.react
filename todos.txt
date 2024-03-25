@@ -14,8 +14,8 @@ Verbesserungen aus Design-Kurs:
 #Link sollte nicht aussehen wie ein Link (unterstrichen)
 #Typo in Überschrift "Pick primary Color"
 #4. Design preview step einfügen?
-- Fix color picking for elements -> growing out of screen size
-- Use outlet for routing
+#Fix color picking for elements -> growing out of screen size
+#Use outlet for routing
 #Dominance: find a way to fixate the eye on the first step
 - "Reopen from existing colors" function
 - "copy value from color above" function

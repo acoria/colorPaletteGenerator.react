@@ -1,5 +1,11 @@
 @import '../../colors.scss';
 
+.colorBarWithWarning {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
 .colorBar {
   position: relative;
   border: none;
@@ -7,4 +13,16 @@
   height: 3rem;
   transform: translateY(-0.3rem);
   cursor: pointer;
+}
+
+.saturationWarning {
+  border: 2px solid $warning;
+}
+
+.saturationWarningMessage {
+  position: absolute;
+  top: 0;
+  left: -5.6rem;
+  color: $warning;
+  font-size: xx-small;
 }

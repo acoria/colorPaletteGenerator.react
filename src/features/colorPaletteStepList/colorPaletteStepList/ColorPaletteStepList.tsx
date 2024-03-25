@@ -70,7 +70,7 @@ export const ColorPaletteStepList: React.FC = () => {
           "Pick neutral colors"
         )}
         explanation="Pick the second color, then move a little up and left for each color
-            until you reach the top and nearly the left with the last color."
+            until you nearly reach the top and left with the last color."
       >
         <ColorPicker
           numberOfColorsToGenerate={7}
