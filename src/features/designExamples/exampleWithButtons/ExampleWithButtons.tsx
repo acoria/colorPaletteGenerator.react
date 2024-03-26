@@ -124,7 +124,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
       props.transformOriginHorizontal ?? "left"
     }`;
     return {
-      "transform-origin": transformOrigin,
+      "transformOrigin": transformOrigin,
     } as CSSProperties;
   };
 
