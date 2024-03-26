@@ -13,13 +13,13 @@
 }
 
 .horizontalPaletteBar {
-  width: 6rem;
+  width: 8rem;
   height: 10rem;
 }
 
-.hexCodeDark {
+.colorCodeDark {
   color: black;
 }
-.hexCodeLight {
+.colorCodeLight {
   color: white;
 }

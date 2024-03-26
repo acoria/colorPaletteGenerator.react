@@ -1,14 +1,20 @@
 import { IColorInfo } from "./IColorInfo";
 
 class ColorInfoDefault implements IColorInfo {
+  convertHexToRGB(hexColor: string) {
+    const color = this.removeHashIfNecessary(hexColor);
+    return [
+      this.hexToDecimal(color.substring(0, 2)),
+      this.hexToDecimal(color.substring(2, 4)),
+      this.hexToDecimal(color.substring(4, 6)),
+    ];
+  }
+
   getSaturationFromHexColor(hexColor: string): number {
-    if (hexColor.charAt(0) === "#") {
-      hexColor = hexColor.substring(1, 7);
-    } else if (hexColor === "") {
+    if (hexColor === "") {
       return -1;
     }
-
-    const rgb = this.convertHexToRGB(hexColor);
+    const rgb = this.convertHexToRGB(this.removeHashIfNecessary(hexColor));
     const maxValue = Math.max(...rgb) / 255;
     const minValue = Math.min(...rgb) / 255;
 
@@ -21,16 +27,16 @@ class ColorInfoDefault implements IColorInfo {
     return Math.round((delta / (1 - Math.abs(2 * lightness - 1))) * 100);
   }
 
-  private getLightness(minValue: number, maxValue: number): number {
-    return (minValue + maxValue) / 2;
+  private removeHashIfNecessary(hexColor: string): string {
+    if (hexColor.charAt(0) === "#") {
+      return hexColor.substring(1, 7);
+    } else {
+      return hexColor;
+    }
   }
 
-  private convertHexToRGB(hexColor: string) {
-    return [
-      this.hexToDecimal(hexColor.substring(0, 2)),
-      this.hexToDecimal(hexColor.substring(2, 4)),
-      this.hexToDecimal(hexColor.substring(4, 6)),
-    ];
+  private getLightness(minValue: number, maxValue: number): number {
+    return (minValue + maxValue) / 2;
   }
 
   private hexToDecimal(hexNumber: string): number {

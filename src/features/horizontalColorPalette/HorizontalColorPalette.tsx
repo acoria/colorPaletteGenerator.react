@@ -1,3 +1,4 @@
+import { ColorInfo } from "../../services/colorInfo/ColorInfo";
 import styles from "./HorizontalColorPalette.module.css";
 import { IHorizontalColorPaletteProps } from "./IHorizontalColorPaletteProps";
 
@@ -8,15 +9,26 @@ export const HorizontalColorPalette: React.FC<IHorizontalColorPaletteProps> = (
     <div className={styles.generatedPalette}>
       <h4>{props.title}</h4>
       <div className={styles.horizontalPalette}>
-        {props.colors.map((primaryColor) => (
-          <div
-            className={styles.horizontalPaletteBar}
-            style={{ backgroundColor: primaryColor }}
-          >
-            <div className={styles.hexCodeDark}>{primaryColor}</div>
-            <div className={styles.hexCodeLight}>{primaryColor}</div>
-          </div>
-        ))}
+        {props.colors.map((hexColor) => {
+          if (hexColor === "") {
+            return "";
+          }
+          const rgb = (
+            ColorInfo.convertHexToRGB(hexColor) as unknown as string[]
+          ).reduce((previous, current) => `${previous} ${current}`);
+          const rgbText = `RGB ${rgb}`;
+          return (
+            <div
+              className={styles.horizontalPaletteBar}
+              style={{ backgroundColor: hexColor }}
+            >
+              <div className={styles.colorCodeDark}>{hexColor}</div>
+              <div className={styles.colorCodeDark}>{rgbText}</div>
+              <div className={styles.colorCodeLight}>{hexColor}</div>
+              <div className={styles.colorCodeLight}>{rgbText}</div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
