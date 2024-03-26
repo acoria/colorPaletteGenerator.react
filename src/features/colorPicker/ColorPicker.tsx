@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { ColorBar } from "../colorBar/ColorBar";
 import styles from "./ColorPicker.module.css";
 import { IColorPickerProps } from "./IColorPickerProps";
@@ -8,22 +8,26 @@ import { IColorPickerProps } from "./IColorPickerProps";
  */
 export const ColorPicker: React.FC<IColorPickerProps> = (props) => {
   const initialBarColor = "";
-  const getInitialColors = (
-    initialTopColor?: string,
-    allInitialColors?: string[]
-  ) => {
-    if (allInitialColors && allInitialColors.length !== 0) {
-      return allInitialColors;
-    } else {
-      return [...Array(props.numberOfColorsToGenerate)].map((_, index) => {
-        if (index === 0) {
-          return initialTopColor ?? initialBarColor;
-        } else {
-          return initialBarColor;
-        }
-      });
-    }
-  };
+  const getInitialColors = useCallback(
+    (initialTopColor?: string, allInitialColors?: string[]) => {
+      if (allInitialColors && allInitialColors.length !== 0) {
+        return allInitialColors;
+      } else {
+        return [...Array(props.numberOfColorsToGenerate)].map((_, index) => {
+          if (index === 0) {
+            return initialTopColor ?? initialBarColor;
+          } else {
+            return initialBarColor;
+          }
+        });
+      }
+    },
+    [props.numberOfColorsToGenerate]
+  );
+
+  useEffect(() => {
+    setColors(getInitialColors(undefined, props.allInitialColors));
+  }, [props.allInitialColors, getInitialColors]);
 
   const [colors, setColors] = useState<string[]>(
     getInitialColors(props.initialTopColor, props.allInitialColors)

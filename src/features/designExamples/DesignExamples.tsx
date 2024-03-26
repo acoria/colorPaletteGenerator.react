@@ -207,6 +207,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             primaryButtonBackgroundColor={colors[0]}
             primaryButtonTextColor={colors[3]}
             colors={colors}
+            transformOriginHorizontal={TransformOriginHorizontal.RIGHT}
           />
           <ExampleWithButtons
             backgroundColor={colors[6]}
@@ -219,6 +220,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             primaryButtonBackgroundColor={colors[0]}
             primaryButtonTextColor={colors[3]}
             colors={colors}
+            transformOriginHorizontal={TransformOriginHorizontal.RIGHT}
           />
         </div>
         <div className={styles.designExamplesRow}>
