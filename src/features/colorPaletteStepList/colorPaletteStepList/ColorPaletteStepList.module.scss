@@ -39,6 +39,16 @@
   fill: $primary;
 }
 
+.orSection{
+  position: relative;
+  top: -2rem;
+}
+
+.orText {
+  font-family: "Lexend";
+  text-align: center;
+}
+
 .centerElement {
   display: flex;
   flex-direction: row;

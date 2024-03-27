@@ -1,0 +1,25 @@
+@import "../../colors.scss";
+@import "../../global.scss";
+
+.explanation {
+    @extend .explanatoryParagraph;
+    height: auto;
+}
+
+.codeAndButton {
+    position: relative;
+}
+
+.code {
+    //double the height of a color bar
+    height: 5.75rem;
+    width: $columnWidth;
+}
+
+.copyButton {
+    position: absolute;
+    top: 0.2rem;
+    right: 0.2rem;
+    width: 2rem;
+    cursor: pointer;
+}

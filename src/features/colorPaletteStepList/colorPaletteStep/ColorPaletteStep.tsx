@@ -1,5 +1,5 @@
 import { IColorPaletteStepProps } from "./IColorPaletteStepProps";
-import styles from "./colorPaletteStep.module.css";
+import styles from "./colorPaletteStep.module.scss";
 
 export const ColorPaletteStep: React.FC<IColorPaletteStepProps> = (props) => {
   return (
@@ -9,7 +9,7 @@ export const ColorPaletteStep: React.FC<IColorPaletteStepProps> = (props) => {
       ) : (
         props.title
       )}
-      <p className={styles.explanation}>{props.explanation}</p>
+      <p className={styles.explanatoryParagraph}>{props.explanation}</p>
       {props.children}
     </div>
   );

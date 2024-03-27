@@ -1,3 +1,5 @@
+@import "../../../global.scss";
+
 .colorPaletteStep {
   display: flex;
   flex-direction: column;
@@ -6,11 +8,4 @@
 .title {
   margin: 0;
   margin-bottom: 0.3rem;
-}
-
-.explanation {
-  width: 19rem;
-  height: 4.5rem;
-  font-size: small;
-  padding: 0 0.3rem;
 }

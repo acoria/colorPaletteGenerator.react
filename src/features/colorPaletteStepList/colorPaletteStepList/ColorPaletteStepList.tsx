@@ -1,11 +1,11 @@
-import { ReactNode, useContext, useRef } from "react";
+import { ReactNode, useContext } from "react";
 import { ReactComponent as CircleWithFour } from "../../../assets/circleWithFour.svg";
 import { ReactComponent as CircleWithOne } from "../../../assets/circleWithOne.svg";
 import { ReactComponent as CircleWithThree } from "../../../assets/circleWithThree.svg";
 import { ReactComponent as CircleWithTwo } from "../../../assets/circleWithTwo.svg";
 import { ReactComponent as Decision } from "../../../assets/decision.svg";
 import { AppContext } from "../../../context/AppContext";
-import { HexColorsParser } from "../../../services/HexColorsParser";
+import { CodeToColor } from "../../codeToColor/CodeToColor";
 import { ColorPicker } from "../../colorPicker/ColorPicker";
 import { ExampleWithButtons } from "../../designExamples/exampleWithButtons/ExampleWithButtons";
 import { ColorPaletteStep } from "../colorPaletteStep/ColorPaletteStep";
@@ -15,7 +15,6 @@ export const ColorPaletteStepList: React.FC = () => {
   const context = useContext(AppContext);
   const primaryColors = context.primaryColors.value;
   const neutralColors = context.neutralColors.value;
-  const hexColorsString = useRef<HTMLTextAreaElement>(null);
 
   const colorTitle = (component: ReactNode, title: string) => (
     <div className={styles.colorTitle}>
@@ -50,33 +49,29 @@ export const ColorPaletteStepList: React.FC = () => {
         <div className={styles.centerElement}>
           <Decision className={styles.decisionIcon} />
         </div>
-        <div>OR</div>
-        <textarea style={{height: "5.75rem"}} ref={hexColorsString}></textarea>
-        <button
-          onClick={() => {
-            const colors = new HexColorsParser().parse(
-              hexColorsString.current?.value ?? ""
-            );
-            context.primaryColors.setValue([colors[0], colors[1], colors[2]]);
-            if (colors.length === 7) {
-              context.neutralColors.setValue([
-                colors[3],
-                "",
-                colors[4],
-                "",
-                colors[5],
-                "",
-                colors[6],
-              ]);
-            } else {
-              context.neutralColors.setValue(
-                colors.filter((_, index) => index > 2)
-              );
-            }
-          }}
-        >
-          initialize
-        </button>
+        <div className={styles.orSection}>
+          <div className={styles.orText}>OR</div>
+          <CodeToColor
+            onNewColors={(colors) => {
+              context.primaryColors.setValue([colors[0], colors[1], colors[2]]);
+              if (colors.length === 7) {
+                context.neutralColors.setValue([
+                  colors[3],
+                  "",
+                  colors[4],
+                  "",
+                  colors[5],
+                  "",
+                  colors[6],
+                ]);
+              } else {
+                context.neutralColors.setValue(
+                  colors.filter((_, index) => index > 2)
+                );
+              }
+            }}
+          />
+        </div>
       </ColorPaletteStep>
       <ColorPaletteStep
         title={colorTitle(
