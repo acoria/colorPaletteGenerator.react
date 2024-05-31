@@ -28,6 +28,9 @@ class ColorInfoDefault implements IColorInfo {
   }
 
   private removeHashIfNecessary(hexColor: string): string {
+    if (hexColor === undefined) {
+      return "";
+    }
     if (hexColor.charAt(0) === "#") {
       return hexColor.substring(1, 7);
     } else {

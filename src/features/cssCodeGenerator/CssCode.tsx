@@ -9,7 +9,9 @@ export const CssCode: React.FC<ICssCodeProps> = (props) => {
       <div className={styles.code}>
         <CopyIcon
           className={styles.copyIcon}
-          onClick={() => navigator.clipboard.writeText(props.code.join(""))}
+          onClick={() => {
+            navigator.clipboard.writeText(props.code.join("\n"));
+          }}
         />
         {props.code.map((codeSnippet) => (
           <div className={styles.codeSnippet}>{codeSnippet}</div>
