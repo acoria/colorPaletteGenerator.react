@@ -5,8 +5,7 @@
 #bug: zwei Farben auswählen, die erste verändern -> sollte alles resetten
 #die einzelnen Elemente auswählbar machen und mit Dropdown eine andere Farbe wählen
 #bug: schwarz & weiß werden nicht mehr im color picker angezeigt
-
-- für mehr Design-Beispiele: mit weiß und schwarz als Text-Farben und evt. Buttons arbeiten
+#für mehr Design-Beispiele: mit weiß und schwarz als Text-Farben und evt. Buttons arbeiten
 
 Verbesserungen aus Design-Kurs:
 #Alignment
@@ -20,6 +19,17 @@ Verbesserungen aus Design-Kurs:
 - "Reopen from existing colors" function
 - "copy value from color above" function
 - save existing colors
-- show rgb values in color palette
-- Sättigung mit anzeigen (>82%?)
-- für Icon bezahlen
+#show rgb values in color palette
+#Sättigung mit anzeigen (>82%?)
+#für Icon bezahlen
+
+bug: add colors from:
+$primary: #09233e;
+$primary_accent: #31557c;
+$primary_light: #699ace;
+$neutral_dark: #d74346;
+$neutral: #f77e80;
+$neutral_accent: #febebf;
+$neutral_light: #fff0f0;
+$gray: #5e646b;
+$lightgray: #e3e5e8;
