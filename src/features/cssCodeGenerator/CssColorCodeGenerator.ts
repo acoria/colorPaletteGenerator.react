@@ -1,6 +1,6 @@
 class CssColorCodeGeneratorDefault {
-  private suffixesForThree = ["", "accent", "light"];
-  private suffixesForFour = ["dark", "", "accent", "light"];
+  private suffixesForThree = ["", "light", "lighter"];
+  private suffixesForFour = ["dark", "", "light", "lighter"];
 
   private suffixes = new Map<number, string[]>();
 
@@ -32,7 +32,7 @@ class CssColorCodeGeneratorDefault {
       return [];
     }
     return colors.map((color, index) => {
-      const suffix = suffixes[index] !== "" ? `_${suffixes[index]}` : "";
+      const suffix = suffixes[index] !== "" ? `-${suffixes[index]}` : "";
       return `${prefix}${suffix}: ${color};`;
     });
   };

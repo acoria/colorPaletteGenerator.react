@@ -7,6 +7,8 @@ import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
 
 export const ColorPaletteResult: React.FC = () => {
+  const prefixPrimary = "$color-primary";
+  const prefixSecondary = "$color-secondary";
   const context = useContext(AppContext);
   const limitedNeutralColorSelector = useMemo(
     () => new LimitedNeutralColorsSelector(),
@@ -34,11 +36,11 @@ export const ColorPaletteResult: React.FC = () => {
           code={[
             ...CssColorCodeGenerator.generate(
               context.primaryColors.value,
-              "$primary"
+              prefixPrimary
             ),
             ...CssColorCodeGenerator.generate(
               limitedNeutralColorSelector.select(context.neutralColors.value),
-              "$neutral"
+              prefixSecondary
             ),
           ]}
           title="SCSS code"
@@ -47,11 +49,11 @@ export const ColorPaletteResult: React.FC = () => {
           code={[
             ...CssColorCodeGenerator.generate(
               context.primaryColors.value,
-              "$primary"
+              prefixPrimary
             ),
             ...CssColorCodeGenerator.generate(
               context.neutralColors.value,
-              "$neutral"
+              prefixSecondary
             ),
           ]}
           title="SCSS code extended"
