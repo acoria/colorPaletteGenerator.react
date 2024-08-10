@@ -9,7 +9,7 @@ export const HorizontalColorPalette: React.FC<IHorizontalColorPaletteProps> = (
     <div className={styles.generatedPalette}>
       <h4>{props.title}</h4>
       <div className={styles.horizontalPalette}>
-        {props.colors.map((hexColor) => {
+        {props.colors.map((hexColor, index) => {
           if (hexColor === "") {
             return "";
           }
@@ -21,6 +21,7 @@ export const HorizontalColorPalette: React.FC<IHorizontalColorPaletteProps> = (
             <div
               className={styles.horizontalPaletteBar}
               style={{ backgroundColor: hexColor }}
+              key={`${hexColor}_${index}`}
             >
               <div className={styles.colorCodeDark}>{hexColor}</div>
               <div className={styles.colorCodeDark}>{rgbText}</div>

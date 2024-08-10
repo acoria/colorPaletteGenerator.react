@@ -14,7 +14,9 @@ export const CssCode: React.FC<ICssCodeProps> = (props) => {
           }}
         />
         {props.code.map((codeSnippet) => (
-          <div className={styles.codeSnippet}>{codeSnippet}</div>
+          <div className={styles.codeSnippet} key={codeSnippet}>
+            {codeSnippet}
+          </div>
         ))}
       </div>
     </div>
