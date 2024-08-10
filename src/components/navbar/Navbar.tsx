@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Routes } from "../../routes/Routes";
 import { style } from "../../utils/style";
 import { INavbarProps } from "./INavbarProps";
@@ -7,8 +7,9 @@ import styles from "./Navbar.module.scss";
 
 export const Navbar: React.FC<INavbarProps> = (props) => {
   const navigate = useNavigate();
+  const location = useLocation();
   const [selectedItemRoute, setSelectedItemRoute] = useState<Routes>(
-    Routes.HOME
+    location.pathname as Routes
   );
 
   return (
