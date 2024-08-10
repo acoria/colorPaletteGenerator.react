@@ -9,13 +9,13 @@ import { IColorPickerProps } from "./IColorPickerProps";
 export const ColorPicker: React.FC<IColorPickerProps> = (props) => {
   const initialBarColor = "";
   const getInitialColors = useCallback(
-    (initialTopColor?: string, allInitialColors?: string[]) => {
+    (initialMainColor?: string, allInitialColors?: string[]) => {
       if (allInitialColors && allInitialColors.length !== 0) {
         return allInitialColors;
       } else {
         return [...Array(props.numberOfColorsToGenerate)].map((_, index) => {
           if (index === 0) {
-            return initialTopColor ?? initialBarColor;
+            return initialMainColor ?? initialBarColor;
           } else {
             return initialBarColor;
           }
@@ -30,7 +30,7 @@ export const ColorPicker: React.FC<IColorPickerProps> = (props) => {
   }, [props.allInitialColors, getInitialColors]);
 
   const [colors, setColors] = useState<string[]>(
-    getInitialColors(props.initialTopColor, props.allInitialColors)
+    getInitialColors(props.initialMainColor, props.allInitialColors)
   );
 
   const getColorOfPreviousBar = (currentIndex: number) => {
@@ -45,6 +45,7 @@ export const ColorPicker: React.FC<IColorPickerProps> = (props) => {
     <ColorBar
       key={index}
       color={color}
+      isProminent={props.positionOfMainColor === index}
       initialColorPickerColor={getColorOfPreviousBar(index)}
       onColorChange={(color) => {
         setColors((previous) => {

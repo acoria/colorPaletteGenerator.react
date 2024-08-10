@@ -1,10 +1,11 @@
 export interface IColorPickerProps {
   numberOfColorsToGenerate: number;
+  positionOfMainColor?: number;
   onColorsChange?: (colors: string[]) => void;
   /**
    * The color of the first bar. It will be initialized with it and the rest of the bars stay empty.
    */
-  initialTopColor?: string;
+  initialMainColor?: string;
   /**
    * All colors to initialize all the bars with.
    */

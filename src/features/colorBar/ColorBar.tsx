@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./ColorBar.module.scss";
 import { IColorBarProps } from "./IColorBarProps";
 import { ColorInfo } from "../../services/colorInfo/ColorInfo";
+import { style } from "../../utils/style";
 
 /**
  * A component to pick and show a color and keep track of it.
@@ -44,9 +45,11 @@ export const ColorBar: React.FC<IColorBarProps> = (props) => {
         </div>
       )}
       <input
-        className={`${styles.colorBar} ${
-          showSaturationWarning && styles.saturationWarning
-        }`}
+        className={style(
+          styles.colorBar,
+          props.isProminent ? styles.prominent : "",
+          showSaturationWarning ? styles.saturationWarning : ""
+        )}
         style={{
           color: props.color,
           backgroundColor: "transparent",

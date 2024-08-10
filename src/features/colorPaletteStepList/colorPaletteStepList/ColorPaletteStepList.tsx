@@ -87,6 +87,7 @@ export const ColorPaletteStepList: React.FC = () => {
         >
           <ColorPicker
             numberOfColorsToGenerate={3}
+            positionOfMainColor={1}
             onColorsChange={context.primaryColors.setValue}
             allInitialColors={primaryColors}
           />
@@ -115,6 +116,7 @@ export const ColorPaletteStepList: React.FC = () => {
       >
         <ColorPicker
           numberOfColorsToGenerate={7}
+          positionOfMainColor={2}
           onColorsChange={context.neutralColors.setValue}
           allInitialColors={neutralColors}
         />
