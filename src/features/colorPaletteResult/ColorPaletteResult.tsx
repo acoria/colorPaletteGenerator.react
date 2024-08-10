@@ -8,6 +8,7 @@ import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator
 
 export const ColorPaletteResult: React.FC = () => {
   const prefixPrimary = "$color-primary";
+  const prefixAccent = "$color-accent";
   const prefixSecondary = "$color-secondary";
   const context = useContext(AppContext);
   const limitedNeutralColorSelector = useMemo(
@@ -15,20 +16,23 @@ export const ColorPaletteResult: React.FC = () => {
     []
   );
 
+  const simpleColors = [
+    ...context.primaryColors.value,
+    context.accentColor.value,
+    ...limitedNeutralColorSelector.select(context.neutralColors.value),
+  ];
+
+  const extendedColors = [
+    ...context.primaryColors.value,
+    context.accentColor.value,
+    ...context.neutralColors.value,
+  ];
+
   return (
     <div className={styles.colorPaletteResult}>
+      <HorizontalColorPalette colors={simpleColors} title={"Color palette"} />
       <HorizontalColorPalette
-        colors={[
-          ...context.primaryColors.value,
-          ...limitedNeutralColorSelector.select(context.neutralColors.value),
-        ]}
-        title={"Color palette"}
-      />
-      <HorizontalColorPalette
-        colors={[
-          ...context.primaryColors.value,
-          ...context.neutralColors.value,
-        ]}
+        colors={extendedColors}
         title={"Extended color palette"}
       />
       <div className={styles.codeSnippets}>
@@ -37,6 +41,10 @@ export const ColorPaletteResult: React.FC = () => {
             ...CssColorCodeGenerator.generate(
               context.primaryColors.value,
               prefixPrimary
+            ),
+            ...CssColorCodeGenerator.generate(
+              [context.accentColor.value],
+              prefixAccent
             ),
             ...CssColorCodeGenerator.generate(
               limitedNeutralColorSelector.select(context.neutralColors.value),
@@ -50,6 +58,10 @@ export const ColorPaletteResult: React.FC = () => {
             ...CssColorCodeGenerator.generate(
               context.primaryColors.value,
               prefixPrimary
+            ),
+            ...CssColorCodeGenerator.generate(
+              [context.accentColor.value],
+              prefixAccent
             ),
             ...CssColorCodeGenerator.generate(
               context.neutralColors.value,

@@ -62,6 +62,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
     setButtonsBackgroundColorUnselected(props.buttonsBackgroundColorUnselected);
     setPrimaryButtonBackgroundColor(props.primaryButtonBackgroundColor);
     setPrimaryButtonTextColor(props.primaryButtonTextColor);
+    setHeaderBackgroundColor(props.headerBackgroundColor);
   }, [props]);
 
   const setSelectedColorToElement = (
