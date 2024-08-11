@@ -17,6 +17,7 @@ export const Page: React.FC<{ children?: ReactNode }> = (props) => {
           <h1 className={styles.titleOfApp}>Color Palette Generator</h1>
         </div>
         <Navbar
+          className={styles.navbar}
           items={[
             { title: "Colors", route: Routes.HOME },
             { title: "Design examples", route: Routes.DESIGN_EXAMPLES },

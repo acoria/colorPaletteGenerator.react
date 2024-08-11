@@ -13,7 +13,7 @@ export const Navbar: React.FC<INavbarProps> = (props) => {
   );
 
   return (
-    <div className={styles.navbar}>
+    <div className={style(styles.navbar, props.className)}>
       {props.items.map((item) => (
         <div key={item.route}>
           <div
