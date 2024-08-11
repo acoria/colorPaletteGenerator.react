@@ -1,6 +1,6 @@
 import { useContext, useMemo } from "react";
 import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
-import styles from "./ColorPaletteResult.module.scss";
+import styles from "./ColorResult.module.scss";
 import { AppContext } from "../../context/AppContext";
 import { LimitedNeutralColorsSelector } from "../../services/LimitedNeutralColorsSelector";
 import { CssCode } from "../cssCodeGenerator/CssCode";
@@ -9,7 +9,7 @@ import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator
 /**
  * A component to show the color palette based on the picked colors and the corresponding scss code.
  */
-export const ColorPaletteResult: React.FC = () => {
+export const ColorResult: React.FC = () => {
   const prefixPrimary = "$color-primary";
   const prefixAccent = "$color-accent";
   const prefixSecondary = "$color-secondary";
@@ -32,7 +32,7 @@ export const ColorPaletteResult: React.FC = () => {
   ];
 
   return (
-    <div className={styles.colorPaletteResult}>
+    <div className={styles.colorResult}>
       <HorizontalColorPalette colors={simpleColors} title={"Color palette"} />
       <HorizontalColorPalette
         colors={extendedColors}

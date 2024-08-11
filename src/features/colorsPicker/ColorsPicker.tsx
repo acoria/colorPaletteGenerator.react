@@ -1,12 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
 import { ColorBar } from "../colorBar/ColorBar";
-import styles from "./ColorPicker.module.css";
-import { IColorPickerProps } from "./IColorPickerProps";
+import styles from "./ColorsPicker.module.css";
+import { IColorsPickerProps } from "./IColorsPickerProps";
 
 /**
  * A component to pick a defined number of colors. Each consecutive color has its predecessor color as reference.
  */
-export const ColorPicker: React.FC<IColorPickerProps> = (props) => {
+export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
   const initialBarColor = "";
   const getInitialColors = useCallback(
     (initialMainColor?: string, allInitialColors?: string[]) => {

@@ -7,7 +7,7 @@ import { ReactComponent as CircleWithTwo } from "../../../assets/circleWithTwo.s
 import { ReactComponent as Decision } from "../../../assets/decision.svg";
 import { AppContext } from "../../../context/AppContext";
 import { CodeToColor } from "../../codeToColor/CodeToColor";
-import { ColorPicker } from "../../colorPicker/ColorPicker";
+import { ColorsPicker } from "../../colorsPicker/ColorsPicker";
 import { ExampleWithButtons } from "../../designExamples/exampleWithButtons/ExampleWithButtons";
 import { ColorPaletteStep } from "../colorPaletteStep/ColorPaletteStep";
 import styles from "./ColorPaletteStepList.module.scss";
@@ -86,7 +86,7 @@ export const ColorPaletteStepList: React.FC = () => {
             element and use the picker to select this color. Then pick a darker color in the top, moving on the
             x-axis and a lighter color for the bottom. This color should use up about 30%."
         >
-          <ColorPicker
+          <ColorsPicker
             numberOfColorsToGenerate={3}
             positionOfMainColor={1}
             hintTextForMainColor="Primary"
@@ -101,7 +101,7 @@ export const ColorPaletteStepList: React.FC = () => {
           )}
           explanation="Decide which color should be your accent color. This color is only used 10% of the time to draw attention, e.g. for a call to action button."
         >
-          <ColorPicker
+          <ColorsPicker
             numberOfColorsToGenerate={1}
             onColorsChange={(colors) => context.accentColor.setValue(colors[0])}
             allInitialColors={accentColor ? [accentColor] : []}
@@ -116,7 +116,7 @@ export const ColorPaletteStepList: React.FC = () => {
         explanation="Pick the secondary, neutral color. Then move a little down and right for each darker color above. Do the opposite for the lighter colors
             until you nearly reach the top and left with the last color. These colors are used 60% of the time."
       >
-        <ColorPicker
+        <ColorsPicker
           numberOfColorsToGenerate={7}
           positionOfMainColor={2}
           hintTextForMainColor="Secondary"

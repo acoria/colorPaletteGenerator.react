@@ -1,4 +1,4 @@
-export interface IColorPickerProps {
+export interface IColorsPickerProps {
   numberOfColorsToGenerate: number;
   positionOfMainColor?: number;
   hintTextForMainColor?: string;
