@@ -1,12 +1,27 @@
+@import "../../colors.scss";
+
 .generatedPalette {
   display: flex;
   flex-direction: column;
 }
 
-.generatedPalette h4 {
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.title {
   font-family: "Lexend";
   font-size: large;
 }
+
+.visibilityIcon {
+  fill: $primary;
+  cursor: pointer;
+}
+
 .horizontalPalette {
   display: flex;
   flex-direction: row;
@@ -18,8 +33,9 @@
 }
 
 .colorCodeDark {
-  color: black;
+  color: $color-code-dark;
 }
+
 .colorCodeLight {
-  color: white;
+  color: $color-code-light;
 }

@@ -113,7 +113,7 @@ export const ColorPaletteStepList: React.FC = () => {
           <CircleWithFour className={styles.circleWithNumber} />,
           "Pick neutral colors"
         )}
-        explanation="Pick the secondary, neutral color. Then move a little up and left for each color
+        explanation="Pick the secondary, neutral color. Then move a little down and right for each darker color above. Do the opposite for the lighter colors
             until you nearly reach the top and left with the last color. These colors are used 60% of the time."
       >
         <ColorPicker

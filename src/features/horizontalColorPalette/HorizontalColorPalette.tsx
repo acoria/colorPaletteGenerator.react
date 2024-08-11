@@ -1,13 +1,35 @@
 import { ColorInfo } from "../../services/colorInfo/ColorInfo";
-import styles from "./HorizontalColorPalette.module.css";
+import styles from "./HorizontalColorPalette.module.scss";
 import { IHorizontalColorPaletteProps } from "./IHorizontalColorPaletteProps";
+import { ReactComponent as VisibilityOn } from "../../assets/visibility_on.svg";
+import { ReactComponent as VisibilityOff } from "../../assets/visibility_off.svg";
+import { useState } from "react";
 
 export const HorizontalColorPalette: React.FC<IHorizontalColorPaletteProps> = (
   props
 ) => {
+  const [showColorCodes, setShowColorCodes] = useState<boolean>(true);
+
   return (
     <div className={styles.generatedPalette}>
-      <h4>{props.title}</h4>
+      <div className={styles.header}>
+        <h4 className={styles.title}>{props.title}</h4>
+        {showColorCodes ? (
+          <VisibilityOff
+            className={styles.visibilityIcon}
+            onClick={() => {
+              setShowColorCodes((previous) => !previous);
+            }}
+          />
+        ) : (
+          <VisibilityOn
+            className={styles.visibilityIcon}
+            onClick={() => {
+              setShowColorCodes((previous) => !previous);
+            }}
+          />
+        )}
+      </div>
       <div className={styles.horizontalPalette}>
         {props.colors.map((hexColor, index) => {
           if (hexColor === "") {
@@ -23,10 +45,18 @@ export const HorizontalColorPalette: React.FC<IHorizontalColorPaletteProps> = (
               style={{ backgroundColor: hexColor }}
               key={`${hexColor}_${index}`}
             >
-              <div className={styles.colorCodeDark}>{hexColor}</div>
-              <div className={styles.colorCodeDark}>{rgbText}</div>
-              <div className={styles.colorCodeLight}>{hexColor}</div>
-              <div className={styles.colorCodeLight}>{rgbText}</div>
+              <div className={styles.colorCodeDark}>
+                {showColorCodes && hexColor}
+              </div>
+              <div className={styles.colorCodeDark}>
+                {showColorCodes && rgbText}
+              </div>
+              <div className={styles.colorCodeLight}>
+                {showColorCodes && hexColor}
+              </div>
+              <div className={styles.colorCodeLight}>
+                {showColorCodes && rgbText}
+              </div>
             </div>
           );
         })}
