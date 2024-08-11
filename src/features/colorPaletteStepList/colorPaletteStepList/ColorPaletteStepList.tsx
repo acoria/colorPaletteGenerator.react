@@ -11,8 +11,11 @@ import { ColorsPicker } from "../../colorsPicker/ColorsPicker";
 import { ExampleWithButtons } from "../../designExamples/exampleWithButtons/ExampleWithButtons";
 import { ColorPaletteStep } from "../colorPaletteStep/ColorPaletteStep";
 import styles from "./ColorPaletteStepList.module.scss";
+import { useTranslation } from "../../../hooks/useTranslation/useTranslation";
+import { texts } from "../../../hooks/useTranslation/texts";
 
 export const ColorPaletteStepList: React.FC = () => {
+  const { t } = useTranslation();
   const context = useContext(AppContext);
   const primaryColors = context.primaryColors.value;
   const neutralColors = context.neutralColors.value;
@@ -30,11 +33,11 @@ export const ColorPaletteStepList: React.FC = () => {
       <ColorPaletteStep
         title={colorTitle(
           <CircleWithOne className={styles.circleWithNumber} />,
-          "Choose two colors"
+          t(texts.steps.chooseTwoColors.title)
         )}
         explanation={
           <>
-            Go to{" "}
+            {t(texts.steps.chooseTwoColors.explanationPartOne)}
             <a
               href="https://coolors.co/palettes"
               target="_blank"
@@ -42,9 +45,8 @@ export const ColorPaletteStepList: React.FC = () => {
               className={styles.link}
             >
               Coolors.co
-            </a>{" "}
-            or take any other color palette and pick two colors you like from
-            the same color palette.
+            </a>
+            {t(texts.steps.chooseTwoColors.explanationPartTwo)}
           </>
         }
       >
@@ -52,12 +54,14 @@ export const ColorPaletteStepList: React.FC = () => {
           <Decision className={styles.decisionIcon} />
         </div>
         <div className={styles.orSection}>
-          <div className={styles.orText}>OR</div>
-          <h4 className={styles.title}>Fill with existing colors</h4>
+          <div className={styles.orText}>{t(texts.steps.chooseTwoColors.or)}</div>
+          <h4 className={styles.title}>
+            {t(texts.steps.chooseTwoColors.orTitle)}
+          </h4>
           <CodeToColor
             onNewColors={(colors) => {
               context.primaryColors.setValue([colors[0], colors[1], colors[2]]);
-              context.accentColor.setValue(colors[3])
+              context.accentColor.setValue(colors[3]);
               if (colors.length === 8) {
                 context.neutralColors.setValue([
                   colors[4],
@@ -81,11 +85,9 @@ export const ColorPaletteStepList: React.FC = () => {
         <ColorPaletteStep
           title={colorTitle(
             <CircleWithTwo className={styles.circleWithNumber} />,
-            "Pick primary colors"
+            t(texts.steps.pickPrimaryColor.title)
           )}
-          explanation="Decide which color should be your primary color. Click on the middle
-            element and use the picker to select this color. Then pick a darker color in the top, moving on the
-            x-axis and a lighter color for the bottom. This color should use up about 30%."
+          explanation={t(texts.steps.pickPrimaryColor.explanation)}
         >
           <ColorsPicker
             numberOfColorsToGenerate={3}
@@ -98,9 +100,9 @@ export const ColorPaletteStepList: React.FC = () => {
         <ColorPaletteStep
           title={colorTitle(
             <CircleWithThree className={styles.circleWithNumber} />,
-            "Pick accent color"
+            t(texts.steps.pickAccentColor.title)
           )}
-          explanation="Decide which color should be your accent color. This color is only used 10% of the time to draw attention, e.g. for a call to action button."
+          explanation={t(texts.steps.pickAccentColor.explanation)}
         >
           <ColorsPicker
             numberOfColorsToGenerate={1}
@@ -112,10 +114,9 @@ export const ColorPaletteStepList: React.FC = () => {
       <ColorPaletteStep
         title={colorTitle(
           <CircleWithFour className={styles.circleWithNumber} />,
-          "Pick neutral colors"
+          t(texts.steps.pickNeutralColors.title)
         )}
-        explanation="Pick the secondary, neutral color. Then move a little down and right for each darker color above. Do the opposite for the lighter colors
-            until you nearly reach the top and left with the last color. These colors are used 60% of the time."
+        explanation={t(texts.steps.pickNeutralColors.explanation)}
       >
         <ColorsPicker
           numberOfColorsToGenerate={7}
@@ -128,9 +129,9 @@ export const ColorPaletteStepList: React.FC = () => {
       <ColorPaletteStep
         title={colorTitle(
           <CircleWithFive className={styles.circleWithNumber} />,
-          "Preview design"
+          t(texts.steps.previewDesign.title)
         )}
-        explanation="This is an example on how a design could look. In the next tab you can view more combinations and adjust individual elements' colors by clicking on them."
+        explanation={t(texts.steps.previewDesign.explanation)}
       >
         <div className={styles.centerElement}>
           <ExampleWithButtons
@@ -141,7 +142,7 @@ export const ColorPaletteStepList: React.FC = () => {
             buttonsTextColor={primaryColors[0]}
             buttonsBackgroundColorUnselected={neutralColors[3]}
             buttonsTextColorUnselected={neutralColors[0]}
-            primaryButtonBackgroundColor={accentColor ?? "#FFFFFF"}
+            primaryButtonBackgroundColor={accentColor}
             primaryButtonTextColor={neutralColors[6]}
             headerBackgroundColor={primaryColors[0]}
             colors={[...primaryColors, ...neutralColors]}
