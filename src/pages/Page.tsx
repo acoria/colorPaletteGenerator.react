@@ -4,6 +4,7 @@ import { ReactComponent as ColorPaletteIcon } from "../assets/colorPalette.svg";
 import { Navbar } from "../components/navbar/Navbar";
 import { Routes } from "../routes/Routes";
 import styles from "./Page.module.scss";
+import { Help } from "../features/help/Help";
 
 export const Page: React.FC<{ children?: ReactNode }> = (props) => {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ export const Page: React.FC<{ children?: ReactNode }> = (props) => {
             { title: "Palette & Code", route: Routes.PALETTE_AND_CODE },
           ]}
         />
+        <Help className={styles.helpIcon}/>
       </div>
       <div className={styles.content}>
         <Outlet />

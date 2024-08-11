@@ -27,8 +27,8 @@ function App() {
   return (
     <div className="App">
       <AppContext.Provider
-        // value={context}
-        value={contextPrefilled}
+        value={context}
+        // value={contextPrefilled}
       >
         <RouterProvider router={AppRouter} />
       </AppContext.Provider>

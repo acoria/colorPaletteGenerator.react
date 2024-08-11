@@ -53,6 +53,7 @@ export const ColorPaletteStepList: React.FC = () => {
         </div>
         <div className={styles.orSection}>
           <div className={styles.orText}>OR</div>
+          <h4 className={styles.title}>Fill with existing colors</h4>
           <CodeToColor
             onNewColors={(colors) => {
               context.primaryColors.setValue([colors[0], colors[1], colors[2]]);
