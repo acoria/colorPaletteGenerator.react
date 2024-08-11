@@ -39,14 +39,37 @@
   fill: $primary;
 }
 
-.orSection{
+.orSection {
   position: relative;
   top: -2rem;
 }
 
 .orText {
+  position: relative;
   font-family: "Lexend";
   text-align: center;
+  font-size: large;
+  font-weight: 700;
+
+  &::before {
+    position: absolute;
+    z-index: -1;
+    bottom: calc(50% - 0.15rem);
+    left: calc(50% - 3.5rem);
+    width: 10%;
+    content: "";
+    border-bottom: 3px solid $primary;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    bottom: calc(50% - 0.15rem);
+    right: calc(50% - 3.5rem);
+    width: 10%;
+    content: "";
+    border-bottom: 3px solid $primary;
+  }
 }
 
 .centerElement {
@@ -55,7 +78,7 @@
   justify-content: center;
 }
 
-.primaryAndAccentColor{
+.primaryAndAccentColor {
   display: flex;
   flex-direction: column;
   row-gap: 1rem;
