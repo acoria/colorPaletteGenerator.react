@@ -1,0 +1,18 @@
+@import '../../colors.scss';
+
+.colorsPicker {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+}
+
+.deleteIcon {
+  fill: $middlegray;
+  align-self: end;
+  cursor: pointer;
+}
+
+.colorBars {
+  display: flex;
+  flex-direction: column;
+}

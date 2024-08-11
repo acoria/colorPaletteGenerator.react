@@ -1,7 +1,8 @@
 import { useCallback, useEffect, useState } from "react";
 import { ColorBar } from "../colorBar/ColorBar";
-import styles from "./ColorsPicker.module.css";
+import styles from "./ColorsPicker.module.scss";
 import { IColorsPickerProps } from "./IColorsPickerProps";
+import { ReactComponent as Delete } from "../../assets/delete.svg";
 
 /**
  * A component to pick a defined number of colors. Each consecutive color has its predecessor color as reference.
@@ -41,14 +42,15 @@ export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
     }
   };
 
+  const isLeadingBar = (index: number) =>
+    props.positionOfLeadingColor === index;
+
   const colorBars = colors.map((color, index) => (
     <ColorBar
       key={index}
       color={color}
-      isProminent={props.positionOfMainColor === index}
-      hintText={
-        props.positionOfMainColor === index ? props.hintTextForMainColor : ""
-      }
+      isProminent={isLeadingBar(index)}
+      hintText={isLeadingBar(index) ? props.hintTextForLeadingColor : ""}
       initialColorPickerColor={getColorOfPreviousBar(index)}
       onColorChange={(color) => {
         setColors((previous) => {
@@ -66,5 +68,17 @@ export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
     />
   ));
 
-  return <div className={styles.colorBars}>{colorBars}</div>;
+  return (
+    <div className={styles.colorsPicker}>
+      <Delete
+        className={styles.deleteIcon}
+        onClick={() => {
+          const colors = getInitialColors();
+          setColors(colors);
+          props.onColorsChange?.(colors);
+        }}
+      />
+      <div className={styles.colorBars}>{colorBars}</div>
+    </div>
+  );
 };
