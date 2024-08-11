@@ -46,6 +46,9 @@ export const ColorPicker: React.FC<IColorPickerProps> = (props) => {
       key={index}
       color={color}
       isProminent={props.positionOfMainColor === index}
+      hintText={
+        props.positionOfMainColor === index ? props.hintTextForMainColor : ""
+      }
       initialColorPickerColor={getColorOfPreviousBar(index)}
       onColorChange={(color) => {
         setColors((previous) => {

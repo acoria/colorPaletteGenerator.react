@@ -10,7 +10,7 @@ export const CodeToColor: React.FC<ICodeToColorProps> = (props) => {
   return (
     <>
       <p className={styles.explanation}>
-        Paste at least three primary colors and four neutral colors in whatever
+        Paste at least three primary colors, an accent color, and four neutral colors in whatever
         code format you like. The colors will be filled by the pasted order.
       </p>
       <div className={styles.codeAndButton}>

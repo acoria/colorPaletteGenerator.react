@@ -6,6 +6,9 @@ import { LimitedNeutralColorsSelector } from "../../services/LimitedNeutralColor
 import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
 
+/**
+ * A component to show the color palette based on the picked colors and the corresponding scss code.
+ */
 export const ColorPaletteResult: React.FC = () => {
   const prefixPrimary = "$color-primary";
   const prefixAccent = "$color-accent";

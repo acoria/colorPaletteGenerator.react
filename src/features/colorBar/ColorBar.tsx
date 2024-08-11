@@ -44,6 +44,7 @@ export const ColorBar: React.FC<IColorBarProps> = (props) => {
           <div>{`${saturation}% (best below 72%)`}</div>
         </div>
       )}
+
       <input
         className={style(
           styles.colorBar,
@@ -67,6 +68,9 @@ export const ColorBar: React.FC<IColorBarProps> = (props) => {
           }
         }}
       />
+      {props.hintText && (
+        <div className={styles.hintText}>{props.hintText}</div>
+      )}
     </div>
   );
 };

@@ -3,4 +3,5 @@ export interface IColorBarProps {
   initialColorPickerColor?: string;
   onColorChange?: (color: string) => void;
   isProminent?: boolean;
+  hintText?: string;
 }

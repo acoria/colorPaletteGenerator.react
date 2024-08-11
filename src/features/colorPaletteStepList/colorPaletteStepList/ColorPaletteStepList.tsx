@@ -56,19 +56,20 @@ export const ColorPaletteStepList: React.FC = () => {
           <CodeToColor
             onNewColors={(colors) => {
               context.primaryColors.setValue([colors[0], colors[1], colors[2]]);
-              if (colors.length === 7) {
+              context.accentColor.setValue(colors[3])
+              if (colors.length === 8) {
                 context.neutralColors.setValue([
-                  colors[3],
-                  "",
                   colors[4],
                   "",
                   colors[5],
                   "",
                   colors[6],
+                  "",
+                  colors[7],
                 ]);
               } else {
                 context.neutralColors.setValue(
-                  colors.filter((_, index) => index > 2)
+                  colors.filter((_, index) => index > 3)
                 );
               }
             }}
@@ -81,13 +82,14 @@ export const ColorPaletteStepList: React.FC = () => {
             <CircleWithTwo className={styles.circleWithNumber} />,
             "Pick primary colors"
           )}
-          explanation="Decide which color should be your primary color. Click on the first
-            element and use the picker to select this color. Then move left on the
-            x-axis towards a lighter color for each following element."
+          explanation="Decide which color should be your primary color. Click on the middle
+            element and use the picker to select this color. Then pick a darker color in the top, moving on the
+            x-axis and a lighter color for the bottom. This color should use up about 30%."
         >
           <ColorPicker
             numberOfColorsToGenerate={3}
             positionOfMainColor={1}
+            hintTextForMainColor="Primary"
             onColorsChange={context.primaryColors.setValue}
             allInitialColors={primaryColors}
           />
@@ -111,12 +113,13 @@ export const ColorPaletteStepList: React.FC = () => {
           <CircleWithFour className={styles.circleWithNumber} />,
           "Pick neutral colors"
         )}
-        explanation="Pick the second color, then move a little up and left for each color
-            until you nearly reach the top and left with the last color."
+        explanation="Pick the secondary, neutral color. Then move a little up and left for each color
+            until you nearly reach the top and left with the last color. These colors are used 60% of the time."
       >
         <ColorPicker
           numberOfColorsToGenerate={7}
           positionOfMainColor={2}
+          hintTextForMainColor="Secondary"
           onColorsChange={context.neutralColors.setValue}
           allInitialColors={neutralColors}
         />

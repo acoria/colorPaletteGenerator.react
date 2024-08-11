@@ -1,5 +1,7 @@
 @import '../../colors.scss';
 
+$hintColor: $middlegray;
+
 .colorBarWithWarning {
   position: relative;
   display: flex;
@@ -15,8 +17,17 @@
   cursor: pointer;
 }
 
-.prominent{
-  border: 2px solid $lightgray;
+.hintText {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  color: $hintColor;
+  //makes it "invisible" for clicking
+  pointer-events: none;
+}
+
+.prominent {
+  border: 2px solid $hintColor;
 }
 
 .saturationWarning {
