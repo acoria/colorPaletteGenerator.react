@@ -1,4 +1,4 @@
-@import '../../../colors.scss';
+@import '../../../styles/colors.scss';
 
 .colorPaletteStepList {
   display: grid;
@@ -24,13 +24,13 @@
 .circleWithNumber {
   width: 1.5rem;
   flex-shrink: 0;
-  stroke: $primary;
-  fill: $primary;
+  stroke: $color-primary;
+  fill: $color-primary;
 }
 
 .link {
   text-decoration: none;
-  color: $neutral;
+  color: $color-neutral;
   font-weight: 500;
 }
 
@@ -42,7 +42,7 @@
 
 .decisionIcon {
   width: 15rem;
-  fill: $primary;
+  fill: $color-primary;
   align-self: center;
 }
 
@@ -60,7 +60,7 @@
     left: calc(50% - 3.5rem);
     width: 10%;
     content: "";
-    border-bottom: 3px solid $primary;
+    border-bottom: 3px solid $color-primary;
   }
 
   &::after {
@@ -70,7 +70,7 @@
     right: calc(50% - 3.5rem);
     width: 10%;
     content: "";
-    border-bottom: 3px solid $primary;
+    border-bottom: 3px solid $color-primary;
   }
 }
 

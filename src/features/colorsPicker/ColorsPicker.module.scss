@@ -1,4 +1,4 @@
-@import '../../colors.scss';
+@import '../../styles/colors.scss';
 
 .colorsPicker {
   display: flex;
@@ -7,7 +7,7 @@
 }
 
 .deleteIcon {
-  fill: $middlegray;
+  fill: $color-middlegray;
   align-self: end;
   cursor: pointer;
 }

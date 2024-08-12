@@ -1,4 +1,4 @@
-@import '../colors.scss';
+@import '../styles/colors.scss';
 
 .header {
   display: grid;
@@ -19,15 +19,15 @@
   font-family: "Lexend";
   font-size: 1.4rem;
   margin: 0;
-  color: $primary;
+  color: $color-primary;
 }
 
 .colorPaletteIcon {
   position: relative;
   top: -0.1rem;
   width: 1.1rem;
-  fill: $primary;
-  stroke: $primary;
+  fill: $color-primary;
+  stroke: $color-primary;
 }
 
 .navbar {

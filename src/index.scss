@@ -1,4 +1,4 @@
-@import './colors.scss';
+@import './styles/colors.scss';
 
 * {
   box-sizing: border-box;
@@ -11,7 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: $primary;
+  color: $color-primary;
 }
 
 @font-face {

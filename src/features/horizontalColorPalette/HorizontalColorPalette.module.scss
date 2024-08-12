@@ -1,4 +1,4 @@
-@import "../../colors.scss";
+@import "../../styles/colors.scss";
 
 .generatedPalette {
   display: flex;
@@ -18,7 +18,7 @@
 }
 
 .visibilityIcon {
-  fill: $primary;
+  fill: $color-primary;
   cursor: pointer;
 }
 

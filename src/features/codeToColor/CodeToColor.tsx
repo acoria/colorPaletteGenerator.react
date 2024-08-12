@@ -28,7 +28,7 @@ export const CodeToColor: React.FC<ICodeToColorProps> = (props) => {
         <textarea
           className={styles.code}
           ref={hexColorsCode}
-          placeholder='e.g. &#10;$primary: #09233e;&#10;or&#10;#f77e80&#10;or&#10;useValue(["#DB8529", "#E4A562"])'
+          placeholder='e.g. &#10;$color-primary: #09233e;&#10;or&#10;#f77e80&#10;or&#10;useValue(["#DB8529", "#E4A562"])'
         />
       </div>
     </>
