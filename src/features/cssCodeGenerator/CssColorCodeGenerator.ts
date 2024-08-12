@@ -1,15 +1,23 @@
 class CssColorCodeGeneratorDefault {
   private suffixesForOne = [""];
-  private suffixesForThree = ["dark", "", "light"];
-  private suffixesForFour = ["dark", "", "light", "lighter"];
+  private suffixesForSeven = [
+    "darkest",
+    "darker",
+    "dark",
+    "",
+    "light",
+    "lighter",
+    "lightest",
+  ];
+  private suffixesForFive = ["darker", "dark", "", "light", "lighter"];
 
   private suffixes = new Map<number, string[]>();
 
   constructor() {
     this.suffixes
       .set(1, this.suffixesForOne)
-      .set(3, this.suffixesForThree)
-      .set(4, this.suffixesForFour);
+      .set(5, this.suffixesForFive)
+      .set(7, this.suffixesForSeven);
   }
 
   private buildSuffixesByLengthOfColors(colors: string[]): string[] {

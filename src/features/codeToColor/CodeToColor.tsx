@@ -3,15 +3,17 @@ import { HexColorsParser } from "../../services/HexColorsParser";
 import styles from "./CodeToColor.module.scss";
 import { ICodeToColorProps } from "./ICodeToColorProps";
 import { ReactComponent as CopyRight } from "../../assets/copyRight.svg";
+import { useTranslation } from "../../hooks/useTranslation/useTranslation";
+import { texts } from "../../hooks/useTranslation/texts";
 
 export const CodeToColor: React.FC<ICodeToColorProps> = (props) => {
   const hexColorsCode = useRef<HTMLTextAreaElement>(null);
+  const {t} = useTranslation()
 
   return (
     <>
       <p className={styles.explanation}>
-        Paste at least three primary colors, an accent color, and four neutral colors in whatever
-        code format you like. The colors will be filled by the pasted order.
+        {t(texts.codeToColor.explanation)}
       </p>
       <div className={styles.codeAndButton}>
         <CopyRight

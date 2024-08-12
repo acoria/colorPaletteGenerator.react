@@ -6,14 +6,14 @@ import { IHelpProps } from "./IHelpProps";
 import { style } from "../../utils/style";
 
 export const Help: React.FC<IHelpProps> = (props) => {
-  const helpPrimaryColors = ["#DB8529", "#E4A562", "#F2D5B5"];
+  const helpPrimaryColors = ["#B76B1F", "#DB8529", "#E4A562", "#F2D5B5", "#F5EBE0"];
   const helpNeutralColors = [
     "#133D67",
     "#285480",
-    "#1d5a9a",
-    "#3d76b8",
-    "#4588d3",
-    "#6ea2dd",
+    "#1D5A9A",
+    "#3D76B8",
+    "#4588D3",
+    "#6EA2DD",
     "#DFEBF7",
   ];
   const helpAccentColor = "#146733";

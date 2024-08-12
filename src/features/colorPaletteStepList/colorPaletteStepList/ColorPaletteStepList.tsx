@@ -54,27 +54,35 @@ export const ColorPaletteStepList: React.FC = () => {
           <Decision className={styles.decisionIcon} />
         </div>
         <div className={styles.orSection}>
-          <div className={styles.orText}>{t(texts.steps.chooseTwoColors.or)}</div>
+          <div className={styles.orText}>
+            {t(texts.steps.chooseTwoColors.or)}
+          </div>
           <h4 className={styles.title}>
             {t(texts.steps.chooseTwoColors.orTitle)}
           </h4>
           <CodeToColor
             onNewColors={(colors) => {
-              context.primaryColors.setValue([colors[0], colors[1], colors[2]]);
-              context.accentColor.setValue(colors[3]);
-              if (colors.length === 8) {
+              context.primaryColors.setValue([
+                colors[0],
+                colors[1],
+                colors[2],
+                colors[3],
+                colors[4],
+              ]);
+              context.accentColor.setValue(colors[5]);
+              if (colors.length === 10) {
                 context.neutralColors.setValue([
-                  colors[4],
-                  "",
-                  colors[5],
-                  "",
                   colors[6],
                   "",
                   colors[7],
+                  "",
+                  colors[8],
+                  "",
+                  colors[9],
                 ]);
               } else {
                 context.neutralColors.setValue(
-                  colors.filter((_, index) => index > 3)
+                  colors.filter((_, index) => index > 5)
                 );
               }
             }}
@@ -90,8 +98,8 @@ export const ColorPaletteStepList: React.FC = () => {
           explanation={t(texts.steps.pickPrimaryColor.explanation)}
         >
           <ColorsPicker
-            numberOfColorsToGenerate={3}
-            positionOfLeadingColor={1}
+            numberOfColorsToGenerate={5}
+            positionOfLeadingColor={2}
             hintTextForLeadingColor="Primary"
             onColorsChange={context.primaryColors.setValue}
             allInitialColors={primaryColors}
@@ -107,7 +115,7 @@ export const ColorPaletteStepList: React.FC = () => {
           <ColorsPicker
             numberOfColorsToGenerate={1}
             onColorsChange={(colors) => context.accentColor.setValue(colors[0])}
-            allInitialColors={accentColor ? [accentColor] : []}
+            allInitialColors={[accentColor]}
           />
         </ColorPaletteStep>
       </div>
@@ -139,12 +147,12 @@ export const ColorPaletteStepList: React.FC = () => {
             titleColor={neutralColors[1]}
             buttonsSectionTextColor={neutralColors[0]}
             buttonsBackgroundColor={neutralColors[0]}
-            buttonsTextColor={primaryColors[0]}
+            buttonsTextColor={primaryColors[2]}
             buttonsBackgroundColorUnselected={neutralColors[3]}
             buttonsTextColorUnselected={neutralColors[0]}
             primaryButtonBackgroundColor={accentColor}
             primaryButtonTextColor={neutralColors[6]}
-            headerBackgroundColor={primaryColors[0]}
+            headerBackgroundColor={primaryColors[2]}
             colors={[...primaryColors, ...neutralColors]}
             suppressExpanding
           />
