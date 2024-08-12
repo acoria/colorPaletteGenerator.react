@@ -8,7 +8,7 @@ import { ReactComponent as Delete } from "../../assets/delete.svg";
  * A component to pick a defined number of colors. Each consecutive color has its predecessor color as reference.
  */
 export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
-  const initialBarColor = "";
+  const initialBarColor = '';
   const getInitialColors = useCallback(
     (initialMainColor?: string, allInitialColors?: string[]) => {
       if (allInitialColors && allInitialColors.length !== 0) {
@@ -23,14 +23,18 @@ export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
         });
       }
     },
-    [props.numberOfColorsToGenerate, props.positionOfLeadingColor]
+    [
+      props.numberOfColorsToGenerate,
+      props.positionOfLeadingColor,
+      initialBarColor,
+    ]
   );
 
   useEffect(() => {
     setColors(getInitialColors(undefined, props.allInitialColors));
   }, [props.allInitialColors, getInitialColors]);
 
-  const [colors, setColors] = useState<string[]>(
+  const [colors, setColors] = useState<(string | undefined)[]>(
     getInitialColors(props.initialMainColor, props.allInitialColors)
   );
 
@@ -65,7 +69,9 @@ export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
           let colors = [];
           colors = [...previous];
           colors[index] = color;
-          props.onColorsChange?.(colors);
+          props.onColorsChange?.(
+            colors.map((color) => (color === undefined ? "" : color))
+          );
           return colors;
         });
       }}
@@ -79,7 +85,9 @@ export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
         onClick={() => {
           const colors = getInitialColors();
           setColors(colors);
-          props.onColorsChange?.(colors);
+          props.onColorsChange?.(
+            colors.map((color) => (color === undefined ? "" : color))
+          );
         }}
       />
       <div className={styles.colorBars}>{colorBars}</div>

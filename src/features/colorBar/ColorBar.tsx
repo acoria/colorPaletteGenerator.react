@@ -9,8 +9,7 @@ import { style } from "../../utils/style";
  */
 export const ColorBar: React.FC<IColorBarProps> = (props) => {
   //needs its own color state so that the color picker can be prefilled with a value
-  const [color, setColor] = useState(props.color);
-  const [pickerInitialized, setPickerInitialized] = useState(false);
+  const [color, setColor] = useState<string | undefined>(props.color);
   const [showSaturationWarning, setShowSaturationWarning] = useState(false);
   const [saturation, setSaturation] = useState<number>(0);
 
@@ -27,15 +26,10 @@ export const ColorBar: React.FC<IColorBarProps> = (props) => {
   useEffect(() => {
     setColor(props.color);
     checkSaturationOfColor(props.color ?? "");
-    if (props.color === "") {
-      //if the color was reset, the color picker needs initializing
-      //so that the color picker color can be set once again
-      setPickerInitialized(false);
-    }
   }, [props.color]);
 
   //set color to white, so the input is not initially black
-  const inputColor = color === "" ? "#FFFFFF" : color;
+  const inputColor = color === "" || color === undefined ? "#FFFFFF" : color;
 
   return (
     <div className={styles.colorBarWithWarning}>
@@ -59,13 +53,13 @@ export const ColorBar: React.FC<IColorBarProps> = (props) => {
         type="color"
         value={inputColor}
         onChange={(event) => {
-          props.onColorChange?.(event.target.value);
           setColor(event.target.value);
+          // setPickerInitialized(true);
+          props.onColorChange?.(event.target.value);
         }}
         onClick={() => {
-          if (!pickerInitialized && props.initialColorPickerColor) {
+          if (color === "" && props.initialColorPickerColor) {
             setColor(props.initialColorPickerColor);
-            setPickerInitialized(true);
           }
         }}
       />
