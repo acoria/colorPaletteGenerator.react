@@ -1,5 +1,24 @@
 {
     "appTitle": "Color Palette Generator",
+    "colorResult": {
+        "colorPaletteSimple": "Color palette",
+        "colorPaletteExtended": "Extended color palette",
+        "scssCodeSimple": "SCSS code",
+        "scssCodeExtended": "SCSS code extended"
+    },
+    "exampleWithButtons": {
+        "appTitle": "Example App",
+        "chipsGroupTitle": "Pick from some choices",
+        "chip1": "Something",
+        "chip2": "you",
+        "chip3": "can",
+        "chip4": "click on",
+        "chip5": "or",
+        "chip6": "something else",
+        "chip7": "you can also",
+        "chip8": "click on",
+        "callToActionButton": "Main action"
+    },
     "pages": {
         "colors": "Colors",
         "designExamples": "Design examples",

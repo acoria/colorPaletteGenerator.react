@@ -11,6 +11,8 @@ import {
 } from "react";
 import useOnClickOutside from "../../../hooks/useOnClickOutside";
 import { style } from "../../../utils/style";
+import { useTranslation } from "../../../hooks/useTranslation/useTranslation";
+import { texts } from "../../../hooks/useTranslation/texts";
 
 /**
  * A design example component with a header, buttons and some label text
@@ -19,6 +21,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
   props
 ) => {
   const [editMode, setEditMode] = useState(false);
+  const { t } = useTranslation();
   const [selectedEditColor, setSelectedEditColor] = useState("");
   const [backgroundColor, setBackgroundColor] = useState(props.backgroundColor);
   const [titleColor, setTitleColor] = useState(props.titleColor);
@@ -125,7 +128,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
       props.transformOriginHorizontal ?? "left"
     }`;
     return {
-      "transformOrigin": transformOrigin,
+      transformOrigin: transformOrigin,
     } as CSSProperties;
   };
 
@@ -171,7 +174,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
                 setSelectedColorToElement(event, setTitleColor)
               }
             >
-              Example App
+              {t(texts.exampleWithButtons.appTitle)}
             </div>
           </div>
           <div className={styles.buttonsSection}>
@@ -182,17 +185,17 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
                 setSelectedColorToElement(event, setButtonsSectionTextColor)
               }
             >
-              Pick from some choices
+              {t(texts.exampleWithButtons.chipsGroupTitle)}
             </div>
             <div className={styles.buttons}>
-              {selectedButton("Something")}
-              {selectedButton("you")}
-              {unselectedButton("can")}
-              {selectedButton("click on")}
-              {unselectedButton("or")}
-              {selectedButton("something else")}
-              {unselectedButton("you can also")}
-              {selectedButton("click on")}
+              {selectedButton(t(texts.exampleWithButtons.chip1))}
+              {selectedButton(t(texts.exampleWithButtons.chip2))}
+              {unselectedButton(t(texts.exampleWithButtons.chip3))}
+              {selectedButton(t(texts.exampleWithButtons.chip4))}
+              {unselectedButton(t(texts.exampleWithButtons.chip5))}
+              {selectedButton(t(texts.exampleWithButtons.chip6))}
+              {unselectedButton(t(texts.exampleWithButtons.chip7))}
+              {selectedButton(t(texts.exampleWithButtons.chip8))}
             </div>
           </div>
           <div
@@ -211,7 +214,7 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
                 setSelectedColorToElement(event, setPrimaryButtonTextColor);
               }}
             >
-              Main action
+              {t(texts.exampleWithButtons.callToActionButton)}
             </div>
           </div>
         </div>

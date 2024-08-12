@@ -5,11 +5,14 @@ import { AppContext } from "../../context/AppContext";
 import { LimitedNeutralColorsSelector } from "../../services/LimitedNeutralColorsSelector";
 import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
+import { useTranslation } from "../../hooks/useTranslation/useTranslation";
+import { texts } from "../../hooks/useTranslation/texts";
 
 /**
  * A component to show the color palette based on the picked colors and the corresponding scss code.
  */
 export const ColorResult: React.FC = () => {
+  const { t } = useTranslation();
   const prefixPrimary = "$color-primary";
   const prefixAccent = "$color-accent";
   const prefixSecondary = "$color-secondary";
@@ -33,10 +36,13 @@ export const ColorResult: React.FC = () => {
 
   return (
     <div className={styles.colorResult}>
-      <HorizontalColorPalette colors={simpleColors} title={"Color palette"} />
+      <HorizontalColorPalette
+        colors={simpleColors}
+        title={t(texts.colorResult.colorPaletteSimple)}
+      />
       <HorizontalColorPalette
         colors={extendedColors}
-        title={"Extended color palette"}
+        title={t(texts.colorResult.colorPaletteExtended)}
       />
       <div className={styles.codeSnippets}>
         <CssCode
@@ -54,7 +60,7 @@ export const ColorResult: React.FC = () => {
               prefixSecondary
             ),
           ]}
-          title="SCSS code"
+          title={t(texts.colorResult.scssCodeSimple)}
         />
         <CssCode
           code={[
@@ -71,7 +77,7 @@ export const ColorResult: React.FC = () => {
               prefixSecondary
             ),
           ]}
-          title="SCSS code extended"
+          title={t(texts.colorResult.scssCodeExtended)}
         />
       </div>
     </div>
