@@ -34,7 +34,8 @@ export const ColorBar: React.FC<IColorBarProps> = (props) => {
     }
   }, [props.color]);
 
-  const testColor = color === "" ? "#FFFFFF" : color;
+  //set color to white, so the input is not initially black
+  const inputColor = color === "" ? "#FFFFFF" : color;
 
   return (
     <div className={styles.colorBarWithWarning}>
@@ -56,7 +57,7 @@ export const ColorBar: React.FC<IColorBarProps> = (props) => {
           backgroundColor: "transparent",
         }}
         type="color"
-        value={testColor}
+        value={inputColor}
         onChange={(event) => {
           props.onColorChange?.(event.target.value);
           setColor(event.target.value);

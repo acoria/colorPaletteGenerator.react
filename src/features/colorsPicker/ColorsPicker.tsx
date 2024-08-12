@@ -15,7 +15,7 @@ export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
         return allInitialColors;
       } else {
         return [...Array(props.numberOfColorsToGenerate)].map((_, index) => {
-          if (index === 0) {
+          if (index === props.positionOfLeadingColor) {
             return initialMainColor ?? initialBarColor;
           } else {
             return initialBarColor;
@@ -23,7 +23,7 @@ export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
         });
       }
     },
-    [props.numberOfColorsToGenerate]
+    [props.numberOfColorsToGenerate, props.positionOfLeadingColor]
   );
 
   useEffect(() => {
@@ -34,9 +34,17 @@ export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
     getInitialColors(props.initialMainColor, props.allInitialColors)
   );
 
-  const getColorOfPreviousBar = (currentIndex: number) => {
-    if (currentIndex === 0) {
-      return colors[0];
+  /**
+   * Only set a color, if there is no color set yet. Otherwise open it with the color that is already set.
+   * If the bar is above the leading column, take the value of the bar below.
+   * If the bar is below the leading column or the leading column, take the value of the bar above.
+   * If the bar is the leading column, open with the value from above.
+   */
+  const getColorOfAdjacentBar = (currentIndex: number) => {
+    if (!props.positionOfLeadingColor) return;
+
+    if (currentIndex < props.positionOfLeadingColor) {
+      return colors[currentIndex + 1];
     } else {
       return colors[currentIndex - 1];
     }
@@ -51,16 +59,12 @@ export const ColorsPicker: React.FC<IColorsPickerProps> = (props) => {
       color={color}
       isProminent={isLeadingBar(index)}
       hintText={isLeadingBar(index) ? props.hintTextForLeadingColor : ""}
-      initialColorPickerColor={getColorOfPreviousBar(index)}
+      initialColorPickerColor={getColorOfAdjacentBar(index)}
       onColorChange={(color) => {
         setColors((previous) => {
           let colors = [];
-          if (index === 0) {
-            colors = getInitialColors(color);
-          } else {
-            colors = [...previous];
-            colors[index] = color;
-          }
+          colors = [...previous];
+          colors[index] = color;
           props.onColorsChange?.(colors);
           return colors;
         });
