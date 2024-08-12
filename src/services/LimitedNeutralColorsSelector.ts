@@ -10,6 +10,7 @@ export class LimitedNeutralColorsSelector {
           neutralColors[2],
           neutralColors[4],
           neutralColors[6],
+          neutralColors[8],
         ]
       : [];
   }

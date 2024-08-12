@@ -1,5 +1,13 @@
 class CssColorCodeGeneratorDefault {
   private suffixesForOne = [""];
+  private suffixesForSix = [
+    "darker",
+    "dark",
+    "",
+    "light",
+    "lighter",
+    "lightest",
+  ];
   private suffixesForSeven = [
     "darkest",
     "darker",
@@ -17,6 +25,7 @@ class CssColorCodeGeneratorDefault {
     this.suffixes
       .set(1, this.suffixesForOne)
       .set(5, this.suffixesForFive)
+      .set(6, this.suffixesForSix)
       .set(7, this.suffixesForSeven);
   }
 

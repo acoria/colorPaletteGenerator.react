@@ -34,7 +34,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
       <div className={styles.designExamples}>
         <div className={styles.designExamplesRow}>
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[8]}
@@ -46,7 +46,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             colors={colors}
           />
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[8]}
@@ -54,27 +54,27 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             buttonsBackgroundColorUnselected={colors[3]}
             buttonsTextColorUnselected={colors[8]}
             primaryButtonBackgroundColor={colors[5]}
-            primaryButtonTextColor={colors[11]}
+            primaryButtonTextColor={colors[12]}
             colors={colors}
           />
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
+            titleColor={colors[6]}
+            buttonsSectionTextColor={colors[6]}
+            buttonsBackgroundColor={colors[8]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[9]}
+            buttonsTextColorUnselected={colors[12]}
+            primaryButtonBackgroundColor={colors[5]}
+            primaryButtonTextColor={colors[12]}
+            colors={colors}
+          />
+          <ExampleWithButtons
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[8]}
             buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[9]}
-            buttonsTextColorUnselected={colors[11]}
-            primaryButtonBackgroundColor={colors[5]}
-            primaryButtonTextColor={colors[11]}
-            colors={colors}
-          />
-          <ExampleWithButtons
-            backgroundColor={colors[10]}
-            titleColor={colors[6]}
-            buttonsSectionTextColor={colors[6]}
-            buttonsBackgroundColor={colors[8]}
-            buttonsTextColor={colors[10]}
             buttonsBackgroundColorUnselected={colors[3]}
             buttonsTextColorUnselected={colors[8]}
             primaryButtonBackgroundColor={colors[5]}
@@ -82,7 +82,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             colors={colors}
           />
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[2]}
@@ -95,12 +95,12 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             transformOriginHorizontal={TransformOriginHorizontal.RIGHT}
           />
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[9]}
             buttonsBackgroundColor={colors[9]}
-            buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[11]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[12]}
             buttonsTextColorUnselected={colors[6]}
             primaryButtonBackgroundColor={colors[1]}
             primaryButtonTextColor={colors[6]}
@@ -110,7 +110,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
         </div>
         <div className={styles.designExamplesRow}>
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[8]}
@@ -122,7 +122,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             colors={colors}
           />
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[8]}
@@ -130,27 +130,27 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             buttonsBackgroundColorUnselected={colors[3]}
             buttonsTextColorUnselected={colors[8]}
             primaryButtonBackgroundColor={colors[6]}
-            primaryButtonTextColor={colors[11]}
+            primaryButtonTextColor={colors[12]}
             colors={colors}
           />
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
+            titleColor={colors[6]}
+            buttonsSectionTextColor={colors[6]}
+            buttonsBackgroundColor={colors[8]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[9]}
+            buttonsTextColorUnselected={colors[12]}
+            primaryButtonBackgroundColor={colors[6]}
+            primaryButtonTextColor={colors[12]}
+            colors={colors}
+          />
+          <ExampleWithButtons
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[8]}
             buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[9]}
-            buttonsTextColorUnselected={colors[11]}
-            primaryButtonBackgroundColor={colors[6]}
-            primaryButtonTextColor={colors[11]}
-            colors={colors}
-          />
-          <ExampleWithButtons
-            backgroundColor={colors[10]}
-            titleColor={colors[6]}
-            buttonsSectionTextColor={colors[6]}
-            buttonsBackgroundColor={colors[8]}
-            buttonsTextColor={colors[10]}
             buttonsBackgroundColorUnselected={colors[3]}
             buttonsTextColorUnselected={colors[8]}
             primaryButtonBackgroundColor={colors[1]}
@@ -158,7 +158,7 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             colors={colors}
           />
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[2]}
@@ -171,15 +171,91 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             transformOriginHorizontal={TransformOriginHorizontal.RIGHT}
           />
           <ExampleWithButtons
-            backgroundColor={colors[10]}
+            backgroundColor={colors[11]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[9]}
             buttonsBackgroundColor={colors[9]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[12]}
+            buttonsTextColorUnselected={colors[6]}
+            primaryButtonBackgroundColor={colors[1]}
+            primaryButtonTextColor={colors[6]}
+            colors={colors}
+            transformOriginHorizontal={TransformOriginHorizontal.RIGHT}
+          />
+        </div>
+        <div className={styles.designExamplesRow}>
+          <ExampleWithButtons
+            backgroundColor={colors[4]}
+            titleColor={colors[6]}
+            buttonsSectionTextColor={colors[6]}
+            buttonsBackgroundColor={colors[6]}
             buttonsTextColor={colors[11]}
             buttonsBackgroundColorUnselected={colors[11]}
             buttonsTextColorUnselected={colors[6]}
             primaryButtonBackgroundColor={colors[1]}
             primaryButtonTextColor={colors[6]}
+            colors={colors}
+          />
+          <ExampleWithButtons
+            backgroundColor={colors[4]}
+            titleColor={colors[6]}
+            buttonsSectionTextColor={colors[6]}
+            buttonsBackgroundColor={colors[6]}
+            buttonsTextColor={colors[11]}
+            buttonsBackgroundColorUnselected={colors[11]}
+            buttonsTextColorUnselected={colors[6]}
+            primaryButtonBackgroundColor={colors[1]}
+            primaryButtonTextColor={colors[11]}
+            colors={colors}
+          />
+          <ExampleWithButtons
+            backgroundColor={colors[4]}
+            titleColor={colors[6]}
+            buttonsSectionTextColor={colors[6]}
+            buttonsBackgroundColor={colors[6]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[12]}
+            buttonsTextColorUnselected={colors[6]}
+            primaryButtonBackgroundColor={colors[1]}
+            primaryButtonTextColor={colors[12]}
+            colors={colors}
+          />
+          <ExampleWithButtons
+            backgroundColor={colors[4]}
+            titleColor={colors[8]}
+            buttonsSectionTextColor={colors[8]}
+            buttonsBackgroundColor={colors[8]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[12]}
+            buttonsTextColorUnselected={colors[6]}
+            primaryButtonBackgroundColor={colors[1]}
+            primaryButtonTextColor={colors[12]}
+            colors={colors}
+          />
+          <ExampleWithButtons
+            backgroundColor={colors[4]}
+            titleColor={colors[8]}
+            buttonsSectionTextColor={colors[8]}
+            buttonsBackgroundColor={colors[8]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[12]}
+            buttonsTextColorUnselected={colors[6]}
+            primaryButtonBackgroundColor={colors[8]}
+            primaryButtonTextColor={colors[12]}
+            colors={colors}
+            transformOriginHorizontal={TransformOriginHorizontal.RIGHT}
+          />
+          <ExampleWithButtons
+            backgroundColor={colors[4]}
+            titleColor={colors[8]}
+            buttonsSectionTextColor={colors[1]}
+            buttonsBackgroundColor={colors[1]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[2]}
+            buttonsTextColorUnselected={colors[6]}
+            primaryButtonBackgroundColor={colors[8]}
+            primaryButtonTextColor={colors[12]}
             colors={colors}
             transformOriginHorizontal={TransformOriginHorizontal.RIGHT}
           />
@@ -190,85 +266,9 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[6]}
-            buttonsTextColor={colors[10]}
-            buttonsBackgroundColorUnselected={colors[10]}
-            buttonsTextColorUnselected={colors[6]}
-            primaryButtonBackgroundColor={colors[1]}
-            primaryButtonTextColor={colors[6]}
-            colors={colors}
-          />
-          <ExampleWithButtons
-            backgroundColor={colors[3]}
-            titleColor={colors[6]}
-            buttonsSectionTextColor={colors[6]}
-            buttonsBackgroundColor={colors[6]}
-            buttonsTextColor={colors[10]}
-            buttonsBackgroundColorUnselected={colors[10]}
-            buttonsTextColorUnselected={colors[6]}
-            primaryButtonBackgroundColor={colors[1]}
-            primaryButtonTextColor={colors[10]}
-            colors={colors}
-          />
-          <ExampleWithButtons
-            backgroundColor={colors[3]}
-            titleColor={colors[6]}
-            buttonsSectionTextColor={colors[6]}
-            buttonsBackgroundColor={colors[6]}
-            buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[11]}
-            buttonsTextColorUnselected={colors[6]}
-            primaryButtonBackgroundColor={colors[1]}
-            primaryButtonTextColor={colors[11]}
-            colors={colors}
-          />
-          <ExampleWithButtons
-            backgroundColor={colors[3]}
-            titleColor={colors[8]}
-            buttonsSectionTextColor={colors[8]}
-            buttonsBackgroundColor={colors[8]}
-            buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[11]}
-            buttonsTextColorUnselected={colors[6]}
-            primaryButtonBackgroundColor={colors[1]}
-            primaryButtonTextColor={colors[11]}
-            colors={colors}
-          />
-          <ExampleWithButtons
-            backgroundColor={colors[3]}
-            titleColor={colors[8]}
-            buttonsSectionTextColor={colors[8]}
-            buttonsBackgroundColor={colors[8]}
-            buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[11]}
-            buttonsTextColorUnselected={colors[6]}
-            primaryButtonBackgroundColor={colors[8]}
-            primaryButtonTextColor={colors[11]}
-            colors={colors}
-            transformOriginHorizontal={TransformOriginHorizontal.RIGHT}
-          />
-          <ExampleWithButtons
-            backgroundColor={colors[3]}
-            titleColor={colors[8]}
-            buttonsSectionTextColor={colors[1]}
-            buttonsBackgroundColor={colors[1]}
-            buttonsTextColor={colors[11]}
+            buttonsTextColor={colors[12]}
             buttonsBackgroundColorUnselected={colors[2]}
-            buttonsTextColorUnselected={colors[6]}
-            primaryButtonBackgroundColor={colors[8]}
-            primaryButtonTextColor={colors[11]}
-            colors={colors}
-            transformOriginHorizontal={TransformOriginHorizontal.RIGHT}
-          />
-        </div>
-        <div className={styles.designExamplesRow}>
-          <ExampleWithButtons
-            backgroundColor={colors[3]}
-            titleColor={colors[6]}
-            buttonsSectionTextColor={colors[6]}
-            buttonsBackgroundColor={colors[6]}
-            buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[2]}
-            buttonsTextColorUnselected={colors[11]}
+            buttonsTextColorUnselected={colors[12]}
             primaryButtonBackgroundColor={colors[1]}
             primaryButtonTextColor={colors[6]}
             colors={colors}
@@ -278,11 +278,11 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[1]}
             buttonsBackgroundColor={colors[1]}
-            buttonsTextColor={colors[11]}
+            buttonsTextColor={colors[12]}
             buttonsBackgroundColorUnselected={colors[2]}
             buttonsTextColorUnselected={colors[6]}
             primaryButtonBackgroundColor={colors[6]}
-            primaryButtonTextColor={colors[11]}
+            primaryButtonTextColor={colors[12]}
             colors={colors}
           />
           <ExampleWithButtons
@@ -290,8 +290,8 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
             titleColor={colors[2]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[6]}
-            buttonsTextColor={colors[10]}
-            buttonsBackgroundColorUnselected={colors[10]}
+            buttonsTextColor={colors[11]}
+            buttonsBackgroundColorUnselected={colors[11]}
             buttonsTextColorUnselected={colors[6]}
             primaryButtonBackgroundColor={colors[1]}
             primaryButtonTextColor={colors[6]}
@@ -302,51 +302,51 @@ export const DesignExamples: React.FC<IDesignExampleProps> = (props) => {
         <div className={styles.designExamplesRow}>
           {/* white background */}
           <ExampleWithButtons
-            backgroundColor={colors[11]}
+            backgroundColor={colors[12]}
             titleColor={colors[9]}
             buttonsSectionTextColor={colors[9]}
             buttonsBackgroundColor={colors[9]}
-            buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[10]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[11]}
             buttonsTextColorUnselected={colors[6]}
             primaryButtonBackgroundColor={colors[1]}
             primaryButtonTextColor={colors[6]}
             colors={colors}
           />
           <ExampleWithButtons
-            backgroundColor={colors[11]}
+            backgroundColor={colors[12]}
             titleColor={colors[6]}
             buttonsSectionTextColor={colors[6]}
             buttonsBackgroundColor={colors[6]}
-            buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[10]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[11]}
             buttonsTextColorUnselected={colors[6]}
             primaryButtonBackgroundColor={colors[1]}
+            primaryButtonTextColor={colors[13]}
+            colors={colors}
+          />
+          <ExampleWithButtons
+            backgroundColor={colors[12]}
+            titleColor={colors[1]}
+            buttonsSectionTextColor={colors[1]}
+            buttonsBackgroundColor={colors[1]}
+            buttonsTextColor={colors[12]}
+            buttonsBackgroundColorUnselected={colors[3]}
+            buttonsTextColorUnselected={colors[6]}
+            primaryButtonBackgroundColor={colors[6]}
             primaryButtonTextColor={colors[12]}
             colors={colors}
           />
           <ExampleWithButtons
-            backgroundColor={colors[11]}
-            titleColor={colors[1]}
-            buttonsSectionTextColor={colors[1]}
+            backgroundColor={colors[12]}
+            titleColor={colors[13]}
+            buttonsSectionTextColor={colors[13]}
             buttonsBackgroundColor={colors[1]}
-            buttonsTextColor={colors[11]}
+            buttonsTextColor={colors[12]}
             buttonsBackgroundColorUnselected={colors[3]}
-            buttonsTextColorUnselected={colors[6]}
+            buttonsTextColorUnselected={colors[13]}
             primaryButtonBackgroundColor={colors[6]}
-            primaryButtonTextColor={colors[11]}
-            colors={colors}
-          />
-          <ExampleWithButtons
-            backgroundColor={colors[11]}
-            titleColor={colors[12]}
-            buttonsSectionTextColor={colors[12]}
-            buttonsBackgroundColor={colors[1]}
-            buttonsTextColor={colors[11]}
-            buttonsBackgroundColorUnselected={colors[3]}
-            buttonsTextColorUnselected={colors[12]}
-            primaryButtonBackgroundColor={colors[6]}
-            primaryButtonTextColor={colors[11]}
+            primaryButtonTextColor={colors[12]}
             colors={colors}
           />
         </div>

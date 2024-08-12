@@ -1,7 +1,7 @@
 {
     "appTitle": "Color Palette Generator",
     "codeToColor": {
-        "explanation": "Paste five primary colors, an accent color, and at least four neutral colors in whatever code format you like. The colors will be filled by the pasted order."
+        "explanation": "Paste five primary colors, an accent color, and at least five neutral colors in whatever code format you like. The colors will be filled by the pasted order."
     },
     "colorResult": {
         "colorPaletteSimple": "Color palette",

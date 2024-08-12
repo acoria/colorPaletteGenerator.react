@@ -51,42 +51,44 @@ export const ColorPaletteStepList: React.FC = () => {
         }
       >
         <div className={styles.chooseTwoColorsContent}>
-          {/* <div className={styles.centerElement}> */}
-            <Decision className={styles.decisionIcon} />
-          {/* </div> */}
-            <div className={styles.orText}>
-              {t(texts.steps.chooseTwoColors.or)}
-            </div>
-            <h4 className={styles.title}>
-              {t(texts.steps.chooseTwoColors.orTitle)}
-            </h4>
-            <CodeToColor
-              onNewColors={(colors) => {
-                context.primaryColors.setValue([
-                  colors[0],
-                  colors[1],
-                  colors[2],
-                  colors[3],
-                  colors[4],
+          <Decision className={styles.decisionIcon} />
+          <div className={styles.orText}>
+            {t(texts.steps.chooseTwoColors.or)}
+          </div>
+          <h4 className={styles.title}>
+            {t(texts.steps.chooseTwoColors.orTitle)}
+          </h4>
+          <CodeToColor
+            onNewColors={(colors) => {
+              context.primaryColors.setValue([
+                colors[0],
+                colors[1],
+                colors[2],
+                colors[3],
+                colors[4],
+              ]);
+              context.accentColor.setValue(colors[5]);
+              if (colors.length === 12) {
+                context.neutralColors.setValue([
+                  colors[6],
+                  colors[7],
+                  colors[8],
+                  "",
+                  colors[9],
+                  "",
+                  colors[10],
+                  "",
+                  colors[11],
                 ]);
-                context.accentColor.setValue(colors[5]);
-                if (colors.length === 10) {
-                  context.neutralColors.setValue([
-                    colors[6],
-                    "",
-                    colors[7],
-                    "",
-                    colors[8],
-                    "",
-                    colors[9],
-                  ]);
-                } else {
-                  context.neutralColors.setValue(
-                    colors.filter((_, index) => index > 5)
-                  );
-                }
-              }}
-            />
+              } else {
+                const emptyFieldsCount = 15 - colors.length;
+                context.neutralColors.setValue([
+                  ...colors.filter((_, index) => index > 5),
+                  ...Array(emptyFieldsCount).map(() => ""),
+                ]);
+              }
+            }}
+          />
         </div>
       </ColorPaletteStep>
       <ColorPaletteStep
@@ -133,7 +135,7 @@ export const ColorPaletteStepList: React.FC = () => {
         explanation={t(texts.steps.pickNeutralColors.explanation)}
       >
         <ColorsPicker
-          numberOfColorsToGenerate={7}
+          numberOfColorsToGenerate={9}
           positionOfLeadingColor={2}
           hintTextForLeadingColor={t(
             texts.steps.pickNeutralColors.hintTextForColorBar
@@ -151,7 +153,7 @@ export const ColorPaletteStepList: React.FC = () => {
       >
         <div className={styles.centerElement}>
           <ExampleWithButtons
-            backgroundColor={neutralColors[6]}
+            backgroundColor={neutralColors[8]}
             titleColor={neutralColors[1]}
             buttonsSectionTextColor={neutralColors[0]}
             buttonsBackgroundColor={neutralColors[0]}
@@ -159,7 +161,7 @@ export const ColorPaletteStepList: React.FC = () => {
             buttonsBackgroundColorUnselected={neutralColors[3]}
             buttonsTextColorUnselected={neutralColors[0]}
             primaryButtonBackgroundColor={accentColor}
-            primaryButtonTextColor={neutralColors[6]}
+            primaryButtonTextColor={neutralColors[8]}
             headerBackgroundColor={primaryColors[2]}
             colors={[...primaryColors, ...neutralColors]}
             suppressExpanding
