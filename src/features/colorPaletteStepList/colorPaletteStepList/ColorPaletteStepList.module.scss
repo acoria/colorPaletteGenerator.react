@@ -5,7 +5,7 @@
   grid-template-columns: repeat(4, 22rem);
   grid-template-rows: repeat(3, auto);
   grid-auto-flow: column;
-  column-gap: 5rem;
+  column-gap: 6.5rem;
 }
 
 .colorTitle {
@@ -96,5 +96,5 @@
 
 .exampleWithButtons {
   //padding to make app appear as high as actual edge of color bars and not the button above
-  padding-top: 1.2rem;
+  padding-top: 1.9rem;
 }
