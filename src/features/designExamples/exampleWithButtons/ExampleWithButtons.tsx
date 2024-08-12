@@ -133,7 +133,10 @@ export const ExampleWithButtons: React.FC<IExampleWithButtonProps> = (
   };
 
   return (
-    <div className={styles.exampleWithButtons} ref={ref}>
+    <div
+      className={style(styles.exampleWithButtons, props.className)}
+      ref={ref}
+    >
       <div
         className={`${editMode && styles.appWithEditMode}`}
         style={transformOriginStyle()}

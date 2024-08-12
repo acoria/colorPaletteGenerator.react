@@ -1,9 +1,11 @@
 @import '../../../colors.scss';
 
 .colorPaletteStepList {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: repeat(4, 22rem);
+  grid-template-rows: repeat(3, auto);
+  grid-auto-flow: column;
+  column-gap: 5rem;
 }
 
 .colorTitle {
@@ -32,16 +34,16 @@
   font-weight: 500;
 }
 
-.decisionIcon {
-  position: relative;
-  top: -1.5rem;
-  width: 59%;
-  fill: $primary;
+.chooseTwoColorsContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
-.orSection {
-  position: relative;
-  top: -2rem;
+.decisionIcon {
+  width: 15rem;
+  fill: $primary;
+  align-self: center;
 }
 
 .orText {
@@ -85,8 +87,14 @@
   justify-content: center;
 }
 
-.primaryAndAccentColor {
+.primaryAndAccentColorsPicker {
   display: flex;
   flex-direction: column;
-  row-gap: 1rem;
+  justify-content: space-between;
+  row-gap: 2rem;
+}
+
+.exampleWithButtons {
+  //padding to make app appear as high as actual edge of color bars and not the button above
+  padding-top: 1.2rem;
 }

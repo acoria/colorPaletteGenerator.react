@@ -31,21 +31,23 @@
         "chooseTwoColors": {
             "title": "Choose two colors",
             "explanationPartOne": "Go to ",
-            "explanationPartTwo": " or take any other color palette and pick two colors you like from the same color palette.",
+            "explanationPartTwo": " or take any other color palette and pick three colors you like from the same color palette or use a picture which represents the mood for your app and pick three colors from there. ",
             "or": "OR",
             "orTitle": "Fill with existing colors"
         },
         "pickPrimaryColor": {
             "title": "Pick primary colors",
-            "explanation": "Decide which color should be your primary color. Click on the middle element and use the picker to select this color. Then pick a darker color in the top, moving on the x-axis and a lighter color for the bottom. This color should use up about 30%."
+            "explanation": "Decide which color should be your primary color. Click on the middle element and use the picker to select this color. Then pick a darker color in the top, moving on the x-axis and a lighter color for the bottom. This color should use up about 30%.",
+            "hintTextForColorBar": "Primary"
         },
         "pickAccentColor": {
             "title": "Pick accent color",
             "explanation": "Decide which color should be your accent color. This color is only used 10% of the time to draw attention, e.g. for a call to action button."
         },
         "pickNeutralColors": {
-            "title": "Pick neutral colors",
-            "explanation": "Pick the secondary, neutral color. Then move a little down and right for each darker color above. Do the opposite for the lighter colors until you nearly reach the top and left with the last color. These colors are used 60% of the time."
+            "title": "Pick secondary colors",
+            "explanation": "Pick the secondary, neutral color. Then move a little down and right for each darker color above. Do the opposite for the lighter colors until you nearly reach the top and left with the last color. These colors are used 60% of the time.",
+            "hintTextForColorBar": "Secondary"
         },
         "previewDesign": {
             "title": "Preview design",

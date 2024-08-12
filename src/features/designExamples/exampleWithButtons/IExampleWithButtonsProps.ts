@@ -19,4 +19,5 @@ export interface IExampleWithButtonProps {
   transformOriginVertical?: TransformOriginVertical;
   /** Which direction to transform from when growing on click */
   transformOriginHorizontal?: TransformOriginHorizontal;
+  className?: string;
 }

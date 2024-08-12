@@ -2,7 +2,6 @@
 @import "../../global.scss";
 
 .explanation {
-    @extend .explanatoryParagraph;
     height: auto;
 }
 
@@ -12,7 +11,8 @@
 
 .code {
     //double the height of a color bar
-    height: 5.75rem;
+    height: 7rem;
+    // height: 5.75rem;
     width: $columnWidth;
 }
 
