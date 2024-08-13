@@ -23,13 +23,21 @@ Verbesserungen aus Design-Kurs:
 #Sättigung mit anzeigen (>82%?)
 #für Icon bezahlen
 
-bug: add colors from:
-$primary: #09233e;
-$primary_accent: #31557c;
-$primary_light: #699ace;
-$neutral_dark: #d74346;
-$neutral: #f77e80;
-$neutral_accent: #febebf;
-$neutral_light: #fff0f0;
-$gray: #5e646b;
-$lightgray: #e3e5e8;
+#show example function -> swaps the existing colors with the predefined ones
+#color palette -> hide code
+#use useTranslation
+#useTranslation for examples and scss
+#correct color usage (color-primary) and move to styles
+#use flexbox for all columns
+#add two more primary dark and light colors
+#add reset button
+#adjust logic how colors are prepicked, remove reset of first color
+#add title for OR "Fill with existing colors"
+#align navbar in middle
+#ColorPaletteStepList -> in 4 Schritte unterteilen?
+#saturation message for secondary does no longer fit on my screen
+#add 2 more help colors
+bug: copying scss code on raspberry does not work
+write "darker"/"lighter" with arrows next to color bars
+useTranslation for link
+switch from "" to undefined for empty colors

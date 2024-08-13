@@ -6,16 +6,25 @@ import { IHelpProps } from "./IHelpProps";
 import { style } from "../../utils/style";
 
 export const Help: React.FC<IHelpProps> = (props) => {
-  const helpPrimaryColors = ["#B76B1F", "#DB8529", "#E4A562", "#F2D5B5", "#F5EBE0"];
-  const helpNeutralColors = [
-    "#133D67",
-    "#285480",
-    "#1D5A9A",
-    "#3D76B8",
-    "#4588D3",
-    "#6EA2DD",
-    "#DFEBF7",
+  const helpPrimaryColors = [
+    "#b76b1f",
+    "#db8529",
+    "#e4a562",
+    "#f2d5b5",
+    "#f5ebe0",
   ];
+  const helpNeutralColors = [
+    "#153d66",
+    "#2a547f",
+    "#205a99",
+    "#3d7bc7",
+    "#518dd6",
+    "#73a6e8",
+    "#94b9e6",
+    "#cddff3",
+    "#edeff3",
+  ];
+
   const helpAccentColor = "#146733";
   const context = useContext(AppContext);
   const [memoPrimaryColors, setMemoPrimaryColors] = useState<string[]>(
