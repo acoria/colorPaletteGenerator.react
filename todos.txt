@@ -37,8 +37,12 @@ Verbesserungen aus Design-Kurs:
 #ColorPaletteStepList -> in 4 Schritte unterteilen?
 #saturation message for secondary does no longer fit on my screen
 #add 2 more help colors
-bug: copying scss code on raspberry does not work
+#useTranslation for link
+bug: copying scss code on raspberry does not work -> blocked if not https
+    could be replaced for now with 
+    var copyText = document.getElementById("text-to-copy");
+    copyText.select();
+    document.execCommand("copy");
 write "darker"/"lighter" with arrows next to color bars
-useTranslation for link
 switch from "" to undefined for empty colors
 add examples for usage of lighter colors

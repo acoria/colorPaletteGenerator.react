@@ -38,16 +38,18 @@ export const ColorPaletteStepList: React.FC = () => {
         )}
         explanation={
           <>
-            {t(texts.steps.chooseTwoColors.explanationPartOne)}
-            <a
-              href="https://coolors.co/palettes"
-              target="_blank"
-              rel="noreferrer"
-              className={styles.link}
-            >
-              Coolors.co
-            </a>
-            {t(texts.steps.chooseTwoColors.explanationPartTwo)}
+            {t(texts.steps.chooseTwoColors.explanation, {
+              link: (
+                <a
+                  href="https://coolors.co/palettes"
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.link}
+                >
+                  Coolors.co
+                </a>
+              ),
+            })}
           </>
         }
       >

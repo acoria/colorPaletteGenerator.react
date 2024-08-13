@@ -33,8 +33,7 @@
     "steps": {
         "chooseTwoColors": {
             "title": "Choose two colors",
-            "explanationPartOne": "Go to ",
-            "explanationPartTwo": " or take any other color palette and pick three colors you like from the same color palette or use a picture which represents the mood for your app and pick three colors from there. ",
+            "explanation": "Go to {{link}} or take any other color palette and pick three colors you like from the same color palette or use a picture which represents the mood for your app and pick three colors from there.",
             "or": "OR",
             "orTitle": "Fill with existing colors"
         },
