@@ -81,12 +81,6 @@
   text-align: center;
 }
 
-.centerElement {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
 .primaryAndAccentColorsPicker {
   display: flex;
   flex-direction: column;
@@ -94,7 +88,16 @@
   row-gap: 2rem;
 }
 
-.exampleWithButtons {
+.preview {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   //padding to make app appear as high as actual edge of color bars and not the button above
   padding-top: 1.9rem;
+}
+
+.previewContent {
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }

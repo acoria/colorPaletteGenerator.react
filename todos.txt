@@ -41,3 +41,4 @@ bug: copying scss code on raspberry does not work
 write "darker"/"lighter" with arrows next to color bars
 useTranslation for link
 switch from "" to undefined for empty colors
+add examples for usage of lighter colors

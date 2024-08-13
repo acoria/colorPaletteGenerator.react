@@ -22,6 +22,9 @@
         "chip8": "click on",
         "callToActionButton": "Main action"
     },
+    "exampleWebsite":{
+        "appTitle": "Website example"
+    },
     "pages": {
         "colors": "Colors",
         "designExamples": "Design examples",

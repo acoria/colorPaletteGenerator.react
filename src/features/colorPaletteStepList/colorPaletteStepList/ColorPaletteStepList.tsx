@@ -6,13 +6,14 @@ import { ReactComponent as CircleWithThree } from "../../../assets/circleWithThr
 import { ReactComponent as CircleWithTwo } from "../../../assets/circleWithTwo.svg";
 import { ReactComponent as Decision } from "../../../assets/decision.svg";
 import { AppContext } from "../../../context/AppContext";
+import { texts } from "../../../hooks/useTranslation/texts";
+import { useTranslation } from "../../../hooks/useTranslation/useTranslation";
 import { CodeToColor } from "../../codeToColor/CodeToColor";
 import { ColorsPicker } from "../../colorsPicker/ColorsPicker";
+import { ExampleForWebsite } from "../../designExamples/exampleForWebsite/ExampleForWebsite";
 import { ExampleWithButtons } from "../../designExamples/exampleWithButtons/ExampleWithButtons";
 import { ColorPaletteStep } from "../colorPaletteStep/ColorPaletteStep";
 import styles from "./ColorPaletteStepList.module.scss";
-import { useTranslation } from "../../../hooks/useTranslation/useTranslation";
-import { texts } from "../../../hooks/useTranslation/texts";
 
 export const ColorPaletteStepList: React.FC = () => {
   const { t } = useTranslation();
@@ -151,22 +152,29 @@ export const ColorPaletteStepList: React.FC = () => {
         )}
         explanation={t(texts.steps.previewDesign.explanation)}
       >
-        <div className={styles.centerElement}>
-          <ExampleWithButtons
-            backgroundColor={neutralColors[8]}
-            titleColor={neutralColors[1]}
-            buttonsSectionTextColor={neutralColors[0]}
-            buttonsBackgroundColor={neutralColors[0]}
-            buttonsTextColor={primaryColors[2]}
-            buttonsBackgroundColorUnselected={neutralColors[3]}
-            buttonsTextColorUnselected={neutralColors[0]}
-            primaryButtonBackgroundColor={accentColor}
-            primaryButtonTextColor={neutralColors[8]}
-            headerBackgroundColor={primaryColors[2]}
-            colors={[...primaryColors, ...neutralColors]}
-            suppressExpanding
-            className={styles.exampleWithButtons}
-          />
+        <div className={styles.preview}>
+          <div className={styles.previewContent}>
+            <ExampleForWebsite
+              backgroundColor="white"
+              titleColor={neutralColors[2]}
+              headerBackgroundColor={primaryColors[2]}
+              cardColor={neutralColors[8]}
+            />
+            <ExampleWithButtons
+              backgroundColor={neutralColors[8]}
+              titleColor={neutralColors[1]}
+              buttonsSectionTextColor={neutralColors[0]}
+              buttonsBackgroundColor={neutralColors[0]}
+              buttonsTextColor={primaryColors[2]}
+              buttonsBackgroundColorUnselected={neutralColors[3]}
+              buttonsTextColorUnselected={neutralColors[0]}
+              primaryButtonBackgroundColor={accentColor}
+              primaryButtonTextColor={neutralColors[8]}
+              headerBackgroundColor={primaryColors[2]}
+              colors={[...primaryColors, ...neutralColors]}
+              suppressExpanding
+            />
+          </div>
         </div>
       </ColorPaletteStep>
     </div>
