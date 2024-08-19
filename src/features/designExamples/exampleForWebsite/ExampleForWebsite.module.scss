@@ -1,14 +1,19 @@
-.exampleForWebsite{
-    
-}
+.exampleForWebsite {}
 
-.title{
+.title {
     padding: 0.5rem;
     font-weight: 500;
 }
 
-.card{
-    width: 80%;
+.cards {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    row-gap: 1rem;
+}
+
+.card {
     height: 5rem;
     border-radius: 10px;
+    padding: 1rem;
 }

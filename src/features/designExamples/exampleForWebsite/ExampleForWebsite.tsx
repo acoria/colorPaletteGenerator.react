@@ -10,14 +10,16 @@ export const ExampleForWebsite: React.FC<IExampleForWebsiteProps> = (props) => {
   const [headerBackgroundColor, setHeaderBackgroundColor] = useState(
     props.headerBackgroundColor
   );
-  const [cardColor, setCardColor] = useState(props.cardColor);
+  const [cardColor1, setCardColor1] = useState(props.cardColor1);
+  const [cardColor2, setCardColor2] = useState(props.cardColor2);
   const { t } = useTranslation();
 
   useEffect(() => {
     setBackgroundColor(props.backgroundColor);
     setTitleColor(props.titleColor);
     setHeaderBackgroundColor(props.headerBackgroundColor);
-    setCardColor(props.cardColor);
+    setCardColor1(props.cardColor1);
+    setCardColor2(props.cardColor2);
   }, [props]);
 
   return (
@@ -31,8 +33,13 @@ export const ExampleForWebsite: React.FC<IExampleForWebsiteProps> = (props) => {
       >
         {t(texts.exampleWebsite.appTitle)}
       </div>
-      <div className={styles.card} style={{ backgroundColor: cardColor }}>
-        Card
+      <div className={styles.cards}>
+        <div className={styles.card} style={{ backgroundColor: cardColor1 }}>
+          Card
+        </div>
+        <div className={styles.card} style={{ backgroundColor: cardColor2 }}>
+          Card
+        </div>
       </div>
     </div>
   );

@@ -160,7 +160,8 @@ export const ColorPaletteStepList: React.FC = () => {
               backgroundColor="white"
               titleColor={neutralColors[2]}
               headerBackgroundColor={primaryColors[2]}
-              cardColor={neutralColors[8]}
+              cardColor1={neutralColors[8]}
+              cardColor2={neutralColors[7]}
             />
             <ExampleWithButtons
               backgroundColor={neutralColors[8]}

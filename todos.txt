@@ -46,3 +46,4 @@ bug: copying scss code on raspberry does not work -> blocked if not https
 write "darker"/"lighter" with arrows next to color bars
 switch from "" to undefined for empty colors
 add examples for usage of lighter colors
+add examples like here: https://palettemaker.com/app
