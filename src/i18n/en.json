@@ -1,5 +1,9 @@
 {
     "appTitle": "Color Palette Generator",
+    "buyMeACoffee": {
+        "youLikeIt": "Like it?",
+        "buyMeACoffee": "Buy me a coffee!"
+    },
     "codeToColor": {
         "explanation": "Paste five primary colors, an accent color, and at least five neutral colors in whatever code format you like. The colors will be filled by the pasted order."
     },
@@ -22,7 +26,7 @@
         "chip8": "click on",
         "callToActionButton": "Main action"
     },
-    "exampleWebsite":{
+    "exampleWebsite": {
         "appTitle": "Website example"
     },
     "pages": {

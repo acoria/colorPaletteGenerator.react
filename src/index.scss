@@ -1,3 +1,4 @@
+@import './styles/typography.scss';
 @import './styles/colors.scss';
 
 * {
@@ -12,11 +13,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: $color-primary;
-}
-
-@font-face {
-  font-family: "Lexend";
-  src: url(./fonts/Lexend-VariableFont_wght.ttf)
 }
 
 h4 {
