@@ -45,44 +45,41 @@ export const ColorResult: React.FC = () => {
         colors={extendedColors}
         title={t(texts.colorResult.colorPaletteExtended)}
       />
-      <div className={styles.codeAndDonationButton}>
-        <div className={styles.codeSnippets}>
-          <CssCode
-            code={[
-              ...CssColorCodeGenerator.generate(
-                context.primaryColors.value,
-                prefixPrimary
-              ),
-              ...CssColorCodeGenerator.generate(
-                [context.accentColor.value],
-                prefixAccent
-              ),
-              ...CssColorCodeGenerator.generate(
-                limitedNeutralColorSelector.select(context.neutralColors.value),
-                prefixSecondary
-              ),
-            ]}
-            title={t(texts.colorResult.scssCodeSimple)}
-          />
-          <CssCode
-            code={[
-              ...CssColorCodeGenerator.generate(
-                context.primaryColors.value,
-                prefixPrimary
-              ),
-              ...CssColorCodeGenerator.generate(
-                [context.accentColor.value],
-                prefixAccent
-              ),
-              ...CssColorCodeGenerator.generate(
-                context.neutralColors.value,
-                prefixSecondary
-              ),
-            ]}
-            title={t(texts.colorResult.scssCodeExtended)}
-          />
-        </div>
-        <BuyMeACoffeeLink />
+      <div className={styles.codeSnippets}>
+        <CssCode
+          code={[
+            ...CssColorCodeGenerator.generate(
+              context.primaryColors.value,
+              prefixPrimary
+            ),
+            ...CssColorCodeGenerator.generate(
+              [context.accentColor.value],
+              prefixAccent
+            ),
+            ...CssColorCodeGenerator.generate(
+              limitedNeutralColorSelector.select(context.neutralColors.value),
+              prefixSecondary
+            ),
+          ]}
+          title={t(texts.colorResult.scssCodeSimple)}
+        />
+        <CssCode
+          code={[
+            ...CssColorCodeGenerator.generate(
+              context.primaryColors.value,
+              prefixPrimary
+            ),
+            ...CssColorCodeGenerator.generate(
+              [context.accentColor.value],
+              prefixAccent
+            ),
+            ...CssColorCodeGenerator.generate(
+              context.neutralColors.value,
+              prefixSecondary
+            ),
+          ]}
+          title={t(texts.colorResult.scssCodeExtended)}
+        />
       </div>
     </div>
   );

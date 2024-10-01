@@ -29,6 +29,8 @@
     "exampleWebsite": {
         "appTitle": "Website example"
     },
+    "imprint": "Imprint",
+    "privacyPolicy": "Privacy Policy",
     "pages": {
         "colors": "Colors",
         "designExamples": "Design examples",

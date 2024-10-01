@@ -12,7 +12,7 @@ export const BuyMeACoffeeLink: React.FC<IBuyMeACoffeeLinkProps> = (props) => {
 
   return (
     <Link
-      to={AppConfig.MY_PAYPAL_ME_LINK}
+      to={AppConfig.LINK_MY_PAYPAL_ME}
       className={style(styles.buyMeACoffeeLink, props.className)}
       openInNewTab
     >
