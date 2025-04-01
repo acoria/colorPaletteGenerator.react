@@ -16,6 +16,7 @@ import { ColorPaletteStep } from "../colorPaletteStep/ColorPaletteStep";
 import styles from "./ColorPaletteStepList.module.scss";
 import { HexColorsParser } from "../../../services/HexColorsParser";
 import { useLocation } from "react-router-dom";
+import { urlParamsColors } from "../../../routes/AppRouter";
 
 export const ColorPaletteStepList: React.FC = () => {
   const { t } = useTranslation();
@@ -23,9 +24,7 @@ export const ColorPaletteStepList: React.FC = () => {
   const primaryColors = context.primaryColors.value;
   const neutralColors = context.neutralColors.value;
   const accentColor = context.accentColor.value;
-
-  const location = useLocation()
-  console.log(location.search);
+  const location = useLocation();
 
   const colorTitle = (component: ReactNode, title: string) => (
     <div className={styles.colorTitle}>
@@ -34,47 +33,48 @@ export const ColorPaletteStepList: React.FC = () => {
     </div>
   );
 
-  const setColorsInContext = useCallback(
-    (colors: string[]) => {
-      context.primaryColors.setValue([
-        colors[0],
-        colors[1],
-        colors[2],
-        colors[3],
-        colors[4],
+  const setColorsInContext = useCallback((colors: string[]) => {
+    context.primaryColors.setValue([
+      colors[0],
+      colors[1],
+      colors[2],
+      colors[3],
+      colors[4],
+    ]);
+    context.accentColor.setValue(colors[5]);
+    if (colors.length === 12) {
+      context.neutralColors.setValue([
+        colors[6],
+        colors[7],
+        colors[8],
+        "",
+        colors[9],
+        "",
+        colors[10],
+        "",
+        colors[11],
       ]);
-      context.accentColor.setValue(colors[5]);
-      if (colors.length === 12) {
-        context.neutralColors.setValue([
-          colors[6],
-          colors[7],
-          colors[8],
-          "",
-          colors[9],
-          "",
-          colors[10],
-          "",
-          colors[11],
-        ]);
-      } else {
-        const emptyFieldsCount = 15 - colors.length;
-        context.neutralColors.setValue([
-          ...colors.filter((_, index) => index > 5),
-          ...Array(emptyFieldsCount).map(() => ""),
-        ]);
-      }
-    },
-    []
-  );
+    } else {
+      const emptyFieldsCount = 15 - colors.length;
+      context.neutralColors.setValue([
+        ...colors.filter((_, index) => index > 5),
+        ...Array(emptyFieldsCount).map(() => ""),
+      ]);
+    }
+  }, []);
 
   useEffect(() => {
-        // const decoded = atob(encoded);
-        // console.log(decoded);
-    const colors = new HexColorsParser().parse(
-      "$color-primary-darker: #b76b1f;$color-primary-dark: #db8529;$color-primary: #e4a562;$color-primary-light: #f2d5b5;$color-primary-lighter: #f5ebe0;"
-    );
-    setColorsInContext(colors);
-  }, [setColorsInContext]);
+    const urlParams = location.search;
+    if (urlParams.charAt(0) === "?") {
+      //contains params
+      const encodedColors = urlParams.replace(`?${urlParamsColors}=`, "");
+      const decodedColors = atob(encodedColors);
+      const colors = new HexColorsParser().parse(decodedColors);
+      if(colors.length > 0){
+        setColorsInContext(colors);
+      }
+    }
+  }, [location.search, setColorsInContext]);
 
   return (
     <div className={styles.colorPaletteStepList}>
