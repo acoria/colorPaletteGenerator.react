@@ -8,7 +8,7 @@
         "explanation": "Paste five primary colors, an accent color, and at least five neutral colors in whatever code format you like. The colors will be filled by the pasted order."
     },
     "colorResult": {
-        "copyColorExample": "Copy color example link to clipboard",
+        "copyColorExample": "Copy color palette link",
         "colorPaletteSimple": "Color palette",
         "colorPaletteExtended": "Extended color palette",
         "scssCodeSimple": "SCSS code",

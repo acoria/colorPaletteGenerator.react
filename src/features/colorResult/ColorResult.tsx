@@ -24,12 +24,24 @@ export const ColorResult: React.FC = () => {
     () => new LimitedNeutralColorsSelector(),
     []
   );
+  const primaryColorsCssCode = CssColorCodeGenerator.generate(
+    context.primaryColors.value,
+    prefixPrimary
+  );
+  const accentColorCssCode = CssColorCodeGenerator.generate(
+    [context.accentColor.value],
+    prefixAccent
+  );
+  const neutralColorsCssCode = CssColorCodeGenerator.generate(
+    context.neutralColors.value,
+    prefixSecondary
+  );
   const copyColorExampleLinkToClipboard = () => {
     const colors = [
-      ...context.primaryColors.value,
-      context.accentColor.value,
-      ...context.neutralColors.value,
-    ].join(";");
+      ...primaryColorsCssCode,
+      ...accentColorCssCode,
+      ...neutralColorsCssCode,
+    ].join(" ");
     const encoded = btoa(colors);
     const url = `${AppConfig.BASE_URL}?${urlParamsColors}=${encoded}`;
     navigator.clipboard.writeText(url);
@@ -49,7 +61,10 @@ export const ColorResult: React.FC = () => {
 
   return (
     <div className={styles.colorResult}>
-      <button className={styles.copyColorExampleButton} onClick={copyColorExampleLinkToClipboard}>
+      <button
+        className={styles.copyColorExampleButton}
+        onClick={copyColorExampleLinkToClipboard}
+      >
         <div className={styles.copyExampleButtonContent}>
           <CopyIcon
             className={styles.copyIconExampleLink}
@@ -69,14 +84,8 @@ export const ColorResult: React.FC = () => {
       <div className={styles.codeSnippets}>
         <CssCode
           code={[
-            ...CssColorCodeGenerator.generate(
-              context.primaryColors.value,
-              prefixPrimary
-            ),
-            ...CssColorCodeGenerator.generate(
-              [context.accentColor.value],
-              prefixAccent
-            ),
+            ...primaryColorsCssCode,
+            ...accentColorCssCode,
             ...CssColorCodeGenerator.generate(
               limitedNeutralColorSelector.select(context.neutralColors.value),
               prefixSecondary
@@ -86,18 +95,9 @@ export const ColorResult: React.FC = () => {
         />
         <CssCode
           code={[
-            ...CssColorCodeGenerator.generate(
-              context.primaryColors.value,
-              prefixPrimary
-            ),
-            ...CssColorCodeGenerator.generate(
-              [context.accentColor.value],
-              prefixAccent
-            ),
-            ...CssColorCodeGenerator.generate(
-              context.neutralColors.value,
-              prefixSecondary
-            ),
+            ...primaryColorsCssCode,
+            ...accentColorCssCode,
+            ...neutralColorsCssCode,
           ]}
           title={t(texts.colorResult.scssCodeExtended)}
         />
