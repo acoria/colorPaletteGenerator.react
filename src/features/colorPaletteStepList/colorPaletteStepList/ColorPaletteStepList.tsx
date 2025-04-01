@@ -1,4 +1,4 @@
-import { ReactNode, useContext } from "react";
+import { ReactNode, useCallback, useContext, useEffect, useState } from "react";
 import { ReactComponent as CircleWithFive } from "../../../assets/circleWithFive.svg";
 import { ReactComponent as CircleWithFour } from "../../../assets/circleWithFour.svg";
 import { ReactComponent as CircleWithOne } from "../../../assets/circleWithOne.svg";
@@ -14,6 +14,8 @@ import { ExampleForWebsite } from "../../designExamples/exampleForWebsite/Exampl
 import { ExampleWithButtons } from "../../designExamples/exampleWithButtons/ExampleWithButtons";
 import { ColorPaletteStep } from "../colorPaletteStep/ColorPaletteStep";
 import styles from "./ColorPaletteStepList.module.scss";
+import { HexColorsParser } from "../../../services/HexColorsParser";
+import { useLocation } from "react-router-dom";
 
 export const ColorPaletteStepList: React.FC = () => {
   const { t } = useTranslation();
@@ -22,12 +24,57 @@ export const ColorPaletteStepList: React.FC = () => {
   const neutralColors = context.neutralColors.value;
   const accentColor = context.accentColor.value;
 
+  const location = useLocation()
+  console.log(location.search);
+
   const colorTitle = (component: ReactNode, title: string) => (
     <div className={styles.colorTitle}>
       {component}
       <h4 className={styles.colorTitleText}>{title}</h4>
     </div>
   );
+
+  const setColorsInContext = useCallback(
+    (colors: string[]) => {
+      context.primaryColors.setValue([
+        colors[0],
+        colors[1],
+        colors[2],
+        colors[3],
+        colors[4],
+      ]);
+      context.accentColor.setValue(colors[5]);
+      if (colors.length === 12) {
+        context.neutralColors.setValue([
+          colors[6],
+          colors[7],
+          colors[8],
+          "",
+          colors[9],
+          "",
+          colors[10],
+          "",
+          colors[11],
+        ]);
+      } else {
+        const emptyFieldsCount = 15 - colors.length;
+        context.neutralColors.setValue([
+          ...colors.filter((_, index) => index > 5),
+          ...Array(emptyFieldsCount).map(() => ""),
+        ]);
+      }
+    },
+    []
+  );
+
+  useEffect(() => {
+        // const decoded = atob(encoded);
+        // console.log(decoded);
+    const colors = new HexColorsParser().parse(
+      "$color-primary-darker: #b76b1f;$color-primary-dark: #db8529;$color-primary: #e4a562;$color-primary-light: #f2d5b5;$color-primary-lighter: #f5ebe0;"
+    );
+    setColorsInContext(colors);
+  }, [setColorsInContext]);
 
   return (
     <div className={styles.colorPaletteStepList}>
@@ -61,37 +108,7 @@ export const ColorPaletteStepList: React.FC = () => {
           <h4 className={styles.title}>
             {t(texts.steps.chooseTwoColors.orTitle)}
           </h4>
-          <CodeToColor
-            onNewColors={(colors) => {
-              context.primaryColors.setValue([
-                colors[0],
-                colors[1],
-                colors[2],
-                colors[3],
-                colors[4],
-              ]);
-              context.accentColor.setValue(colors[5]);
-              if (colors.length === 12) {
-                context.neutralColors.setValue([
-                  colors[6],
-                  colors[7],
-                  colors[8],
-                  "",
-                  colors[9],
-                  "",
-                  colors[10],
-                  "",
-                  colors[11],
-                ]);
-              } else {
-                const emptyFieldsCount = 15 - colors.length;
-                context.neutralColors.setValue([
-                  ...colors.filter((_, index) => index > 5),
-                  ...Array(emptyFieldsCount).map(() => ""),
-                ]);
-              }
-            }}
-          />
+          <CodeToColor onNewColors={setColorsInContext} />
         </div>
       </ColorPaletteStep>
       <ColorPaletteStep

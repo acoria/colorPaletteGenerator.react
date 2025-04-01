@@ -1,13 +1,14 @@
 import { useContext, useMemo } from "react";
-import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
-import styles from "./ColorResult.module.scss";
 import { AppContext } from "../../context/AppContext";
+import { texts } from "../../hooks/useTranslation/texts";
+import { useTranslation } from "../../hooks/useTranslation/useTranslation";
 import { LimitedNeutralColorsSelector } from "../../services/LimitedNeutralColorsSelector";
 import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
-import { useTranslation } from "../../hooks/useTranslation/useTranslation";
-import { texts } from "../../hooks/useTranslation/texts";
-import { BuyMeACoffeeLink } from "../buyMeACoffeeLink/BuyMeACoffeeLink";
+import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
+import styles from "./ColorResult.module.scss";
+import { useLocation } from "react-router-dom";
+import { AppConfig } from "../../AppConfig";
 
 /**
  * A component to show the color palette based on the picked colors and the corresponding scss code.
@@ -22,6 +23,16 @@ export const ColorResult: React.FC = () => {
     () => new LimitedNeutralColorsSelector(),
     []
   );
+  const copyColorExampleLinkToClipboard = () => {
+    const colors = [
+      ...context.primaryColors.value,
+      context.accentColor.value,
+      ...context.neutralColors.value,
+    ].join(";");
+    const encoded = btoa(colors);
+    const url = `${AppConfig.BASE_URL}?colors=${encoded}`;
+    navigator.clipboard.writeText(url);
+  };
 
   const simpleColors = [
     ...context.primaryColors.value,
@@ -80,6 +91,9 @@ export const ColorResult: React.FC = () => {
           ]}
           title={t(texts.colorResult.scssCodeExtended)}
         />
+        <button onClick={copyColorExampleLinkToClipboard}>
+          Copy example to clipboard
+        </button>
       </div>
     </div>
   );
