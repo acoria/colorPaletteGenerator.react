@@ -1,14 +1,15 @@
 import { useContext, useMemo } from "react";
+import { AppConfig } from "../../AppConfig";
+import { ReactComponent as CopyIcon } from "../../assets/copy.svg";
 import { AppContext } from "../../context/AppContext";
 import { texts } from "../../hooks/useTranslation/texts";
 import { useTranslation } from "../../hooks/useTranslation/useTranslation";
+import { urlParamsColors } from "../../routes/AppRouter";
 import { LimitedNeutralColorsSelector } from "../../services/LimitedNeutralColorsSelector";
 import { CssCode } from "../cssCodeGenerator/CssCode";
 import { CssColorCodeGenerator } from "../cssCodeGenerator/CssColorCodeGenerator";
 import { HorizontalColorPalette } from "../horizontalColorPalette/HorizontalColorPalette";
 import styles from "./ColorResult.module.scss";
-import { useLocation } from "react-router-dom";
-import { AppConfig } from "../../AppConfig";
 
 /**
  * A component to show the color palette based on the picked colors and the corresponding scss code.
@@ -30,7 +31,7 @@ export const ColorResult: React.FC = () => {
       ...context.neutralColors.value,
     ].join(";");
     const encoded = btoa(colors);
-    const url = `${AppConfig.BASE_URL}?colors=${encoded}`;
+    const url = `${AppConfig.BASE_URL}?${urlParamsColors}=${encoded}`;
     navigator.clipboard.writeText(url);
   };
 
@@ -48,6 +49,15 @@ export const ColorResult: React.FC = () => {
 
   return (
     <div className={styles.colorResult}>
+      <button className={styles.copyColorExampleButton} onClick={copyColorExampleLinkToClipboard}>
+        <div className={styles.copyExampleButtonContent}>
+          <CopyIcon
+            className={styles.copyIconExampleLink}
+            onClick={() => copyColorExampleLinkToClipboard}
+          />
+          <div>{t(texts.colorResult.copyColorExample)}</div>
+        </div>
+      </button>
       <HorizontalColorPalette
         colors={simpleColors}
         title={t(texts.colorResult.colorPaletteSimple)}
@@ -91,9 +101,6 @@ export const ColorResult: React.FC = () => {
           ]}
           title={t(texts.colorResult.scssCodeExtended)}
         />
-        <button onClick={copyColorExampleLinkToClipboard}>
-          Copy example to clipboard
-        </button>
       </div>
     </div>
   );

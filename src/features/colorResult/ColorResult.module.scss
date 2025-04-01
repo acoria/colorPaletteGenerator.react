@@ -1,3 +1,27 @@
+@import "../../styles/colors.scss";
+
+
+.copyColorExampleButton {
+  margin-bottom: 1rem;
+  font-family: "Lexend";
+  font-size: medium;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: $color-lightgray;
+  cursor: pointer;
+}
+
+.copyExampleButtonContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.copyIconExampleLink {
+  width: 2.5rem;
+}
+
 .codeSnippets {
   margin-top: 2rem;
   display: flex;

@@ -16,3 +16,5 @@ export const AppRouter = createBrowserRouter([
     ],
   },
 ]);
+
+export const urlParamsColors = "colors"
