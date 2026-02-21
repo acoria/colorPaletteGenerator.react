@@ -1,6 +1,6 @@
 #raspberry:
-FROM --platform=arm64 arm64v8/node:alpine3.19
-#FROM node:20
+# FROM --platform=arm64 arm64v8/node:alpine3.19
+FROM node:20-slim
 WORKDIR /usr/src/app
 COPY package*.json ./
 RUN npm install
